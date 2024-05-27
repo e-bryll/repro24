@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_ENV = "production"
+
+[[redirects]]
+  from = "/old-url"
+  to = "/new-url"
+  status = 301
+
+[build.processing]
+  css = "minify"
+  js = "minify"
+  images = "optimize"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Cache-Control = "public, max-age=3600"
