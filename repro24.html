@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Репроцентр repro24 | Друкарські форми та фотоплівки</title>
+    <meta name="description" content="Репроцентр Репро24 пропонує вивід друкарських форм з використанням технологій CTP та CTCP різних форматів, а також фотоплівок різної ширини.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="aside">
+            <header>
+                <p>Калькулятор вартості плівки</p>
+            </header>
+            <form class="calculationFields" aria-label="Калькулятор вартості плівки">
+                <div id="film-fields-container">
+                    <div class="film-field">
+                        <label for="film-width1">Ширина плівки:</label>
+                        <select id="film-width1" class="film-width" aria-label="Ширина плівки">
+                            <option value="">Оберіть зі списку</option>
+                            <option value="457">457 мм</option>
+                            <option value="724">724 мм</option>
+                            <option value="762">762 мм</option>
+                            <option value="914">914 мм</option>
+                        </select>
+                        <label for="length1">Довжина плівки 1:</label>
+                        <input type="number" id="length1" class="length" placeholder="Введіть довжину в мм" min="50" max="1100" required>
+                        <label for="quantity1">Кількість:</label>
+                        <input type="number" id="quantity1" class="quantity" value="1" min="1" required>
+                        <div class="result" id="result1"></div>
+                    </div>
+                </div>
+                <div id="buttons-container" class="center-content">
+                    <button type="button" id="addFilm" aria-label="Додати плівку">Додати плівку</button>
+                    <button type="button" id="calculate" aria-label="Розрахувати">Розрахувати</button>
+                </div>
+            </form>
+        </aside>
+        <main class="main">
+            <header class="header">
+                <div class="header-text">
+                    <h1>Репроцентр repro24</h1>
+                </div>
+                <div class="logo">
+                    <img src="./img/repro24_logo.jpg" alt="репроцентр repro24">
+                </div>
+            </header>
+            <section>
+                <div class="header-text">
+                    <p>Виводимо друкарські форми з використанням технологій CTP та CTCP різних форматів.<br>
+                        Також виводимо фотоплівки, маємо рулони різної ширини.</p>
+                </div>               
+                <div class="columns">
+                    <div class="column">
+                        <p>Популярні формати форм, мм:</p>
+                        <div class="two-columns">
+                            <ul>
+                                <li>490х370</li>
+                                <li>510х400</li>
+                                <li>521х415</li>
+                                <li>525х459</li>
+                                <li>650х530</li>
+                                <li>650х550</li>
+                                <li>665х510</li>
+                            </ul>
+                            <ul>
+                                <li>724х615</li>
+                                <li>740х575</li>
+                                <li>740х605</li>
+                                <li>743х557</li>
+                                <li>745х660</li>
+                                <li>1030х770</li>
+                                <li>1050х795</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>Ширина стандартних рулонів плівки:</p>
+                        <ul>
+                            <li>457 мм</li>
+                            <li>724 мм</li>
+                            <li>762 мм</li>
+                            <li>914 мм</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-column highlighted">
+                    <p class="info-column-center center-content">Графік прийому макетів</p>
+                    <div class="columns">
+                        <div class="info-column">
+                            <p class="info-column-left">На вивід пластин до 15:00:</p>
+                            <ul>
+                                <li>✔ макети, які потребують затвердження,</li>
+                                <li>✔ об'ємні роботи,</li>
+                                <li>✔ роботи на відправку Новою поштою</li>
+                            </ul>
+                        </div>
+                        <div class="info-column">
+                            <p class="info-column-left">Після 15:00:</p>
+                            <ul>
+                                <li>✔ вивід (та / або відправка) переноситься на наступний день,</li>
+                                <li>✔ невеликі роботи за можливості будуть виведені у цей же день,</li>
+                                <li>✔ об'ємні роботи можуть бути віддані частинами (за наявності та терміновості)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info-column">
+                        <p class="info-column-left">На вивід плівок до 16:00:</p>
+                        <ul>
+                            <li>✔ макети, які потребують затвердження,</li>
+                            <li>✔ об'ємні роботи,</li>
+                            <li>✔ роботи на відправку Новою поштою</li>
+                        </ul>
+                    </div>
+                    <div class="info-column">
+                        <p class="info-column-left">СБ - вихідний або за попередньою домовленістю<br>
+                            НД - вихідний</p>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <div class="contact-columns">
+                        <div class="contact-column">
+                            <p>Наша адреса:<br>вул. Шахтарська, 9Г<br>м. Київ, 04074</p>
+                        </div>
+                        <div class="contact-column">
+                            <p>Телефон для технічних питань:<br>067 401 56 87<br>
+                                Пошта для замовлення:<br>repro24@ukr.net<br>
+                                Резервна пошта:<br>repro24ua@gmail.com</p>
+                        </div>
+                        <div class="contact-column" id="#contactFormContainer">
+                            <!-- Форма зв'язку -->
+                            <form action="#" method="post" aria-label="Контактна форма" id="contactForm">
+                                <!-- Модальне вікно з формою -->
+                                <div id="form-modal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close-btn">×</span>
+                                        <!-- Ваша форма тут -->
+                                        <label for="name">Ваше ім'я:</label>
+                                        <input type="text" id="name" name="name" required>
+                                        <label for="email">Ваша пошта:</label>
+                                        <input type="email" id="email" name="email" required>
+                                        <label for="message">Повідомлення:</label>
+                                        <textarea id="message" name="message" required></textarea>
+                                        <button type="submit">Надіслати</button>
+                                    </div>
+                                </div>
+
+                                <!-- Модальне вікно з повідомленням про успішне надіслання форми -->
+                                <div id="success-modal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close-btn">×</span>
+                                        <h2>Дякуємо!</h2>
+                                        <p>Ваше повідомлення успішно надіслано.</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="contact-column">
+                            <button id="#toggleFormButton" aria-label="Написати нам">Написати нам</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <p> <img src="./img/repro24_logo_short.jpg" alt="Малий логотип Репроцентр Репро24"> &copy; 2024</p>
+    </footer>
+    <script src="js/script_calc.js" defer></script>
+    <script src="js/script_form.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Репроцентр Репро24",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "вул. Шахтарська, 9Г",
+            "addressLocality": "Київ",
+            "postalCode": "04074",
+            "addressCountry": "UA"
+        },
+        "telephone": "+380674015687",
+        "email": "repro24@ukr.net"
+    }
+    </script>
+</body>
+</html>
