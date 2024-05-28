@@ -142,8 +142,8 @@ button:hover {
 
 /* Блок з додатковою інформацією */
 .highlighted {
-    padding: 10px 10px 0 10px; /* Задаємо padding для верхнього відступу */
-    margin: 0;
+    padding: 5px;
+    margin: 5px 0 5рх 0;
     background-color: #FF6F61;
 }
 
@@ -156,7 +156,22 @@ button:hover {
 }
 
 .column {
-    flex: 1;
+    flex: 1; /* Дозволяє колонкам займати однакову ширину */
+    min-width: 0; /* Дозволяє колонкам бути однакової ширини */
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.column ul {
+    list-style: none; /* Видаляє маркери списків */
+    padding: 0; /* Видаляє внутрішні відступи списків */
+    margin: 0; /* Видаляє зовнішні відступи списків */
+    text-align: center;
+}
+
+.column ul li {
+    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
+    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
     text-align: center;
 }
 
@@ -190,13 +205,66 @@ button:hover {
     margin-bottom: 5px;
 }
 
-.two-columns {
-    display: flex;
-    gap: 10px;
+.formats-header,
+.widths-header {
+    text-align: center;
+    padding: 5px 0;
+    font-weight: bold;
+    border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+    /*align-items: center;*/
 }
 
-.two-columns ul {
-    flex: 1;
+/*.formats-header {
+    grid-column: span 3; /* Заголовок для двох колонок */
+    /*flex: 3; /* Займає місце двох колонок */
+/*}*/
+
+/*.widths-header {
+    flex: 1; /* Займає місце однієї колонки */
+/*}*/
+
+.columns-container {
+    display: flex;
+    justify-content: space-between; /* Розподіляє колонки рівномірно по ширині екрану */
+    gap: 10px; /* Відступ між колонками */
+    flex-wrap: wrap; /* Дозволяє обертати колонки на новий рядок */
+}
+
+.columns-container > div {
+    flex: 1; /* Дозволяє колонкам займати однакову ширину */
+    min-width: 0; /* Дозволяє колонкам бути однакової ширини */
+}
+
+.columns-container ul {
+    list-style: none; /* Видаляє маркери списків */
+    padding: 0; /* Видаляє внутрішні відступи списків */
+    margin: 0; /* Видаляє зовнішні відступи списків */
+}
+
+.columns-container ul li {
+    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
+    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+}
+
+/* Стиль для чергування кольорів у списках */
+.formats-list li:nth-child(even) {
+    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
+    color: #FFFFFF; /* Колір тексту */
+}
+
+.formats-list li:nth-child(odd) {
+    background-color: #111111; /* Змінюємо фон для парних елементів */
+    color: #FFFFFF; /* Колір тексту */
+}
+
+.widths-list li:nth-child(even) {
+    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
+    color: #FFFFFF; /* Колір тексту */
+}
+
+.widths-list li:nth-child(odd) {
+    background-color: #111111; /* Змінюємо фон для парних елементів */
+    color: #FFFFFF; /* Колір тексту */
 }
 
 .contacts {
