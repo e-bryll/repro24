@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const MODAL_ACTIVE_CLASS_NAME = 'modal-active';
 
 const formModal = document.querySelector('#form-modal');

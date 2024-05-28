@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
     const calculateButton = document.getElementById("calculate");
     const filmFieldsContainer = document.getElementById("film-fields-container");
