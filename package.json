@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/e-bryll/repro24/issues"
   },
-  "homepage": "https://github.com/e-bryll/repro24#readme"
+  "homepage": "https://github.com/e-bryll/repro24#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0"
+  }
 }
