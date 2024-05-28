@@ -145,6 +145,7 @@ button:hover {
     padding: 5px;
     margin: 5px 0 5рх 0;
     background-color: #FF6F61;
+    color: #111111;
 }
 
 .columns {
@@ -249,7 +250,7 @@ button:hover {
 /* Стиль для чергування кольорів у списках */
 .formats-list li:nth-child(even) {
     background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
-    color: #FFFFFF; /* Колір тексту */
+    color: #111111; /* Колір тексту */
 }
 
 .formats-list li:nth-child(odd) {
@@ -259,7 +260,7 @@ button:hover {
 
 .widths-list li:nth-child(even) {
     background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
-    color: #FFFFFF; /* Колір тексту */
+    color: #111111; /* Колір тексту */
 }
 
 .widths-list li:nth-child(odd) {
