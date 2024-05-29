@@ -64,7 +64,6 @@
     "for-own": "^1.0.0",
     "for-in": "^1.0.2",
     "fs-mkdirp-stream": "^2.0.1",
-    "fsevents": "^2.3.3",
     "glob-stream": "^8.0.2",
     "glob-parent": "^5.1.2",
     "function-bind": "^1.1.2",
