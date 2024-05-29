@@ -1,0 +1,463 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+	border: none;
+	outline: none;
+}
+
+/* Основні стилі */
+body {
+    font-family: 'Montserrat';
+    line-height: 1.4;
+    font-size: 12px;
+    color: #FFFFFF; /* #FFFFFF - Білий колір шрифту */
+    background: repeating-linear-gradient(to left, black 0%, black 1%, yellow 1%, yellow 2%, magenta 2%, magenta 3%, cyan 3%, cyan 4%);
+    padding-top: 10px;
+}
+
+/* Контейнер */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    min-height: 100vh;
+    background-color: #111111;
+    padding: 20px;
+}
+
+/* Сайдбар */
+.aside {
+    flex: 1;
+    max-width: 250px;
+    padding: 10px;
+    background-color: #111111;
+    display: block;
+    border-right: 1px solid #FF6F61; /* Колір рамки */
+}
+
+.aside header {
+    display: flex;
+    justify-content: center; /* Вирівнюємо текст по горизонталі */
+    align-items: center; /* Вирівнюємо текст по вертикалі */
+    background-color: #FF6F61; /* Color of the Year */
+    border-radius: 5px; /* Закругленість кутів */
+    margin-bottom: 5px;
+}
+
+.aside p { /* Змінив з a на p */
+    text-align: center; /* Забезпечуємо центрування тексту в середині блока */
+    font-size: 14px;
+}
+
+.calculationFields {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Оптимізовані відступи між полями */
+}
+
+.film-field {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* Оптимізовані відступи між елементами */
+    background-color: #111111;
+    border-top: 0.5px solid #FF6F61; /* Колір рамки */
+    border-bottom: 0.5px solid #FF6F61; /* Колір рамки */
+    padding: 1px; /* Внутрішній відступ */
+    margin-bottom: 1px; /* Додатковий відступ між розрахунками */
+}
+
+#buttons-container {
+    display: flex;
+    gap: 5px;
+    margin-top: 2px;
+    justify-content: center; /* Додаємо це для центрування по горизонталі */
+    align-items: center; /* Вирівнювання по вертикалі */
+}
+
+button {
+    padding: 2px;
+    background-color: #FF6F61; /* Color of the Year */
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #E5635E; /* Darker shade for hover effect */
+}
+
+/* Основний контент */
+.main {
+    flex: 2;
+    padding: 5px;
+    background: #111111;
+    color: #FFFFFF;
+    overflow-y: auto;
+}
+
+/* Основний хедер */
+.header {
+    display: flex;
+    align-items: center; /* Вирівнювання по вертикалі */
+    justify-content: space-between; /* Вирівнювання по горизонталі */
+    background-color: #FF6F61; /* Основний колір фону */
+    gap: 10px; /* Відступ між елементами */
+    padding: 0px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.header .logo {
+    flex-shrink: 0; /* Забезпечує незменшення логотипу */
+    margin-left: auto; /* Вирівнювання логотипу по правому краю */
+}
+
+.header .logo img {
+    max-width: 50px; /* Максимальна ширина логотипу */
+    height: auto;
+    vertical-align: middle;
+}
+
+.header .header-text {
+    flex-grow: 1;
+    text-align: center; /* Вирівнювання тексту по центру */
+    color: #FFFFFF; /* Білий колір тексту */
+}
+
+.header .header-text h1 {
+    font-size: 20px; /* Збільшений розмір шрифту заголовка */
+    margin: 0;
+}
+
+/* Хедер основного блоку */
+.header-section {
+    display: flex;
+    align-items: flex-end; /* Вирівнювання дочірніх елементів по нижньому краю */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header-text p {
+    color: #FFFFFF;
+    gap: 10px;
+    display: flex;
+    align-items: flex-end; /* Вирівнювання тексту по нижньому краю */
+    text-decoration: none; /* Приховування підкреслення посилання */
+    margin-bottom: 5px;
+}
+
+/* Блок з додатковою інформацією */
+.highlighted {
+    padding: 5px;
+    margin: 5px 0 5рх 0;
+    background-color: #FF6F61;
+    color: #111111;
+}
+
+.columns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1; /* Дозволяє колонкам займати однакову ширину */
+    min-width: 0; /* Дозволяє колонкам бути однакової ширини */
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.column ul {
+    list-style: none; /* Видаляє маркери списків */
+    padding: 0; /* Видаляє внутрішні відступи списків */
+    margin: 0; /* Видаляє зовнішні відступи списків */
+    text-align: center;
+}
+
+.column ul li {
+    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
+    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+    text-align: center;
+}
+
+/* Додаємо конкретні стилі для центрування тексту */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-column-center {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+    padding: 2px;
+}
+
+.info-column-left {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+    padding: 2px;
+    border-top: 2px solid #FF6F61; /* Color of the Year */
+}
+
+.info-column ul {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.formats-header,
+.widths-header {
+    text-align: center;
+    padding: 5px 0;
+    font-weight: bold;
+    border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+    /*align-items: center;*/
+}
+
+/*.formats-header {
+    grid-column: span 3; /* Заголовок для двох колонок */
+    /*flex: 3; /* Займає місце двох колонок */
+/*}*/
+
+/*.widths-header {
+    flex: 1; /* Займає місце однієї колонки */
+/*}*/
+
+.columns-container {
+    display: flex;
+    justify-content: space-between; /* Розподіляє колонки рівномірно по ширині екрану */
+    gap: 10px; /* Відступ між колонками */
+    flex-wrap: wrap; /* Дозволяє обертати колонки на новий рядок */
+}
+
+.columns-container > div {
+    flex: 1; /* Дозволяє колонкам займати однакову ширину */
+    min-width: 0; /* Дозволяє колонкам бути однакової ширини */
+}
+
+.columns-container ul {
+    list-style: none; /* Видаляє маркери списків */
+    padding: 0; /* Видаляє внутрішні відступи списків */
+    margin: 0; /* Видаляє зовнішні відступи списків */
+}
+
+.columns-container ul li {
+    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
+    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+}
+
+/* Стиль для чергування кольорів у списках */
+.formats-list li:nth-child(even) {
+    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
+    color: #111111; /* Колір тексту */
+}
+
+.formats-list li:nth-child(odd) {
+    background-color: #111111; /* Змінюємо фон для парних елементів */
+    color: #FFFFFF; /* Колір тексту */
+}
+
+.widths-list li:nth-child(even) {
+    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
+    color: #111111; /* Колір тексту */
+}
+
+.widths-list li:nth-child(odd) {
+    background-color: #111111; /* Змінюємо фон для парних елементів */
+    color: #FFFFFF; /* Колір тексту */
+}
+
+.contacts {
+    margin: 5px 0 5px 0;
+}
+
+.contact-columns {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    align-items: flex-end;
+    padding-left: 10px;
+}
+
+.contact-column {
+    flex: 1;
+}
+
+.contact-column form {
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+}
+
+#contactFormContainer {
+    display: none;
+}
+
+#contactFormContainer.active {
+    display: block;
+}
+
+.footer {
+    display: flex;
+    justify-content: center; /* Вирівнюємо вміст по центру */
+    align-items: center; /* Вирівнюємо вміст по вертикалі */
+    min-height: 20px;
+    padding-top: 2px;
+    background-color: #FF6F61; /* Color of the Year */
+}
+
+.footer p {
+    font-size: 10px; 
+    vertical-align: middle; /* Вирівнюємо текст по вертикалі */
+}
+
+.footer img {
+    max-width: 20px; /* Розмір логотипу */
+    height: auto;
+    vertical-align: middle;
+}
+
+.film-field input,
+.film-field select {
+    width: calc(100% - 5px);
+    background-color: #FF6F61; /* Color of the Year */
+    border: none;
+    border-radius: 3px;
+    padding: 1px;
+    font-size: 12px;
+    margin: 2px 0 0 2px;
+}
+
+.film-field input::placeholder {
+    color: #000000;
+}
+
+.film-field select option[value=""] {
+    color: #000000;
+}
+
+.film-field input:focus, 
+.film-field select:focus {
+    outline: none;
+}
+
+.result {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Стилі для модальних вікон */
+.modal {
+    display: none; /* Початково приховуємо модальне вікно */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Затемнюючий фон */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Затемнення фону при відкритті модального вікна */
+.modal.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .aside, .main {
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start; /* Змінено з center на flex-start */
+    }
+}
+
