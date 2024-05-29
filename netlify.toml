@@ -1,5 +1,5 @@
 [build]
-  command = "node_modules/.bin/gulp build"
+  command = "./node_modules/gulp/bin/gulp.js build"
   publish = "dist"
 
 [build.environment]
