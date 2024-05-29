@@ -1,21 +1,26 @@
-[build]
-  command = "gulp build"
-  publish = "dist"
+[[edge_functions]]
+  path = "/admin"
+  function = "auth"
 
-[build.environment]
-  NODE_ENV = "production"
+[[edge_functions]]
+  path = "/admin"
+  function = "injector"
+  cache = "manual"
 
-[[redirects]]
-  from = "/old-url"
-  to = "/new-url"
-  status = 301
+[[edge_functions]]
+  path = "/blog/*"
+  function = "auth"
 
-[build.processing]
-  css = "minify"
-  js = "minify"
-  images = "optimize"
+[[edge_functions]]
+  path = "/blog/*"
+  function = "rewriter"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
+[[edge_functions]]
+  pattern = "/products/(.*)"
+  excludedPattern = "/products/things/(.*)"
+  function = "highlight"
+
+[[edge_functions]]
+  path = "/*"
+  excludedPath = "/img/*"
+  function = "common"
