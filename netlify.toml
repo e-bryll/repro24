@@ -24,3 +24,7 @@
   path = "/*"
   excludedPath = "/img/*"
   function = "common"
+
+[[build]]
+  command = "npx gulp build"
+  publish = "dist"

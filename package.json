@@ -20,6 +20,7 @@
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-cli": "^2.3.0",
     "sass": "^1.77.2"
   },
   "dependencies": {
