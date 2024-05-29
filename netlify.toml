@@ -1,5 +1,5 @@
 [build]
-  command = "npx gulp build"
+  command = "gulp build"
   publish = "dist"
 
 [build.environment]
