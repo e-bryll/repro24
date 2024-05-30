@@ -94,7 +94,7 @@ button:hover {
     display: flex;
     align-items: center; /* Вирівнювання по вертикалі */
     justify-content: space-between; /* Вирівнювання по горизонталі */
-    background-color: #FF6F61; /* Основний колір фону */
+    background-color: #2885C6; /* #FF6F61 Основний колір фону */
     gap: 10px; /* Відступ між елементами */
     padding: 0px;
     margin-bottom: 10px;
@@ -305,7 +305,7 @@ button:hover {
     align-items: center; /* Вирівнюємо вміст по вертикалі */
     min-height: 20px;
     padding-top: 2px;
-    background-color: #FF6F61; /* Color of the Year */
+    background-color: #2885C6; /* #FF6F61 Color of the Year */
 }
 
 .footer p {
