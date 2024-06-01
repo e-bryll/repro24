@@ -28,4 +28,7 @@
 [build]
   command = "npx gulp build"
   publish = "dist"
-  functions = "netlify/functions"
+
+# If you are not using functions, comment out or remove the following lines
+#[functions]
+#  directory = "netlify/functions"

@@ -20,5 +20,11 @@ gulp.task('assets', () => gulp.src('src/assets/**/*')
 gulp.task('redirects', () => gulp.src('src/_redirects')
   .pipe(gulp.dest('dist')));
 
+// Copy _headers file to dist directory
+gulp.task('headers', function() {
+  return gulp.src('_headers')
+    .pipe(gulp.dest('dist'));
+});
+
 // Build task
-gulp.task('build', gulp.series('styles', 'html', 'assets', 'redirects'));
+gulp.task('build', gulp.series('styles', 'html', 'assets', 'redirects', 'headers'));
