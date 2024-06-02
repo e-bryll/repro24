@@ -12,7 +12,7 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 5px;
     min-height: 100vh;
     background-color: #111111;
     padding: 20px;
@@ -94,8 +94,8 @@ button:hover {
     display: flex;
     align-items: center; /* Вирівнювання по вертикалі */
     justify-content: space-between; /* Вирівнювання по горизонталі */
-    background-color: #FF6F61; /* Основний колір фону */
-    gap: 10px; /* Відступ між елементами */
+    background-color: #2885C6; /* #FF6F61 Основний колір фону */
+    gap: 0px; /* Відступ між елементами */
     padding: 0px;
     margin-bottom: 10px;
     position: relative;
@@ -215,15 +215,6 @@ button:hover {
     /*align-items: center;*/
 }
 
-/*.formats-header {
-    grid-column: span 3; /* Заголовок для двох колонок */
-    /*flex: 3; /* Займає місце двох колонок */
-/*}*/
-
-/*.widths-header {
-    flex: 1; /* Займає місце однієї колонки */
-/*}*/
-
 .columns-container {
     display: flex;
     justify-content: space-between; /* Розподіляє колонки рівномірно по ширині екрану */
@@ -305,7 +296,7 @@ button:hover {
     align-items: center; /* Вирівнюємо вміст по вертикалі */
     min-height: 20px;
     padding-top: 2px;
-    background-color: #FF6F61; /* Color of the Year */
+    background-color: #2885C6; /* #FF6F61 Color of the Year */
 }
 
 .footer p {
@@ -406,4 +397,3 @@ button:hover {
         align-items: flex-start; /* Змінено з center на flex-start */
     }
 }
-
