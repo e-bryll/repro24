@@ -54,47 +54,47 @@
                 </div>
             </header>
             <section>
+                
                 <div class="header-text">
                     <p>Виводимо друкарські форми з використанням технологій CTP та CTCP різних форматів.<br>
                         Також виводимо фотоплівки, маємо рулони різної ширини.</p>
-                </div>  
+                </div>
+                
                 <div class="columns-container">
-                    <div class="column">
+                    <div class="formats-group">
                         <div class="formats-header">
                             <p>Популярні формати форм:</p>
                         </div>
-                        <ul class="formats-list">
-                            <li>490х370</li>
-                            <li>510х400</li>
-                            <li>521х415</li>
-                            <li>525х459</li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <div class="formats-header">
-                            <p>&nbsp;</p> <!-- Порожній параграф для вирівнювання -->
+                        <div class="columns">
+                            <div class="column">
+                                <ul class="formats-list">
+                                    <li>490х370</li>
+                                    <li>510х400</li>
+                                    <li>521х415</li>
+                                    <li>525х459</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="formats-list">
+                                    <li>650х530</li>
+                                    <li>650х550</li>
+                                    <li>665х510</li>
+                                    <li>724х615</li>
+                                    <li>740х575</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="formats-list">
+                                    <li>740х605</li>
+                                    <li>743х557</li>
+                                    <li>745х660</li>
+                                    <li>1030х770</li>
+                                    <li>1050х795</li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul class="formats-list">
-                            <li>650х530</li>
-                            <li>650х550</li>
-                            <li>665х510</li>
-                            <li>724х615</li>
-                            <li>740х575</li>
-                        </ul>
                     </div>
-                    <div class="column">
-                        <div class="formats-header">
-                            <p>&nbsp;</p> <!-- Порожній параграф для вирівнювання -->
-                        </div>
-                        <ul class="formats-list">
-                            <li>740х605</li>
-                            <li>743х557</li>
-                            <li>745х660</li>
-                            <li>1030х770</li>
-                            <li>1050х795</li>
-                        </ul>
-                    </div>
-                    <div class="column">
+                    <div class="widths-column">
                         <div class="widths-header">
                             <p>Ширина стандартних плівок:</p>
                         </div>
@@ -105,10 +105,11 @@
                             <li>914 мм</li>
                         </ul>
                     </div>
-                </div>
+                </div>                                           
+                
                 <div class="info-column highlighted">
                     <p class="info-column-center center-content">Графік прийому макетів</p>
-                    <div class="columns">
+                    <!-- <div class="columns"> -->
                         <div class="info-column">
                             <p class="info-column-left">На вивід пластин до 15:00:</p>
                             <ul>
@@ -122,10 +123,11 @@
                             <ul>
                                 <li>✔ вивід (та / або відправка) переноситься на наступний день,</li>
                                 <li>✔ невеликі роботи за можливості будуть виведені у цей же день,</li>
-                                <li>✔ об'ємні роботи можуть бути віддані частинами (за наявності та терміновості)</li>
+                                <li>✔ об'ємні роботи можуть бути віддані частинами (за наявності форм та терміновості)</li>
                             </ul>
                         </div>
-                    </div>
+                    <!-- </div> -->
+                    
                     <div class="info-column">
                         <p class="info-column-left">На вивід плівок до 16:00:</p>
                         <ul>
@@ -139,17 +141,19 @@
                             НД - вихідний</p>
                     </div>
                 </div>
+                
                 <div class="contacts">
                     <div class="contact-columns">
                         <div class="contact-column">
                             <p>Наша адреса:<br>вул. Шахтарська, 9Г<br>м. Київ, 04074</p>
                         </div>
-                        <div class="contact-column">
+                        <div class="contact-column contact-column-wide-gap">
                             <p>Телефон для технічних питань:<br>067 401 56 87<br>
                                 Пошта для замовлення:<br>repro24@ukr.net<br>
                                 Резервна пошта:<br>repro24ua@gmail.com</p>
                         </div>
-                        <div class="contact-column" id="#contactFormContainer">
+                        
+                        <div class="contact-column" id="contactFormContainer">
                             <!-- Форма зв'язку -->
                             <form action="#" method="post" aria-label="Контактна форма" id="contactForm">
                                 <!-- Модальне вікно з формою -->
@@ -158,9 +162,9 @@
                                         <span class="close-btn">×</span>
                                         <!-- Ваша форма тут -->
                                         <label for="name">Ваше ім'я:</label>
-                                        <input type="text" id="name" name="name" required>
+                                        <input type="text" id="name" name="name" autocomplete="name" required>
                                         <label for="email">Ваша пошта:</label>
-                                        <input type="email" id="email" name="email" required>
+                                        <input type="email" id="email" name="email" autocomplete="email" required>
                                         <label for="message">Повідомлення:</label>
                                         <textarea id="message" name="message" required></textarea>
                                         <button type="submit">Надіслати</button>
@@ -177,11 +181,13 @@
                                 </div>
                             </form>
                         </div>
+                        
                         <div class="contact-column">
-                            <button id="#toggleFormButton" aria-label="Написати нам">Написати нам</button>
+                            <button id="toggleFormButton" aria-label="Написати нам">Написати нам</button>
                         </div>
                     </div>
                 </div>
+            
             </section>
         </main>
     </div>

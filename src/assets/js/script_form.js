@@ -9,12 +9,14 @@ const closeBtns = document.querySelectorAll('.close-btn');
 
 openFormModalBtn.addEventListener('click', () => {
   formModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
+  form.classList.add('active');
 });
 
 closeBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     formModal.classList.remove(MODAL_ACTIVE_CLASS_NAME);
     successModal.classList.remove(MODAL_ACTIVE_CLASS_NAME);
+    form.classList.remove('active');
   });
 });
 

@@ -37,7 +37,7 @@ body {
     margin-bottom: 5px;
 }
 
-.aside p { /* Змінив з a на p */
+.aside p {
     text-align: center; /* Забезпечуємо центрування тексту в середині блока */
     font-size: 14px;
 }
@@ -93,29 +93,37 @@ button:hover {
 .header {
     display: flex;
     align-items: center; /* Вирівнювання по вертикалі */
-    justify-content: space-between; /* Вирівнювання по горизонталі */
-    background-color: #2885C6; /* #FF6F61 Основний колір фону */
-    gap: 0px; /* Відступ між елементами */
-    padding: 0px;
+    justify-content: center; /* Центрування елементів по горизонталі */
+    background-color: #2885C6; /* Основний колір фону */
+    padding: 0px; /* Відсутність додаткових відступів */
     margin-bottom: 10px;
     position: relative;
+    min-height: 50px;
 }
 
 .header .logo {
-    flex-shrink: 0; /* Забезпечує незменшення логотипу */
-    margin-left: auto; /* Вирівнювання логотипу по правому краю */
+    position: absolute;
+    right: 0px; /* Відступ від правого краю */
+    display: flex;
+    align-items: center; /* Центруємо логотип по вертикалі */
+    flex-shrink: 0; Забезпечує незменшення логотипу */
+    /* z-index: -1; /* Забезпечує, що логотип буде над текстом */
 }
 
 .header .logo img {
     max-width: 50px; /* Максимальна ширина логотипу */
     height: auto;
-    vertical-align: middle;
+    min-height: 50px;
 }
 
 .header .header-text {
-    flex-grow: 1;
     text-align: center; /* Вирівнювання тексту по центру */
     color: #FFFFFF; /* Білий колір тексту */
+    flex-grow: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute; /* Залишається в межах батьківського контейнера */
+    /* z-index: 0; /* Забезпечує, що текст буде над логотипом */
 }
 
 .header .header-text h1 {
@@ -150,15 +158,16 @@ button:hover {
 
 .columns {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 5px; /* Відступ між колонками */
+    width: 100%;
+    /* flex-wrap: wrap;
     margin-bottom: 5px;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 .column {
     flex: 1; /* Дозволяє колонкам займати однакову ширину */
-    min-width: 0; /* Дозволяє колонкам бути однакової ширини */
+    min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex *//* min-width: 50px; /* Забезпечує мінімальну ширину колонок */
     align-items: center;
     margin-bottom: 5px;
 }
@@ -187,7 +196,7 @@ button:hover {
     display: block;
     text-align: center;
     font-weight: bold;
-    margin: 5px 0 5px 0;
+    margin: 2px 0 2px 0;
     padding: 2px;
 }
 
@@ -195,7 +204,7 @@ button:hover {
     display: block;
     text-align: left;
     font-weight: bold;
-    margin: 5px 0 5px 0;
+    margin: 5px 0 2px 0;
     padding: 2px;
     border-top: 2px solid #FF6F61; /* Color of the Year */
 }
@@ -203,23 +212,59 @@ button:hover {
 .info-column ul {
     flex: 1;
     text-align: left;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+    padding: 0 0 2px 0; /* Додаємо відступ знизу для всіх ul */
+}
+
+.info-column ul li {
+    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
+    text-align: left;
+    list-style-position: inside; /* Вирівнює маркери всередині блоку */
+}
+
+.formats-group {
+    flex: 3; /* Займає 3/4 ширини контейнера */
+    min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex */
+    /* width: 75%; /* Займає 75% ширини контейнера */
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .formats-header,
 .widths-header {
     text-align: center;
-    padding: 5px 0;
+    padding: 2px 0;
     font-weight: bold;
-    border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
-    /*align-items: center;*/
+    /* border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
 }
 
 .columns-container {
     display: flex;
-    justify-content: space-between; /* Розподіляє колонки рівномірно по ширині екрану */
-    gap: 10px; /* Відступ між колонками */
-    flex-wrap: wrap; /* Дозволяє обертати колонки на новий рядок */
+    gap: 5px; /* Відступ між колонками */
+    flex-wrap: nowrap; /* Забороняємо перенесення колонок на новий рядок */
+    width: 100%; /* Займає всю ширину контейнера */
+}
+
+.widths-column {
+    flex: 1; /* Займає 1/4 ширини контейнера */
+    min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує елементи по горизонталі */
+    text-align: center; /* Центрує текст всередині колонки */
+}
+
+.column-group {
+    display: flex;
+    flex-direction: column; /* Зробити елементи вертикально */
+    flex: 3; /* Задаємо більше простору для групи колонок */
+}
+
+.column-group .formats-header {
+    text-align: center;
+    padding: 2px 0;
+    font-weight: bold;
+    /* border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
 }
 
 .columns-container > div {
@@ -235,29 +280,51 @@ button:hover {
 
 .columns-container ul li {
     padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
-    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+    border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+}
+
+.widths-list {
+    width: 30%; /* Займає всю ширину колонки */
+    text-align: center; /* Центрує текст в списку */
+}
+
+.widths-list li {
+    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
+    text-align: center; /* Центрує текст в елементах списку */
 }
 
 /* Стиль для чергування кольорів у списках */
-.formats-list li:nth-child(even) {
+.formats-list li:nth-child(odd),
+.widths-list li:nth-child(odd) {
     background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
     color: #111111; /* Колір тексту */
 }
+
+.formats-list li:nth-child(even),
+.widths-list li:nth-child(even) {
+    background-color: #111111; /* Змінюємо фон для парних елементів */
+    color: #FFFFFF; /* Колір тексту */
+}
+
+/*.formats-list li:nth-child(even) {
+    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
+    /*color: #111111; /* Колір тексту */
+/*}
 
 .formats-list li:nth-child(odd) {
     background-color: #111111; /* Змінюємо фон для парних елементів */
-    color: #FFFFFF; /* Колір тексту */
-}
+    /*color: #FFFFFF; /* Колір тексту */
+/*}
 
 .widths-list li:nth-child(even) {
     background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
-    color: #111111; /* Колір тексту */
-}
+    /*color: #111111; /* Колір тексту */
+/*}
 
 .widths-list li:nth-child(odd) {
     background-color: #111111; /* Змінюємо фон для парних елементів */
-    color: #FFFFFF; /* Колір тексту */
-}
+    /*color: #FFFFFF; /* Колір тексту */
+/*}*/
 
 .contacts {
     margin: 5px 0 5px 0;
@@ -265,12 +332,17 @@ button:hover {
 
 .contact-columns {
     display: flex;
-    gap: 5px;
+    gap: 20px; /* Збільшуємо інтервал між колонками */
     flex-wrap: wrap;
     margin-top: 10px;
     align-items: flex-end;
     padding-left: 10px;
 }
+
+.contact-column-wide-gap {
+    margin-left: 0px; /* Відступ між конкретними колонками */
+}
+
 
 .contact-column {
     flex: 1;
@@ -395,5 +467,17 @@ button:hover {
     .header {
         flex-direction: column;
         align-items: flex-start; /* Змінено з center на flex-start */
+    }
+
+    .columns-container {
+        flex-direction: column; /* Робить колонки вертикальними на малих екранах */
+    }
+
+    /*.formats-group .columns, .column {
+        width: 100%; /* Займає всю ширину контейнера на малих екранах */
+    /*}*/
+
+    .formats-group, .widths-column {
+        width: 100%; /* Займає всю ширину контейнера на малих екранах */
     }
 }
