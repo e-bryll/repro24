@@ -52,14 +52,14 @@ body {
     gap: 5px;
     min-height: 100vh;
     background-color: #111111;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
 }
 
 /* Сайдбар */
 .aside {
     flex: 1;
     max-width: 250px;
-    padding: 5px;
+    padding: 2px;
     background-color: #111111;
     display: block;
     border-right: 1px solid #FF6F61; /* Колір рамки */
@@ -144,7 +144,7 @@ button:hover {
     right: 0px; /* Відступ від правого краю */
     display: flex;
     align-items: center; /* Центруємо логотип по вертикалі */
-    flex-shrink: 0; Забезпечує незменшення логотипу */
+    flex-shrink: 0; /* Забезпечує незменшення логотипу */
     /* z-index: -1; /* Забезпечує, що логотип буде над текстом */
 }
 
