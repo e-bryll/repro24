@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const calculateButton = document.getElementById('calculate');
   const filmFieldsContainer = document.getElementById('film-fields-container');
   const addFilmButton = document.getElementById('addFilm');
+  const resetButton = document.getElementById('resetButton');
   const pricePerSquareMeter = 1500; // ціна за квадратний метр в гривнях
   const minFilmPrice = 240; // мінімальна вартість плівки в гривнях
 
@@ -55,14 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Ініціалізація сторінки з одним полем для плівки за замовчуванням
-  while (filmFieldsContainer.children.length > 1) {
-    filmFieldsContainer.removeChild(filmFieldsContainer.lastChild);
-  }
-  if (filmFieldsContainer.children.length === 0) {
+  resetButton.addEventListener('click', () => {
+    // Clear all fields and add one default field
+    filmFieldsContainer.innerHTML = '';
     const newFilmField = createFilmField(1);
     filmFieldsContainer.appendChild(newFilmField);
-  }
+  });
+
+  // Ініціалізація сторінки з одним полем для плівки за замовчуванням
+  initializeFilmFields();
 
   // Функція для створення поля для плівки
   function createFilmField(number) {
@@ -122,15 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return newFilmField;
   }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('contactButton').addEventListener('click', () => {
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm.style.display === 'none') {
-      contactForm.style.display = 'block';
-    } else {
-      contactForm.style.display = 'none';
+  // Функція для ініціалізації поля для плівки
+  function initializeFilmFields() {
+    while (filmFieldsContainer.children.length > 1) {
+      filmFieldsContainer.removeChild(filmFieldsContainer.lastChild);
     }
-  });
+    if (filmFieldsContainer.children.length === 0) {
+      const newFilmField = createFilmField(1);
+      filmFieldsContainer.appendChild(newFilmField);
+    }
+  }
 });

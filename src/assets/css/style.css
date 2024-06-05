@@ -4,8 +4,10 @@ body {
     line-height: 1.4;
     font-size: 12px;
     color: #FFFFFF; /* #FFFFFF - Білий колір шрифту */
-    background: repeating-linear-gradient(to left, black 0%, black 1%, yellow 1%, yellow 2%, magenta 2%, magenta 3%, cyan 3%, cyan 4%);
-    padding-top: 10px;
+}
+.cmyk-header {
+    min-height: 1rem;
+    background: repeating-linear-gradient(to left, black 0rem, black 1rem, yellow 1rem, yellow 2rem, magenta 2rem, magenta 3rem, cyan 3rem, cyan 4rem);
 }
 
 /* Контейнер */
@@ -45,24 +47,24 @@ body {
 .calculationFields {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Оптимізовані відступи між полями */
+    gap: 10px; /* Оптимізовані відступи між полями */
 }
 
 .film-field {
     display: flex;
     flex-direction: column;
-    gap: 2px; /* Оптимізовані відступи між елементами */
+    gap: 5px; /* Оптимізовані відступи між елементами */
     background-color: #111111;
     border-top: 0.5px solid #FF6F61; /* Колір рамки */
     border-bottom: 0.5px solid #FF6F61; /* Колір рамки */
-    padding: 1px; /* Внутрішній відступ */
-    margin-bottom: 1px; /* Додатковий відступ між розрахунками */
+    padding: 5px; /* Внутрішній відступ */
+    margin-bottom: 2px; /* Додатковий відступ між розрахунками */
 }
 
 #buttons-container {
     display: flex;
     gap: 5px;
-    margin-top: 2px;
+    margin-top: 0px;
     justify-content: center; /* Додаємо це для центрування по горизонталі */
     align-items: center; /* Вирівнювання по вертикалі */
 }
@@ -72,12 +74,13 @@ button {
     background-color: #FF6F61; /* Color of the Year */
     color: #FFFFFF;
     cursor: pointer;
-    font-size: 12px;
-    border-radius: 5px;
+    font-size: 10px;
+    text-wrap: nowrap;
+    border-radius: 2px;
 }
 
 button:hover {
-    background-color: #E5635E; /* Darker shade for hover effect */
+    background-color: #2885C6; /* Darker shade for hover effect */
 }
 
 /* Основний контент */
@@ -220,7 +223,7 @@ button:hover {
     font-weight: bold;
     margin: 5px 0;
     padding: 2px;
-    /* border-top: 2px solid #FF6F61;
+    /* border-top: 2px solid #FF6F61;*/
 }
 
 .info-column ul {
@@ -466,11 +469,15 @@ button:hover {
 
     .aside, .main {
         padding: 10px;
+        min-width: 100%;
     }
 
     .header {
         flex-direction: column;
         align-items: flex-start; /* Змінено з center на flex-start */
+        text-align: center;
+        text-wrap: wrap;
+        font-size: 0.5rem;
     }
 
     .columns, .columns-container, .info-columns {
@@ -500,5 +507,14 @@ button:hover {
         color: #FFFFFF; /* Колір тексту */
         border-bottom: 1px solid #111111; /* Додає нижню межу для елементів списку */
     }
+      
+    .header-text {
+        order: 1;
+        /* margin-bottom: 1rem; */
+    }
     
+    .logo {
+        order: 2;
+    }
+
 }
