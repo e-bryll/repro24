@@ -151,38 +151,52 @@ button:hover {
 /* Блок з додатковою інформацією */
 .highlighted {
     padding: 5px;
-    margin: 5px 0 5рх 0;
+    margin: 5px 0;
     background-color: #FF6F61;
     color: #111111;
 }
 
 .columns {
     display: flex;
-    gap: 5px; /* Відступ між колонками */
+    gap: 0px; /* Відступ між колонками */
     width: 100%;
-    /* flex-wrap: wrap;
-    margin-bottom: 5px;
+    /* flex-wrap: nowrap;
+    /* margin-bottom: 5px;
     justify-content: space-between; */
 }
 
 .column {
-    flex: 1; /* Дозволяє колонкам займати однакову ширину */
-    min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex *//* min-width: 50px; /* Забезпечує мінімальну ширину колонок */
-    align-items: center;
-    margin-bottom: 5px;
+    flex: 1;
+    /*min-width: 30%; /* Мінімальна ширина колонки */
+    width: 30%;
+    margin-bottom: 2px;
+    /* align-items: center; */
 }
 
-.column ul {
+/*.column ul {
     list-style: none; /* Видаляє маркери списків */
-    padding: 0; /* Видаляє внутрішні відступи списків */
-    margin: 0; /* Видаляє зовнішні відступи списків */
-    text-align: center;
-}
+    /*padding: 0; /* Видаляє внутрішні відступи списків */
+    /*margin: 0; /* Видаляє зовнішні відступи списків */
+    /*text-align: center;
+}*/
 
-.column ul li {
+/*.column ul li {
     padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
     /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
-    text-align: center;
+    /*text-align: center;
+}*/
+
+.info-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-column {
+    flex: 1;
+    min-width: 30%; /* Мінімальна ширина колонки */
+    margin: 5px;
 }
 
 /* Додаємо конкретні стилі для центрування тексту */
@@ -196,7 +210,7 @@ button:hover {
     display: block;
     text-align: center;
     font-weight: bold;
-    margin: 2px 0 2px 0;
+    margin: 5px 0;
     padding: 2px;
 }
 
@@ -204,30 +218,31 @@ button:hover {
     display: block;
     text-align: left;
     font-weight: bold;
-    margin: 5px 0 2px 0;
+    margin: 5px 0;
     padding: 2px;
-    border-top: 2px solid #FF6F61; /* Color of the Year */
+    /* border-top: 2px solid #FF6F61;
 }
 
 .info-column ul {
-    flex: 1;
-    text-align: left;
+    list-style: none; /* Видаляє маркери списків */
+    padding: 0; /* Видаляє внутрішні відступи списків */
+    margin: 0; /* Видаляє зовнішні відступи списків */
     margin-bottom: 2px;
-    padding: 0 0 2px 0; /* Додаємо відступ знизу для всіх ul */
+    text-align: left;
+    /* list-style-position: inside; /* Вирівнюємо маркери всередині списку */
 }
 
 .info-column ul li {
-    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
+    padding: 2px 0;
     text-align: left;
-    list-style-position: inside; /* Вирівнює маркери всередині блоку */
 }
 
-.formats-group {
-    flex: 3; /* Займає 3/4 ширини контейнера */
-    min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex */
-    /* width: 75%; /* Займає 75% ширини контейнера */
-    /* display: flex;
-    flex-direction: column; */
+.formats-group,
+.widths-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Однакова ширина для всіх колонок */
 }
 
 .formats-header,
@@ -241,17 +256,18 @@ button:hover {
 .columns-container {
     display: flex;
     gap: 5px; /* Відступ між колонками */
-    flex-wrap: nowrap; /* Забороняємо перенесення колонок на новий рядок */
-    width: 100%; /* Займає всю ширину контейнера */
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center; /* Центрування колонок */
 }
 
 .widths-column {
     flex: 1; /* Займає 1/4 ширини контейнера */
-    min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex */
+    /* min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex */
     display: flex;
     flex-direction: column;
     align-items: center; /* Центрує елементи по горизонталі */
-    text-align: center; /* Центрує текст всередині колонки */
+    /* text-align: center; /* Центрує текст всередині колонки */
 }
 
 .column-group {
@@ -262,7 +278,7 @@ button:hover {
 
 .column-group .formats-header {
     text-align: center;
-    padding: 2px 0;
+    padding: 0px 0;
     font-weight: bold;
     /* border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
 }
@@ -279,18 +295,20 @@ button:hover {
 }
 
 .columns-container ul li {
-    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
-    border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+    padding: 1px 0; /* Додає вертикальний відступ для елементів списку */
+    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
 }
 
+.formats-list, 
 .widths-list {
-    width: 30%; /* Займає всю ширину колонки */
-    text-align: center; /* Центрує текст в списку */
+    list-style: none; /* Видаляє маркери списків */
+    padding: 0; /* Видаляє внутрішні відступи списків */
+    margin: 0; /* Видаляє зовнішні відступи списків */
+    text-align: center;
 }
 
-.widths-list li {
+.formats-list li, .widths-list li {
     padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
-    text-align: center; /* Центрує текст в елементах списку */
 }
 
 /* Стиль для чергування кольорів у списках */
@@ -304,27 +322,8 @@ button:hover {
 .widths-list li:nth-child(even) {
     background-color: #111111; /* Змінюємо фон для парних елементів */
     color: #FFFFFF; /* Колір тексту */
+    border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
 }
-
-/*.formats-list li:nth-child(even) {
-    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
-    /*color: #111111; /* Колір тексту */
-/*}
-
-.formats-list li:nth-child(odd) {
-    background-color: #111111; /* Змінюємо фон для парних елементів */
-    /*color: #FFFFFF; /* Колір тексту */
-/*}
-
-.widths-list li:nth-child(even) {
-    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
-    /*color: #111111; /* Колір тексту */
-/*}
-
-.widths-list li:nth-child(odd) {
-    background-color: #111111; /* Змінюємо фон для парних елементів */
-    /*color: #FFFFFF; /* Колір тексту */
-/*}*/
 
 .contacts {
     margin: 5px 0 5px 0;
@@ -342,7 +341,6 @@ button:hover {
 .contact-column-wide-gap {
     margin-left: 0px; /* Відступ між конкретними колонками */
 }
-
 
 .contact-column {
     flex: 1;
@@ -455,6 +453,12 @@ button:hover {
     display: block;
 }
 
+.sup {
+    font-size: 0.8em;
+    vertical-align: super; /* Це піднімає текст */
+    text-decoration: underline; /* Підкреслює текст */
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -469,15 +473,32 @@ button:hover {
         align-items: flex-start; /* Змінено з center на flex-start */
     }
 
-    .columns-container {
-        flex-direction: column; /* Робить колонки вертикальними на малих екранах */
+    .columns, .columns-container, .info-columns {
+        flex-direction: column;
     }
-
-    /*.formats-group .columns, .column {
-        width: 100%; /* Займає всю ширину контейнера на малих екранах */
-    /*}*/
-
+    
     .formats-group, .widths-column {
         width: 100%; /* Займає всю ширину контейнера на малих екранах */
     }
+
+    .formats-group, .widths-column {
+        flex: 1 1 100%; /* Колонки займають всю ширину на малих екранах */
+    }
+
+    .column, .info-column {
+        min-width: 100%;
+    }
+
+    .widths-list, .columns {
+        min-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .formats-list li:nth-child(even),
+    .widths-list li:nth-child(even) {
+        background-color: #111111; /* Змінюємо фон для парних елементів */
+        color: #FFFFFF; /* Колір тексту */
+        border-bottom: 1px solid #111111; /* Додає нижню межу для елементів списку */
+    }
+    
 }
