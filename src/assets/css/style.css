@@ -4,8 +4,14 @@ body {
     line-height: 1.4;
     font-size: 12px;
     color: #FFFFFF; /* #FFFFFF - Білий колір шрифту */
-    background-color: #FFFFFF;
+    background-color: #111111;
 }
+
+.cmyk-header-field {
+    min-height: 1rem;
+    background: #FFFFFF;
+}
+
 .cmyk-header {
     min-height: 1rem;
     /* background: repeating-linear-gradient(to left, black 0rem, black 1rem, yellow 1rem, yellow 2rem, magenta 2rem, magenta 3rem, cyan 3rem, cyan 4rem); */
@@ -109,7 +115,7 @@ button {
 }
 
 button:hover {
-    background-color: #3b78c5; /* Darker shade for hover effect */
+    background-color: #448FD3; /* Darker shade for hover effect */
 }
 
 /* Основний контент */
@@ -126,7 +132,7 @@ button:hover {
     display: flex;
     align-items: center; /* Вирівнювання по вертикалі */
     justify-content: center; /* Центрування елементів по горизонталі */
-    background-color: #3b78c5; /* Основний колір фону */
+    background-color: #448FD3; /* Основний колір фону */
     padding: 0px; /* Відсутність додаткових відступів */
     margin-bottom: 10px;
     position: relative;
@@ -204,19 +210,6 @@ button:hover {
     margin-bottom: 2px;
     /* align-items: center; */
 }
-
-/*.column ul {
-    list-style: none; /* Видаляє маркери списків */
-    /*padding: 0; /* Видаляє внутрішні відступи списків */
-    /*margin: 0; /* Видаляє зовнішні відступи списків */
-    /*text-align: center;
-}*/
-
-/*.column ul li {
-    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
-    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
-    /*text-align: center;
-}*/
 
 .info-columns {
     display: flex;
@@ -398,16 +391,16 @@ button:hover {
     align-items: center; /* Вирівнюємо вміст по вертикалі */
     min-height: 20px;
     padding-top: 2px;
-    background-color: #3b78c5; /* #FF6F61 Color of the Year */
+    background-color: #448FD3; /* #FF6F61 Color of the Year */
 }
 
 .footer p {
-    font-size: 10px; 
+    /*font-size: 10px; */
     vertical-align: middle; /* Вирівнюємо текст по вертикалі */
 }
 
 .footer img {
-    max-width: 20px; /* Розмір логотипу */
+    max-width: 40px; /* Розмір логотипу */
     height: auto;
     vertical-align: middle;
 }
@@ -415,8 +408,8 @@ button:hover {
 .film-field input,
 .film-field select {
     width: calc(100% - 5px);
-    background-color: #FF6F61; /* Color of the Year */
-    border: none;
+    background-color: #111111 /* #FF6F61 Color of the Year */
+    border: 1px solid #FF6F61;
     border-radius: 3px;
     padding: 1px;
     font-size: 12px;
@@ -434,6 +427,7 @@ button:hover {
 .film-field input:focus, 
 .film-field select:focus {
     outline: none;
+    color: #FFFFFF;
 }
 
 .result {
