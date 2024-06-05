@@ -4,11 +4,39 @@ body {
     line-height: 1.4;
     font-size: 12px;
     color: #FFFFFF; /* #FFFFFF - Білий колір шрифту */
-    background-color: #111111;
+    background-color: #FFFFFF;
 }
 .cmyk-header {
     min-height: 1rem;
-    background: repeating-linear-gradient(to left, black 0rem, black 1rem, yellow 1rem, yellow 2rem, magenta 2rem, magenta 3rem, cyan 3rem, cyan 4rem);
+    /* background: repeating-linear-gradient(to left, black 0rem, black 1rem, yellow 1rem, yellow 2rem, magenta 2rem, magenta 3rem, cyan 3rem, cyan 4rem); */
+    background: repeating-linear-gradient(to right,
+    /* 100% непрозора */
+    rgba(0, 0, 0, 1) 0rem, rgba(0, 0, 0, 1) 1rem, 
+    rgba(255, 255, 0, 1) 1rem, rgba(255, 255, 0, 1) 2rem, 
+    rgba(255, 0, 255, 1) 2rem, rgba(255, 0, 255, 1) 3rem, 
+    rgba(0, 255, 255, 1) 3rem, rgba(0, 255, 255, 1) 4rem,
+    /* 25% прозорості */
+    rgba(0, 0, 0, 0.75) 4rem, rgba(0, 0, 0, 0.75) 5rem, 
+    rgba(255, 255, 0, 0.75) 5rem, rgba(255, 255, 0, 0.75) 6rem, 
+    rgba(255, 0, 255, 0.75) 6rem, rgba(255, 0, 255, 0.75) 7rem, 
+    rgba(0, 255, 255, 0.75) 7rem, rgba(0, 255, 255, 0.75) 8rem,
+    /* 50% прозорості */
+    rgba(0, 0, 0, 0.5) 8rem, rgba(0, 0, 0, 0.5) 9rem, 
+    rgba(255, 255, 0, 0.5) 9rem, rgba(255, 255, 0, 0.5) 10rem, 
+    rgba(255, 0, 255, 0.5) 10rem, rgba(255, 0, 255, 0.5) 11rem, 
+    rgba(0, 255, 255, 0.5) 11rem, rgba(0, 255, 255, 0.5) 12rem,
+    /* 75% прозорості */
+    rgba(0, 0, 0, 0.25) 12rem, rgba(0, 0, 0, 0.25) 13rem, 
+    rgba(255, 255, 0, 0.25) 13rem, rgba(255, 255, 0, 0.25) 14rem, 
+    rgba(255, 0, 255, 0.25) 14rem, rgba(255, 0, 255, 0.25) 15rem, 
+    rgba(0, 255, 255, 0.25) 15rem, rgba(0, 255, 255, 0.25) 16rem,
+    /* 95% прозорості */
+    rgba(0, 0, 0, 0.05) 16rem, rgba(0, 0, 0, 0.05) 17rem, 
+    rgba(255, 255, 0, 0.05) 17rem, rgba(255, 255, 0, 0.05) 18rem, 
+    rgba(255, 0, 255, 0.05) 18rem, rgba(255, 0, 255, 0.05) 19rem, 
+    rgba(0, 255, 255, 0.05) 19rem, rgba(0, 255, 255, 0.05) 20rem);
+
+
 }
 
 /* Контейнер */
@@ -18,7 +46,7 @@ body {
     gap: 5px;
     min-height: 100vh;
     background-color: #111111;
-    padding: 1rem 0 1rem 0;
+    padding: 0.5rem;
 }
 
 /* Сайдбар */
@@ -81,7 +109,7 @@ button {
 }
 
 button:hover {
-    background-color: #2885C6; /* Darker shade for hover effect */
+    background-color: #3b78c5; /* Darker shade for hover effect */
 }
 
 /* Основний контент */
@@ -98,7 +126,7 @@ button:hover {
     display: flex;
     align-items: center; /* Вирівнювання по вертикалі */
     justify-content: center; /* Центрування елементів по горизонталі */
-    background-color: #2885C6; /* Основний колір фону */
+    background-color: #3b78c5; /* Основний колір фону */
     padding: 0px; /* Відсутність додаткових відступів */
     margin-bottom: 10px;
     position: relative;
@@ -370,7 +398,7 @@ button:hover {
     align-items: center; /* Вирівнюємо вміст по вертикалі */
     min-height: 20px;
     padding-top: 2px;
-    background-color: #2885C6; /* #FF6F61 Color of the Year */
+    background-color: #3b78c5; /* #FF6F61 Color of the Year */
 }
 
 .footer p {
