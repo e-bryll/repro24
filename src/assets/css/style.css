@@ -87,16 +87,16 @@ body {
 }
 
 .calculationFields {
-    padding: 5px 5px 0 5px;
+    padding: 5px 10px 0 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Оптимізовані відступи між полями */
+    /* gap: 5px; /* Оптимізовані відступи між полями */
 }
 
 .film-field {
     display: flex;
     flex-direction: column;
-    /*gap: 5px; /* Оптимізовані відступи між елементами */
+    /* gap: 5px; /* Оптимізовані відступи між елементами */
     background-color: #111111;
     /*border-top: 0.5px solid #FF6F61; /* Колір рамки */
     border-bottom: 0.5px solid #FF6F61; /* Колір рамки */
@@ -115,7 +115,7 @@ body {
 button {
     padding: 2px;
     background-color: #FF6F61; /* Color of the Year */
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
     cursor: pointer;
     font-size: 10px;
     text-wrap: nowrap;
@@ -129,7 +129,7 @@ button:hover {
 /* Основний контент */
 .main {
     flex: 2;
-    padding: 5px;
+    padding: 0px;
     background: #111111;
     color: #FFFFFF;
     max-width: 100%;
@@ -143,8 +143,8 @@ button:hover {
     align-items: center; /* Вирівнювання по вертикалі */
     justify-content: center; /* Центрування елементів по горизонталі */
     background-color: #448FD3; /* Основний колір фону */
-    padding: 0px; /* Відсутність додаткових відступів */
-    margin-bottom: 10px;
+    padding: 0px;
+    margin: 0;
     position: relative;
     min-height: 50px;
 }
@@ -185,6 +185,7 @@ button:hover {
     align-items: flex-end; /* Вирівнювання дочірніх елементів по нижньому краю */
     text-align: center;
     margin-bottom: 10px;
+    padding: 0;
 }
 
 .header-text p {
@@ -193,12 +194,14 @@ button:hover {
     display: flex;
     align-items: flex-end; /* Вирівнювання тексту по нижньому краю */
     text-decoration: none; /* Приховування підкреслення посилання */
+    font-weight: bold;
     margin-bottom: 5px;
+    padding: 10px;
 }
 
 /* Блок з додатковою інформацією */
 .highlighted {
-    padding: 5px;
+    padding: 10px;
     margin: 5px 0;
     background-color: #FF6F61;
     color: #111111;
@@ -294,6 +297,7 @@ button:hover {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center; /* Центрування колонок */
+    padding: 0 10px 0 10px;
 }
 
 .widths-column {
@@ -521,6 +525,10 @@ button:hover {
     .aside, .main {
         padding: 10px;
         min-width: 100%;
+    }
+
+    .aside {
+        border-right: none; /* Без рамки */
     }
 
     .header {
