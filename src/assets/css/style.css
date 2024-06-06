@@ -107,7 +107,7 @@ body {
 #buttons-container {
     display: flex;
     gap: 5px;
-    margin-top: 0px;
+    margin-top: 5px;
     justify-content: center; /* Додаємо це для центрування по горизонталі */
     align-items: center; /* Вирівнювання по вертикалі */
 }
@@ -433,17 +433,32 @@ button:hover {
 
 .film-field input,
 .film-field select {
-    width: calc(100% - 5px);
+    width: 70%; /* calc(100% - 5px); */
+    max-width: 240px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
     background-color: #111111; /* #FF6F61 Color of the Year */
     border: 1px solid #FF6F61;
     border-radius: 3px;
-    padding: 5px;
-    font-size: 12px;
-    margin: 0 2px 5px 2px;
+    padding: 0.1rem;
+    margin: 0.1rem 0;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.form-label {
+    width: 30%; /* Adjust as needed */
+    text-align: right;
+    margin-right: 1%;
 }
 
 .film-field input::placeholder {
-    color: #000000;
+    color: #FFFFFF;
 }
 
 .film-field select option[value=""] {
@@ -559,7 +574,7 @@ button:hover {
     .header-text, .logo {
         margin: 0.5rem 0;
     }
-    
+
     .columns, .columns-container, .info-columns {
         flex-direction: column;
     }

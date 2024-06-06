@@ -26,19 +26,27 @@
             <form class="calculationFields" aria-label="Калькулятор вартості плівки">
                 <div id="film-fields-container">
                     <div class="film-field">
-                        <label for="film-width1">Ширина плівки:</label>
-                        <select id="film-width1" class="film-width" aria-label="Ширина плівки">
-                            <option value="">Оберіть зі списку</option>
-                            <option value="457">457 мм</option>
-                            <option value="724">724 мм</option>
-                            <option value="762">762 мм</option>
-                            <option value="914">914 мм</option>
-                        </select>
-                        <label for="length1">Довжина плівки 1:</label>
-                        <input type="number" id="length1" class="length" placeholder="Введіть довжину в мм" min="50" max="1100" required>
-                        <label for="quantity1">Кількість:</label>
-                        <input type="number" id="quantity1" class="quantity" value="1" min="1" required>
+                        
+                        <div class="form-group">
+                            <label for="film-width1" class="form-label">Ширина рулону:</label>
+                            <select id="film-width1" class="film-width" aria-label="Ширина плівки">
+                                <option value="">виберіть</option>
+                                <option value="457">457 мм</option>
+                                <option value="724">724 мм</option>
+                                <option value="762">762 мм</option>
+                                <option value="914">914 мм</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="length1" class="form-label">Довжина плівки 1:</label>
+                            <input type="number" id="length1" class="length" placeholder="довжина в мм" min="50" max="1100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity1" class="form-label">Кількість:</label>
+                            <input type="number" id="quantity1" class="quantity" value="1" min="1" required>
+                        </div>
                         <div class="result" id="result1"></div>
+                    
                     </div>
                 </div>
                 <div id="buttons-container" class="center-content">
@@ -136,9 +144,9 @@
                     <div class="info-column">
                         <p class="info-column-left">На вивід плівок до 16 <sup class="sup">00</sup></p>
                         <ul>
-                            <li>✔ макети, які потребують затвердження,</li>
-                            <li>✔ об'ємні роботи,</li>
-                            <li>✔ роботи на відправку Новою поштою</li>
+                            <li>✔ виведення протягом години-двох після надання макетів,</li>
+                            <li>✔ роботи на відправку Новою поштою,</li>
+                            <li>✔ плівки шириною більше 457 мм будуть виводитися після 17 <sup class="sup">00</sup></li>
                         </ul>
                     </div>
                     <div class="info-column">
