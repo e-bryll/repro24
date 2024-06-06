@@ -41,15 +41,13 @@ body {
     rgba(255, 255, 0, 0.05) 17rem, rgba(255, 255, 0, 0.05) 18rem, 
     rgba(255, 0, 255, 0.05) 18rem, rgba(255, 0, 255, 0.05) 19rem, 
     rgba(0, 255, 255, 0.05) 19rem, rgba(0, 255, 255, 0.05) 20rem);
-
-
 }
 
 /* Контейнер */
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    /* gap: 0.5rem 0;*/
     min-height: 100vh;
     background-color: #111111;
     padding: 0.5rem 0;
@@ -59,7 +57,7 @@ body {
 .aside {
     flex: 1;
     max-width: 250px;
-    padding: 2px;
+    padding: 5px;
     background-color: #111111;
     display: block;
     border-right: 1px solid #FF6F61; /* Колір рамки */
@@ -80,20 +78,21 @@ body {
 }
 
 .calculationFields {
+    padding: 5px 5px 0 5px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Оптимізовані відступи між полями */
+    gap: 5px; /* Оптимізовані відступи між полями */
 }
 
 .film-field {
     display: flex;
     flex-direction: column;
-    gap: 0px; /* Оптимізовані відступи між елементами */
+    /*gap: 5px; /* Оптимізовані відступи між елементами */
     background-color: #111111;
     /*border-top: 0.5px solid #FF6F61; /* Колір рамки */
     border-bottom: 0.5px solid #FF6F61; /* Колір рамки */
-    padding: 2px; /* Внутрішній відступ */
-    margin-bottom: 5px; /* Додатковий відступ між розрахунками */
+    padding: 5px; /* Внутрішній відступ */
+    /*margin-top: 5px; /* Додатковий відступ між розрахунками */
 }
 
 #buttons-container {
@@ -179,7 +178,7 @@ button:hover {
 
 .header-text p {
     color: #FFFFFF;
-    gap: 10px;
+    gap: 5px;
     display: flex;
     align-items: flex-end; /* Вирівнювання тексту по нижньому краю */
     text-decoration: none; /* Приховування підкреслення посилання */
@@ -357,9 +356,9 @@ button:hover {
 .contact-columns {
     display: flex;
     gap: 20px; /* Збільшуємо інтервал між колонками */
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 10px;
-    align-items: flex-end;
+    align-items: flex-start;
     padding-left: 10px;
 }
 
@@ -408,12 +407,12 @@ button:hover {
 .film-field input,
 .film-field select {
     width: calc(100% - 5px);
-    background-color: #111111 /* #FF6F61 Color of the Year */
+    background-color: #111111; /* #FF6F61 Color of the Year */
     border: 1px solid #FF6F61;
     border-radius: 3px;
-    padding: 1px;
+    padding: 5px;
     font-size: 12px;
-    margin: 2px 0 0 2px;
+    margin: 0 2px 5px 2px;
 }
 
 .film-field input::placeholder {
