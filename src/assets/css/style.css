@@ -1,3 +1,9 @@
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 /* Основні стилі */
 body {
     font-family: 'Montserrat';
@@ -127,7 +133,7 @@ button:hover {
     background: #111111;
     color: #FFFFFF;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent overflow within the main container */
     overflow-y: auto;
 }
 
@@ -487,6 +493,18 @@ button:hover {
     font-size: 0.8em;
     vertical-align: super; /* Це піднімає текст */
     text-decoration: underline; /* Підкреслює текст */
+}
+
+/* Example fix for specific elements */
+.header, .section, .footer {
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+/* Remove potential margin issues */
+.header, .section, .footer {
+    margin-right: 0;
+    padding-right: 0;
 }
 
 @media (max-width: 768px) {
