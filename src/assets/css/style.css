@@ -70,7 +70,7 @@ body {
 /* Сайдбар */
 .aside {
     flex: 1;
-    max-width: 250px;
+    max-width: 260px;
     padding: 5px;
     background-color: #111111;
     display: block;
@@ -95,18 +95,14 @@ body {
     padding: 5px 10px 0 10px;
     display: flex;
     flex-direction: column;
-    /* gap: 5px; /* Оптимізовані відступи між полями */
 }
 
 .film-field {
     display: flex;
     flex-direction: column;
-    /* gap: 5px; /* Оптимізовані відступи між елементами */
     background-color: #111111;
-    /*border-top: 0.5px solid #FF6F61; /* Колір рамки */
-    border-bottom: 0.5px solid #FF6F61; /* Колір рамки */
-    padding: 5px; /* Внутрішній відступ */
-    /*margin-top: 5px; /* Додатковий відступ між розрахунками */
+    border-bottom: 0.5px solid #FF6F61;
+    padding: 5px;
 }
 
 #buttons-container {
@@ -119,8 +115,7 @@ body {
 
 button {
     padding: 2px;
-    background-color: #FF6F61; /* Color of the Year */
-    /* color: #FFFFFF; */
+    background-color: #FF6F61;
     cursor: pointer;
     font-size: 10px;
     text-wrap: nowrap;
@@ -438,16 +433,17 @@ button:hover {
 
 .film-field input,
 .film-field select {
-    width: 50%; /* calc(100% - 5px); */
-    max-width: 240px;
+    width: 45%; /* calc(100% - 5px); */
+    max-width: 250px;
     box-sizing: border-box; /* Include padding and border in the element's total width */
     background-color: #111111; /* #FF6F61 Color of the Year */
     border: 1px solid #FF6F61;
     border-radius: 3px;
-    padding: 0.1rem;
+    align-items: right;
+    /*padding: 0.1rem;*/
     margin: 0.1rem 0;
     color: #FFFFFF;
-    text-align: right;
+    text-align: left;
 }
 
 .film-field select {
@@ -462,9 +458,10 @@ button:hover {
 }
 
 .form-label {
-    width: 50%; /* Adjust as needed */
+    width: 55%;
     text-align: left;
-    margin-right: 1%;
+    text-wrap: nowrap;
+    margin: 0 2px;
 }
 
 .film-field input::placeholder {
@@ -478,11 +475,11 @@ button:hover {
 }
 
 .film-field input:focus, 
-.film-field select:focus {
+.film-field select:focus,
+.film-field select option:checked {
     outline: none;
     color: #FFFFFF;
-    font-size: 10px;
-}
+    font-size: 12px;
 }
 
 .result {
