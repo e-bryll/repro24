@@ -1,7 +1,7 @@
-html {
+html, body {
     margin: 0;
     padding: 0;
-    overflow-x: visible; /* hidden; Prevent horizontal scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Основні стилі */
@@ -61,10 +61,10 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    /* gap: 0.5rem 0;*/
     min-height: 100vh;
     background-color: #111111;
-    /*padding: 0.5rem 0;*/
+    width: 100%; /* Ensure container takes the full width */
+    overflow: hidden; /* Prevent any overflow */
 }
 
 /* Сайдбар */
@@ -137,29 +137,29 @@ button:hover {
     background: #111111;
     color: #FFFFFF;
     max-width: 100%;
-    overflow-x: visible; /* hidden; Prevent horizontal scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     overflow-y: auto;
     display: grid;
     grid-template-areas:
         "header"
         "content";
     gap: 1rem;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 /* Основний хедер */
 .header {
     grid-area: header;
     display: flex;
-    align-items: center; /* Вирівнювання по вертикалі */
-    justify-content: center; /* Центрування елементів по горизонталі */
-    /*background-color: #50ade5; /* #448FD3; /* Основний колір фону */
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(to top right, #50ade5, #3871c1);
-    /* background: linear-gradient(to top right, #3871c1, #50ade5);*/
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
     margin: 0;
     position: relative;
     min-height: 50px;
     width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 .header .logo {
@@ -402,6 +402,7 @@ button:hover {
     margin-top: 10px;
     align-items: flex-start;
     padding-left: 10px;
+    text-wrap: nowrap;
 }
 
 .contact-column-wide-gap {
