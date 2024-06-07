@@ -77,6 +77,7 @@ body {
     display: block;
     /*border-right: 1px solid #FF6F61;*/
     border: 1px solid #FF6F61;
+    border-radius: 10px;
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     overflow: hidden; /* Prevent overflow */
 }
@@ -574,8 +575,8 @@ button:hover {
 
 /* Remove potential margin issues */
 .header, .section, .footer {
-    margin-right: 0;
-    padding-right: 0;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -589,34 +590,58 @@ button:hover {
         flex-direction: column;
         /*padding: 10px;*/
     }
-    
+
     .container {
         flex-direction: column;
+        width: 100%;
     }
 
     .aside, .contacts {
         max-width: 100%;
         padding: 5px;
         margin: 2px;
+        border: none;
     }
 
-    .header {
-        order: -1; /* Move to the top */
+    .aside, .main {
+        /*padding: 10px;*/
         width: 100%;
+        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    }
+
+    /*.header {
+        /*order: -1; /* Move to the top */
+        /*width: 100%;
         flex-direction: column;
         align-items: center; 
         text-align: center;
         text-wrap: wrap;
         font-size: 0.5rem;
         z-index: 0; /* Забезпечує, що логотип буде над текстом */
+    /*}*/
+
+    .header {
+        order: -1; /* Move header to the top */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .header-text, .logo {
-        margin: 0.5rem 0;
+        margin-bottom: 0.5rem;
     }
 
-    .columns, .columns-container, .info-columns {
+    .columns, .info-columns {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .columns-container {
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        width: 100%;
+        /*flex-direction: column;*/
     }
     
     .formats-group, .widths-column {
