@@ -75,8 +75,10 @@ body {
     margin: 0 0.2rem 0 0.2rem;
     background-color: #111111;
     display: block;
-    border-right: 1px solid #FF6F61; /* Колір рамки */
-    border: 1px solid #FF6F61; 
+    /*border-right: 1px solid #FF6F61;*/
+    border: 1px solid #FF6F61;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    overflow: hidden; /* Prevent overflow */
 }
 
 .aside header { 
@@ -121,7 +123,7 @@ button {
     padding: 2px;
     background-color: #FF6F61;
     cursor: pointer;
-    font-size: 10px;
+    /*font-size: 10px;*/
     text-wrap: nowrap;
     border-radius: 2px;
 }
@@ -154,7 +156,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     background: linear-gradient(to top right, #50ade5, #3871c1);
-    padding: 0 1rem;
+    padding: 0; /*1rem;*/
     margin: 0;
     position: relative;
     min-height: 50px;
@@ -163,16 +165,17 @@ button:hover {
 }
 
 .header .logo {
-    position: absolute;
-    right: 0px; /* Відступ від правого краю */
+    /*position: absolute;*/
+    /*right: 0px; /* Відступ від правого краю */
     display: flex;
     align-items: center; /* Центруємо логотип по вертикалі */
+    justify-content: center;
     flex-shrink: 0; /* Забезпечує незменшення логотипу */
     /* z-index: -1; /* Забезпечує, що логотип буде над текстом */
 }
 
 .header .logo img {
-    max-width: 50px; /* Максимальна ширина логотипу */
+    max-width: 100px; /* Максимальна ширина логотипу */
     height: auto;
     min-height: 50px;
 }
@@ -188,7 +191,7 @@ button:hover {
 }
 
 .header .header-text h1 {
-    font-size: 20px; /* Збільшений розмір шрифту заголовка */
+    font-size: 16px; /* Збільшений розмір шрифту заголовка */
     margin: 0;
 }
 
@@ -392,7 +395,15 @@ button:hover {
 }
 
 .contacts {
-    margin: 5px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust as needed */
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #111111;
+    color: #FFFFFF;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    overflow: hidden; /* Prevent overflow */
 }
 
 .contact-columns {
@@ -449,7 +460,7 @@ button:hover {
 
 .film-field input,
 .film-field select {
-    width: 45%; /* calc(100% - 5px); */
+    width: 55%; /* calc(100% - 5px); */
     /*max-width: 250px;*/
     height: 1.25rem; /* Set a fixed height */
     line-height: 1.25rem; /* Match the line height to the fixed height */
@@ -466,7 +477,7 @@ button:hover {
 
 .film-field select {
     color: #999999;
-    font-size: 10px;
+    /*font-size: 10px;*/
 }
 
 .form-group {
@@ -484,12 +495,12 @@ button:hover {
 
 .film-field input::placeholder {
     color: #999999;
-    font-size: 10px;
+    /*font-size: 10px;*/
 }
 
 .film-field select option[value=""] {
     color: #999999;
-    font-size: 10px;
+    /*font-size: 10px;*/
 }
 
 .film-field input:focus, 
@@ -497,7 +508,7 @@ button:hover {
 .film-field select option:checked {
     outline: none;
     color: #FFFFFF;
-    font-size: 12px;
+    /*font-size: 12px;*/
 }
 
 .result {
@@ -532,7 +543,7 @@ button:hover {
 .close-btn {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    /*font-size: 16px;*/
     font-weight: bold;
     cursor: pointer;
 }
@@ -570,34 +581,34 @@ button:hover {
 @media (max-width: 768px) {
     
     .main {
+        min-width: 100%;
         grid-template-areas:
             "header"
             "content";
         display: flex;
         flex-direction: column;
+        /*padding: 10px;*/
     }
     
     .container {
         flex-direction: column;
     }
 
-    .aside, .main {
-        padding: 10px;
-        min-width: 100%;
-    }
-
-    .aside {
-        border-right: none; /* Без рамки */
+    .aside, .contacts {
+        max-width: 100%;
+        padding: 5px;
+        margin: 2px;
     }
 
     .header {
         order: -1; /* Move to the top */
         width: 100%;
         flex-direction: column;
-        align-items: flex-start; /* Змінено з center на flex-start */
+        align-items: center; 
         text-align: center;
         text-wrap: wrap;
         font-size: 0.5rem;
+        z-index: 0; /* Забезпечує, що логотип буде над текстом */
     }
 
     .header-text, .logo {
