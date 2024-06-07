@@ -19,6 +19,7 @@ body {
 .cmyk-header-field {
     min-height: 1rem;
     background: #FFFFFF;
+    width: 100%;
 }
 
 .cmyk-header {
@@ -26,30 +27,30 @@ body {
     /* background: repeating-linear-gradient(to left, black 0rem, black 1rem, yellow 1rem, yellow 2rem, magenta 2rem, magenta 3rem, cyan 3rem, cyan 4rem); */
     background: repeating-linear-gradient(to right,
     /* 100% непрозора */
-    rgba(0, 0, 0, 1) 0rem, rgba(0, 0, 0, 1) 1rem, 
-    rgba(255, 255, 0, 1) 1rem, rgba(255, 255, 0, 1) 2rem, 
-    rgba(255, 0, 255, 1) 2rem, rgba(255, 0, 255, 1) 3rem, 
-    rgba(0, 255, 255, 1) 3rem, rgba(0, 255, 255, 1) 4rem,
+    rgba(0, 255, 255, 1) 0rem, rgba(0, 255, 255, 1) 1rem, 
+    rgba(255, 0, 255, 1) 1rem, rgba(255, 0, 255, 1) 2rem, 
+    rgba(255, 255, 0, 1) 2rem, rgba(255, 255, 0, 1) 3rem, 
+    rgba(0, 0, 0, 1) 3rem, rgba(0, 0, 0, 1) 4rem,
     /* 25% прозорості */
-    rgba(0, 0, 0, 0.75) 4rem, rgba(0, 0, 0, 0.75) 5rem, 
-    rgba(255, 255, 0, 0.75) 5rem, rgba(255, 255, 0, 0.75) 6rem, 
-    rgba(255, 0, 255, 0.75) 6rem, rgba(255, 0, 255, 0.75) 7rem, 
-    rgba(0, 255, 255, 0.75) 7rem, rgba(0, 255, 255, 0.75) 8rem,
+    rgba(0, 255, 255, 0.75) 4rem, rgba(0, 255, 255, 0.75) 5rem, 
+    rgba(255, 0, 255, 0.75) 5rem, rgba(255, 0, 255, 0.75) 6rem, 
+    rgba(255, 255, 0, 0.75) 6rem, rgba(255, 255, 0, 0.75) 7rem, 
+    rgba(0, 0, 0, 0.75) 7rem, rgba(0, 0, 0, 0.75) 8rem,
     /* 50% прозорості */
-    rgba(0, 0, 0, 0.5) 8rem, rgba(0, 0, 0, 0.5) 9rem, 
-    rgba(255, 255, 0, 0.5) 9rem, rgba(255, 255, 0, 0.5) 10rem, 
-    rgba(255, 0, 255, 0.5) 10rem, rgba(255, 0, 255, 0.5) 11rem, 
-    rgba(0, 255, 255, 0.5) 11rem, rgba(0, 255, 255, 0.5) 12rem,
+    rgba(0, 255, 255, 0.5) 8rem, rgba(0, 255, 255, 0.5) 9rem, 
+    rgba(255, 0, 255, 0.5) 9rem, rgba(255, 0, 255, 0.5) 10rem, 
+    rgba(255, 255, 0, 0.5) 10rem, rgba(255, 255, 0, 0.5) 11rem, 
+    rgba(0, 0, 0, 0.5) 11rem, rgba(0, 0, 0, 0.5) 12rem,
     /* 75% прозорості */
-    rgba(0, 0, 0, 0.25) 12rem, rgba(0, 0, 0, 0.25) 13rem, 
-    rgba(255, 255, 0, 0.25) 13rem, rgba(255, 255, 0, 0.25) 14rem, 
-    rgba(255, 0, 255, 0.25) 14rem, rgba(255, 0, 255, 0.25) 15rem, 
-    rgba(0, 255, 255, 0.25) 15rem, rgba(0, 255, 255, 0.25) 16rem,
+    rgba(0, 255, 255, 0.25) 12rem, rgba(0, 255, 255, 0.25) 13rem, 
+    rgba(255, 0, 255, 0.25) 13rem, rgba(255, 0, 255, 0.25) 14rem, 
+    rgba(255, 255, 0, 0.25) 14rem, rgba(255, 255, 0, 0.25) 15rem, 
+    rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem,
     /* 95% прозорості */
-    rgba(0, 0, 0, 0.05) 16rem, rgba(0, 0, 0, 0.05) 17rem, 
-    rgba(255, 255, 0, 0.05) 17rem, rgba(255, 255, 0, 0.05) 18rem, 
-    rgba(255, 0, 255, 0.05) 18rem, rgba(255, 0, 255, 0.05) 19rem, 
-    rgba(0, 255, 255, 0.05) 19rem, rgba(0, 255, 255, 0.05) 20rem);
+    rgba(0, 255, 255, 0.05) 16rem, rgba(0, 255, 255, 0.05) 17rem, 
+    rgba(255, 0, 255, 0.05) 17rem, rgba(255, 0, 255, 0.05) 18rem, 
+    rgba(255, 255, 0, 0.05) 18rem, rgba(255, 255, 0, 0.05) 19rem, 
+    rgba(0, 0, 0, 0.05) 19rem, rgba(0, 0, 0, 0.05) 20rem);
 }
 
 /* Контейнер */
@@ -382,7 +383,7 @@ button:hover {
 
 .contact-columns {
     display: flex;
-    gap: 20px; /* Збільшуємо інтервал між колонками */
+    gap: 10px; /* Збільшуємо інтервал між колонками */
     flex-wrap: nowrap;
     margin-top: 10px;
     align-items: flex-start;
@@ -390,7 +391,7 @@ button:hover {
 }
 
 .contact-column-wide-gap {
-    margin-left: 0px; /* Відступ між конкретними колонками */
+    margin-left: 10px; /* Відступ між конкретними колонками */
 }
 
 .contact-column {
@@ -417,7 +418,7 @@ button:hover {
     align-items: center; /* Вирівнюємо вміст по вертикалі */
     min-height: 20px;
     padding-top: 2px;
-    background-color: #448FD3; /* #FF6F61 Color of the Year */
+    /* background-color: #448FD3; /* #FF6F61 Color of the Year */
 }
 
 .footer p {
@@ -433,7 +434,7 @@ button:hover {
 
 .film-field input,
 .film-field select {
-    width: 70%; /* calc(100% - 5px); */
+    width: 50%; /* calc(100% - 5px); */
     max-width: 240px;
     box-sizing: border-box; /* Include padding and border in the element's total width */
     background-color: #111111; /* #FF6F61 Color of the Year */
@@ -445,6 +446,11 @@ button:hover {
     text-align: right;
 }
 
+.film-field select {
+    color: #999999;
+    font-size: 10px;
+}
+
 .form-group {
     display: flex;
     align-items: center;
@@ -452,23 +458,27 @@ button:hover {
 }
 
 .form-label {
-    width: 30%; /* Adjust as needed */
-    text-align: right;
+    width: 50%; /* Adjust as needed */
+    text-align: left;
     margin-right: 1%;
 }
 
 .film-field input::placeholder {
-    color: #FFFFFF;
+    color: #999999;
+    font-size: 10px;
 }
 
 .film-field select option[value=""] {
-    color: #000000;
+    color: #999999;
+    font-size: 10px;
 }
 
 .film-field input:focus, 
 .film-field select:focus {
     outline: none;
     color: #FFFFFF;
+    font-size: 10px;
+}
 }
 
 .result {

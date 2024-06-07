@@ -13,6 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Очищення введених даних
+document.addEventListener('DOMContentLoaded', function() {
+    const resetButton = document.getElementById('resetButton');
+    const form = document.querySelector('.calculationFields');
+
+    resetButton.addEventListener('click', function() {
+        // Clear all input fields
+        form.reset();
+        
+        // Optionally, you can also reset custom input fields manually if needed
+        document.querySelectorAll('.film-field').forEach(function(field, index) {
+            // Reset individual fields as needed
+            field.querySelectorAll('input').forEach(input => input.value = '');
+            field.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+        });
+    });
+});
+
   calculateButton.addEventListener('click', () => {
     let totalCost = 0;
     let valid = true;
@@ -80,11 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     filmWidthSelect.setAttribute('id', `film-width${number}`);
     filmWidthSelect.classList.add('film-width');
     filmWidthSelect.innerHTML = `
-            <option value="">Оберіть зі списку</option>
-            <option value="457">457 мм</option>
-            <option value="724">724 мм</option>
-            <option value="762">762 мм</option>
-            <option value="914">914 мм</option>
+            <option value="">виберіть</option>
+            <option value="457">457</option>
+            <option value="724">724</option>
+            <option value="762">762</option>
+            <option value="914">914</option>
         `;
     newFilmField.appendChild(filmWidthSelect);
 
@@ -97,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lengthInput.setAttribute('type', 'number');
     lengthInput.setAttribute('id', `length${number}`);
     lengthInput.classList.add('length');
-    lengthInput.setAttribute('placeholder', 'Введіть довжину в мм');
+    lengthInput.setAttribute('placeholder', 'довжина в мм');
     lengthInput.setAttribute('min', '50');
     lengthInput.setAttribute('max', '1100');
     lengthInput.required = true;
@@ -136,3 +154,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+

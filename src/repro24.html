@@ -15,9 +15,9 @@
     <link rel="manifest" href="assets/site.webmanifest">
 </head>
 <body>
-    <div class="cmyk-header-field">
+    <!-- <div class="cmyk-header-field">
         <div class="cmyk-header"></div>
-    </div>
+    </div> -->
     <div class="container">
         <aside class="aside">
             <header>
@@ -26,15 +26,14 @@
             <form class="calculationFields" aria-label="Калькулятор вартості плівки">
                 <div id="film-fields-container">
                     <div class="film-field">
-                        
                         <div class="form-group">
                             <label for="film-width1" class="form-label">Ширина рулону:</label>
                             <select id="film-width1" class="film-width" aria-label="Ширина плівки">
                                 <option value="">виберіть</option>
-                                <option value="457">457 мм</option>
-                                <option value="724">724 мм</option>
-                                <option value="762">762 мм</option>
-                                <option value="914">914 мм</option>
+                                <option value="457">457</option>
+                                <option value="724">724</option>
+                                <option value="762">762</option>
+                                <option value="914">914</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -46,7 +45,6 @@
                             <input type="number" id="quantity1" class="quantity" value="1" min="1" required>
                         </div>
                         <div class="result" id="result1"></div>
-                    
                     </div>
                 </div>
                 <div id="buttons-container" class="center-content">
@@ -55,7 +53,7 @@
                     <button type="button" id="resetButton" aria-label="Скинути">Скинути</button>
                 </div>
             </form>
-        </aside>
+        </aside>        
         
         <main class="main">
             <header class="header">
@@ -206,10 +204,10 @@
     <footer class="footer">
         <div class="cmyk-header-field">
             <div class="cmyk-header">
-                <p> <img src="assets/img/repro24_logo_short.svg" alt="small logo repro24"> &copy; 2024</p>
+                <p> <img src="assets/img/repro24_logo_short_reverse.svg" alt="small logo repro24"> &copy; 2024</p>
             </div>
         </div>
-        <p> <img src="assets/img/repro24_logo_short.svg" alt="small logo repro24"> &copy; 2024</p>
+        <!-- <p> <img src="assets/img/repro24_logo_short.svg" alt="small logo repro24"> &copy; 2024</p> -->
     </footer>
     <script src="assets/js/script_calc.js" defer></script>
     <script src="assets/js/script_form.js" defer></script>
