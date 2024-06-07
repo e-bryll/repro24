@@ -148,7 +148,9 @@ button:hover {
     display: flex;
     align-items: center; /* Вирівнювання по вертикалі */
     justify-content: center; /* Центрування елементів по горизонталі */
-    background-color: #50ade5; /* #448FD3; /* Основний колір фону */
+    /*background-color: #50ade5; /* #448FD3; /* Основний колір фону */
+    /*background: linear-gradient(to top right, #50ade5, #3871c1);*/
+    background: linear-gradient(to top right, #3871c1, #50ade5);
     padding: 0 1rem 0 1rem;
     margin: 0;
     position: relative;
@@ -435,6 +437,8 @@ button:hover {
 .film-field select {
     width: 45%; /* calc(100% - 5px); */
     max-width: 250px;
+    height: 1.25rem; /* Set a fixed height */
+    line-height: 1.25rem; /* Match the line height to the fixed height */
     box-sizing: border-box; /* Include padding and border in the element's total width */
     background-color: #111111; /* #FF6F61 Color of the Year */
     border: 1px solid #FF6F61;
