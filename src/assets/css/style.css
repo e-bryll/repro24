@@ -24,6 +24,10 @@ body {
 
 .cmyk-header {
     min-height: 1rem;
+    justify-content: center; /* Вирівнюємо вміст по центру */
+    align-items: center; /* Вирівнюємо вміст по вертикалі */
+    text-align: center;
+    color: #50ade5;
     /* background: repeating-linear-gradient(to left, black 0rem, black 1rem, yellow 1rem, yellow 2rem, magenta 2rem, magenta 3rem, cyan 3rem, cyan 4rem); */
     background: repeating-linear-gradient(to right,
     /* 100% непрозора */
@@ -124,7 +128,7 @@ button {
 }
 
 button:hover {
-    background-color: #448FD3; /* Darker shade for hover effect */
+    background-color: #50ade5; /* #448FD3; /* Darker shade for hover effect */
 }
 
 /* Основний контент */
@@ -149,7 +153,7 @@ button:hover {
     display: flex;
     align-items: center; /* Вирівнювання по вертикалі */
     justify-content: center; /* Центрування елементів по горизонталі */
-    background-color: #448FD3; /* Основний колір фону */
+    background-color: #50ade5; /* #448FD3; /* Основний колір фону */
     padding: 0 1rem 0 1rem;
     margin: 0;
     position: relative;
@@ -625,5 +629,4 @@ button:hover {
     .header-text, .logo {
         margin: 0.5rem 0;
     }
-
 }

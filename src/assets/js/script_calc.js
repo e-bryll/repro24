@@ -13,24 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Очищення введених даних
-document.addEventListener('DOMContentLoaded', function() {
-    const resetButton = document.getElementById('resetButton');
-    const form = document.querySelector('.calculationFields');
-
-    resetButton.addEventListener('click', function() {
-        // Clear all input fields
-        form.reset();
-        
-        // Optionally, you can also reset custom input fields manually if needed
-        document.querySelectorAll('.film-field').forEach(function(field, index) {
-            // Reset individual fields as needed
-            field.querySelectorAll('input').forEach(input => input.value = '');
-            field.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
-        });
-    });
-});
-
   calculateButton.addEventListener('click', () => {
     let totalCost = 0;
     let valid = true;
@@ -89,10 +71,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const newFilmField = document.createElement('div');
     newFilmField.classList.add('film-field');
 
+    const filmWidthGroup = document.createElement('div');
+    filmWidthGroup.classList.add('form-group');
     const filmWidthLabel = document.createElement('label');
     filmWidthLabel.setAttribute('for', `film-width${number}`);
-    filmWidthLabel.textContent = 'Ширина плівки:';
-    newFilmField.appendChild(filmWidthLabel);
+    filmWidthLabel.classList.add('form-label');
+    filmWidthLabel.textContent = 'Ширина рулону:';
+    filmWidthGroup.appendChild(filmWidthLabel);
 
     const filmWidthSelect = document.createElement('select');
     filmWidthSelect.setAttribute('id', `film-width${number}`);
@@ -104,12 +89,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <option value="762">762</option>
             <option value="914">914</option>
         `;
-    newFilmField.appendChild(filmWidthSelect);
+    filmWidthGroup.appendChild(filmWidthSelect);
+    newFilmField.appendChild(filmWidthGroup);
 
+    const lengthGroup = document.createElement('div');
+    lengthGroup.classList.add('form-group');
     const lengthLabel = document.createElement('label');
     lengthLabel.setAttribute('for', `length${number}`);
+    lengthLabel.classList.add('form-label');
     lengthLabel.textContent = `Довжина плівки ${number}:`;
-    newFilmField.appendChild(lengthLabel);
+    lengthGroup.appendChild(lengthLabel);
 
     const lengthInput = document.createElement('input');
     lengthInput.setAttribute('type', 'number');
@@ -119,12 +108,16 @@ document.addEventListener('DOMContentLoaded', function() {
     lengthInput.setAttribute('min', '50');
     lengthInput.setAttribute('max', '1100');
     lengthInput.required = true;
-    newFilmField.appendChild(lengthInput);
+    lengthGroup.appendChild(lengthInput);
+    newFilmField.appendChild(lengthGroup);
 
+    const quantityGroup = document.createElement('div');
+    quantityGroup.classList.add('form-group');
     const quantityLabel = document.createElement('label');
     quantityLabel.setAttribute('for', `quantity${number}`);
+    quantityLabel.classList.add('form-label');
     quantityLabel.textContent = 'Кількість:';
-    newFilmField.appendChild(quantityLabel);
+    quantityGroup.appendChild(quantityLabel);
 
     const quantityInput = document.createElement('input');
     quantityInput.setAttribute('type', 'number');
@@ -133,7 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
     quantityInput.setAttribute('value', '1');
     quantityInput.setAttribute('min', '1');
     quantityInput.required = true;
-    newFilmField.appendChild(quantityInput);
+    quantityGroup.appendChild(quantityInput);
+    newFilmField.appendChild(quantityGroup);
 
     const resultDiv = document.createElement('div');
     resultDiv.classList.add('result');
@@ -154,5 +148,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
-
-
