@@ -246,6 +246,13 @@ button:hover {
     min-width: 30%;
     padding: 0 5px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-column p {
+    margin: 0 auto;
 }
 
 /* Центрування контенту */
@@ -278,6 +285,7 @@ button:hover {
     margin: 0;
     margin-bottom: 2px;
     text-align: left;
+    padding-left: 2em;
 }
 
 .info-column ul li {
@@ -581,6 +589,10 @@ body.modal-active .modal {
         margin: 0;
     }
 
+    .info-columns {
+        align-items: flex-start;
+    }
+
     .columns-container {
         padding: 0 5px;
         margin: 0;
@@ -595,7 +607,9 @@ body.modal-active .modal {
 
     .column {
         min-width: 100%;
+        width: 100%;
         padding: 0;
+        margin: 0;
     }
 
     .info-column {
@@ -603,15 +617,12 @@ body.modal-active .modal {
         padding: 0 10px;
     }
 
-    .column {
-        min-width: 100%;
-        width: 100%;
-        padding: 0;
+    .info-column p {
         margin: 0;
     }
-
+    
     .info-column ul {
-        padding-left: 200px;
+        padding-left: 1em;
     }
 
     .widths-list, .columns {
