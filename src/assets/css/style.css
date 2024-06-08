@@ -243,8 +243,10 @@ button:hover {
     flex: 1;
     /*min-width: 30%; /* Мінімальна ширина колонки */
     width: 30%;
-    margin-bottom: 2px;
+    /*margin-bottom: 2px;*/
     /* align-items: center; */
+    padding: 0;
+    margin: 0;
 }
 
 .info-columns {
@@ -252,6 +254,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    padding: 0 5px;
 }
 
 .info-column {
@@ -274,7 +277,7 @@ button:hover {
     text-align: center;
     font-weight: bold;
     margin: 0;
-    padding: 5px 0;
+    padding: 0;
 }
 
 .info-column-left {
@@ -285,6 +288,7 @@ button:hover {
     padding: 5px 0;
     /* border-top: 2px solid #FF6F61;*/
 }
+
 .info-column-left p {
     display: block;
     text-align: left;
@@ -314,6 +318,7 @@ button:hover {
     flex: 1; /* Однакова ширина для всіх колонок */
     margin: 0;
     padding: 0;
+    /* background-color: rgb(241, 11, 184); /* delete */
 }
 
 .formats-header,
@@ -330,7 +335,6 @@ button:hover {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center; /* Центрування колонок */
-    padding: 0;
 }
 
 .widths-column {
@@ -576,6 +580,21 @@ button:hover {
     box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
+/* Стилі для зниження z-index інших елементів при активному модальному вікні */
+body.modal-active .container,
+body.modal-active .aside,
+body.modal-active .main,
+body.modal-active .header,
+body.modal-active .footer {
+    z-index: 0; /* Зниження z-index для інших елементів */
+}
+
+/* Додавання класу при відкритті модального вікна */
+body.modal-active .modal {
+    z-index: 999; /* Високий z-index для модального вікна */
+}
+
+
 /* Remove potential margin issues */
 .header, .section, .footer {
     margin: 0;
@@ -613,17 +632,6 @@ button:hover {
         width: 100%;
         box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     }
-
-    /*.header {
-        /*order: -1; /* Move to the top */
-        /*width: 100%;
-        flex-direction: column;
-        align-items: center; 
-        text-align: center;
-        text-wrap: wrap;
-        font-size: 0.5rem;
-        z-index: 0; /* Забезпечує, що логотип буде над текстом */
-    /*}*/
 
     .header {
         order: -1; /* Move header to the top */
