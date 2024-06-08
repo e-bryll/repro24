@@ -1,19 +1,27 @@
+:root {
+    --main-bg-color: #111111;
+    --main-text-color: #FFFFFF;
+    --accent-color: #FF6F61;
+    --highlight-color: #50ade5;
+    --border-radius: 5px;
+    --font-family: 'Montserrat', sans-serif;
+    --header-bg-gradient: linear-gradient(to top right, var(--highlight-color), #3871c1);
+    --font-size-small: 12px;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Основні стилі */
 body {
-    font-family: 'Montserrat';
+    font-family: var(--font-family);
     line-height: 1.4;
-    font-size: 12px;
-    color: #FFFFFF; /* #FFFFFF - Білий колір шрифту */
-    background-color: #111111;
-    margin: 0;
-    padding: 0;
-    overflow-x: visible; /* hidden; Prevent horizontal scrolling */
+    font-size: var(--font-size-small);
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    overflow-x: visible;
 }
 
 .cmyk-header-field {
@@ -25,37 +33,31 @@ body {
 
 .cmyk-header {
     min-height: 1rem;
-    justify-content: center; /* Вирівнюємо вміст по центру */
-    align-items: center; /* Вирівнюємо вміст по вертикалі */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    color: #50ade5;
-    /* background: repeating-linear-gradient(to left, black 0rem, black 1rem, yellow 1rem, yellow 2rem, magenta 2rem, magenta 3rem, cyan 3rem, cyan 4rem); */
+    color: var(--highlight-color);
     background: repeating-linear-gradient(to right,
-    /* 100% непрозора */
-    rgba(0, 255, 255, 1) 0rem, rgba(0, 255, 255, 1) 1rem, 
-    rgba(255, 0, 255, 1) 1rem, rgba(255, 0, 255, 1) 2rem, 
-    rgba(255, 255, 0, 1) 2rem, rgba(255, 255, 0, 1) 3rem, 
-    rgba(0, 0, 0, 1) 3rem, rgba(0, 0, 0, 1) 4rem,
-    /* 25% прозорості */
-    rgba(0, 255, 255, 0.75) 4rem, rgba(0, 255, 255, 0.75) 5rem, 
-    rgba(255, 0, 255, 0.75) 5rem, rgba(255, 0, 255, 0.75) 6rem, 
-    rgba(255, 255, 0, 0.75) 6rem, rgba(255, 255, 0, 0.75) 7rem, 
-    rgba(0, 0, 0, 0.75) 7rem, rgba(0, 0, 0, 0.75) 8rem,
-    /* 50% прозорості */
-    rgba(0, 255, 255, 0.5) 8rem, rgba(0, 255, 255, 0.5) 9rem, 
-    rgba(255, 0, 255, 0.5) 9rem, rgba(255, 0, 255, 0.5) 10rem, 
-    rgba(255, 255, 0, 0.5) 10rem, rgba(255, 255, 0, 0.5) 11rem, 
-    rgba(0, 0, 0, 0.5) 11rem, rgba(0, 0, 0, 0.5) 12rem,
-    /* 75% прозорості */
-    rgba(0, 255, 255, 0.25) 12rem, rgba(0, 255, 255, 0.25) 13rem, 
-    rgba(255, 0, 255, 0.25) 13rem, rgba(255, 0, 255, 0.25) 14rem, 
-    rgba(255, 255, 0, 0.25) 14rem, rgba(255, 255, 0, 0.25) 15rem, 
-    rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem,
-    /* 95% прозорості */
-    rgba(0, 255, 255, 0.05) 16rem, rgba(0, 255, 255, 0.05) 17rem, 
-    rgba(255, 0, 255, 0.05) 17rem, rgba(255, 0, 255, 0.05) 18rem, 
-    rgba(255, 255, 0, 0.05) 18rem, rgba(255, 255, 0, 0.05) 19rem, 
-    rgba(0, 0, 0, 0.05) 19rem, rgba(0, 0, 0, 0.05) 20rem);
+        rgba(0, 255, 255, 1) 0rem, rgba(0, 255, 255, 1) 1rem, 
+        rgba(255, 0, 255, 1) 1rem, rgba(255, 0, 255, 1) 2rem, 
+        rgba(255, 255, 0, 1) 2rem, rgba(255, 255, 0, 1) 3rem, 
+        rgba(0, 0, 0, 1) 3rem, rgba(0, 0, 0, 1) 4rem,
+        rgba(0, 255, 255, 0.75) 4rem, rgba(0, 255, 255, 0.75) 5rem, 
+        rgba(255, 0, 255, 0.75) 5rem, rgba(255, 0, 255, 0.75) 6rem, 
+        rgba(255, 255, 0, 0.75) 6rem, rgba(255, 255, 0, 0.75) 7rem, 
+        rgba(0, 0, 0, 0.75) 7rem, rgba(0, 0, 0, 0.75) 8rem,
+        rgba(0, 255, 255, 0.5) 8rem, rgba(0, 255, 255, 0.5) 9rem, 
+        rgba(255, 0, 255, 0.5) 9rem, rgba(255, 0, 255, 0.5) 10rem, 
+        rgba(255, 255, 0, 0.5) 10rem, rgba(255, 255, 0, 0.5) 11rem, 
+        rgba(0, 0, 0, 0.5) 11rem, rgba(0, 0, 0, 0.5) 12rem,
+        rgba(0, 255, 255, 0.25) 12rem, rgba(0, 255, 255, 0.25) 13rem, 
+        rgba(255, 0, 255, 0.25) 13rem, rgba(255, 0, 255, 0.25) 14rem, 
+        rgba(255, 255, 0, 0.25) 14rem, rgba(255, 255, 0, 0.25) 15rem, 
+        rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem,
+        rgba(0, 255, 255, 0.05) 16rem, rgba(0, 255, 255, 0.05) 17rem, 
+        rgba(255, 0, 255, 0.05) 17rem, rgba(255, 0, 255, 0.05) 18rem, 
+        rgba(255, 255, 0, 0.05) 18rem, rgba(255, 255, 0, 0.05) 19rem, 
+        rgba(0, 0, 0, 0.05) 19rem, rgba(0, 0, 0, 0.05) 20rem);
 }
 
 /* Контейнер */
@@ -63,9 +65,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     min-height: 100vh;
-    background-color: #111111;
-    width: 100%; /* Ensure container takes the full width */
-    overflow: hidden; /* Prevent any overflow */
+    background-color: var(--main-bg-color);
+    width: 100%;
+    overflow: hidden;
 }
 
 /* Сайдбар */
@@ -74,28 +76,26 @@ body {
     max-width: 25%;
     padding: 0.2rem;
     margin: 0 0.2rem 0 0.2rem;
-    background-color: #111111;
+    background-color: var(--main-bg-color);
     display: block;
-    /*border-right: 1px solid #FF6F61;*/
-    border: 1px solid #FF6F61;
-    border-radius: 10px;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    overflow: hidden; /* Prevent overflow */
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .aside header { 
     display: flex;
-    justify-content: center; /* Вирівнюємо текст по горизонталі */
-    align-items: center; /* Вирівнюємо текст по вертикалі */
-    background-color: #FF6F61; /* Color of the Year */
-    border-radius: 5px; /* Закругленість кутів */
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
     margin: 5px;
 }
 
 .aside p {
-    text-align: center; /* Забезпечуємо центрування тексту в середині блока */
-    /* font-size: 12px;*/
-    color: #111111;
+    text-align: center;
+    color: var(--main-bg-color);
     font-weight: bold;
 }
 
@@ -108,8 +108,8 @@ body {
 .film-field {
     display: flex;
     flex-direction: column;
-    background-color: #111111;
-    border-bottom: 0.5px solid #FF6F61;
+    background-color: var(--main-bg-color);
+    border-bottom: 0.5px solid var(--accent-color);
     padding: 5px;
 }
 
@@ -117,38 +117,37 @@ body {
     display: flex;
     gap: 5px;
     margin-top: 5px;
-    justify-content: center; /* Додаємо це для центрування по горизонталі */
-    align-items: center; /* Вирівнювання по вертикалі */
+    justify-content: center;
+    align-items: center;
 }
 
 button {
     padding: 2px;
-    background-color: #FF6F61;
+    background-color: var(--accent-color);
     cursor: pointer;
-    /*font-size: 10px;*/
     text-wrap: nowrap;
     border-radius: 2px;
 }
 
 button:hover {
-    background-color: #50ade5; /* #448FD3; /* Darker shade for hover effect */
+    background-color: var(--highlight-color);
 }
 
 /* Основний контент */
 .main {
     flex: 2;
     padding: 0px;
-    background: #111111;
-    color: #FFFFFF;
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
     max-width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
     overflow-y: auto;
     display: grid;
     grid-template-areas:
         "header"
         "content";
     gap: 1rem;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    box-sizing: border-box;
 }
 
 /* Основний хедер */
@@ -157,94 +156,79 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to top right, #50ade5, #3871c1);
-    padding: 0; /*1rem;*/
+    background: var(--header-bg-gradient);
+    padding: 0;
     margin: 0;
     position: relative;
     min-height: 50px;
     width: 100%;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    box-sizing: border-box;
 }
 
 .header .logo {
-    /*position: absolute;*/
-    /*right: 0px; /* Відступ від правого краю */
     display: flex;
-    align-items: center; /* Центруємо логотип по вертикалі */
+    align-items: center;
     justify-content: center;
-    flex-shrink: 0; /* Забезпечує незменшення логотипу */
-    /* z-index: -1; /* Забезпечує, що логотип буде над текстом */
+    flex-shrink: 0;
 }
 
 .header .logo img {
-    max-width: 100px; /* Максимальна ширина логотипу */
+    max-width: 100px;
     height: auto;
     min-height: 50px;
 }
 
 .header .header-text {
-    text-align: center; /* Вирівнювання тексту по центру */
-    color: #FFFFFF; /* Білий колір тексту */
+    text-align: center;
+    color: var(--main-text-color);
     flex-grow: 1;
     left: 50%;
     transform: translateX(-50%);
-    position: absolute; /* Залишається в межах батьківського контейнера */
-    /* z-index: 0; /* Забезпечує, що текст буде над логотипом */
+    position: absolute;
 }
 
 .header .header-text h1 {
-    font-size: 16px; /* Збільшений розмір шрифту заголовка */
+    font-size: 16px;
     margin: 0;
 }
 
-.header-text h1,
-.logo {
+.header-text h1, .logo {
     flex: 1;
 }
 
-/* Хедер основного блоку */
 .header-section {
     display: flex;
-    align-items: flex-end; /* Вирівнювання дочірніх елементів по нижньому краю */
+    align-items: flex-end;
     text-align: center;
     margin-bottom: 10px;
     padding: 0;
 }
 
 .header-text p {
-    color: #FFFFFF;
+    color: var(--main-text-color);
     gap: 5px;
     display: flex;
-    /*align-items: flex-end; /* Вирівнювання тексту по нижньому краю */
-    text-decoration: none; /* Приховування підкреслення посилання */
     font-weight: bold;
     margin-bottom: 5px;
     padding: 10px;
 }
 
-/* Блок з додатковою інформацією */
 .highlighted {
     padding: 10px;
     margin: 5px 0;
-    background-color: #FF6F61;
-    color: #111111;
+    background-color: var(--accent-color);
+    color: var(--main-bg-color);
 }
 
 .columns {
     display: flex;
-    gap: 0px; /* Відступ між колонками */
+    gap: 0px;
     width: 100%;
-    /* flex-wrap: nowrap;
-    /* margin-bottom: 5px;
-    justify-content: space-between; */
 }
 
 .column {
     flex: 1;
-    /*min-width: 30%; /* Мінімальна ширина колонки */
     width: 30%;
-    /*margin-bottom: 2px;*/
-    /* align-items: center; */
     padding: 0;
     margin: 0;
 }
@@ -259,12 +243,12 @@ button:hover {
 
 .info-column {
     flex: 1;
-    min-width: 30%; /* Мінімальна ширина колонки */
+    min-width: 30%;
     padding: 0 5px;
     text-align: left;
 }
 
-/* Додаємо конкретні стилі для центрування тексту */
+/* Центрування контенту */
 .center-content {
     display: flex;
     justify-content: center;
@@ -277,7 +261,7 @@ button:hover {
     text-align: center;
     font-weight: bold;
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
 }
 
 .info-column-left {
@@ -286,22 +270,14 @@ button:hover {
     font-weight: bold;
     margin: 0;
     padding: 5px 0;
-    /* border-top: 2px solid #FF6F61;*/
-}
-
-.info-column-left p {
-    display: block;
-    text-align: left;
-    font-weight: bold;
 }
 
 .info-column ul {
-    list-style: none; /* Видаляє маркери списків */
-    padding: 0 5px; /* Видаляє внутрішні відступи списків */
-    margin: 0; /* Видаляє зовнішні відступи списків */
+    list-style: none;
+    padding: 0 5px;
+    margin: 0;
     margin-bottom: 2px;
     text-align: left;
-    /* list-style-position: inside; /* Вирівнюємо маркери всередині списку */
 }
 
 .info-column ul li {
@@ -310,114 +286,98 @@ button:hover {
     font-weight: bolder;
 }
 
-.formats-group,
-.widths-column {
+.formats-group, .widths-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1; /* Однакова ширина для всіх колонок */
+    flex: 1;
     margin: 0;
     padding: 0;
-    /* background-color: rgb(241, 11, 184); /* delete */
 }
 
-.formats-header,
-.widths-header {
+.formats-header, .widths-header {
     text-align: center;
     padding: 2px 0;
     font-weight: bold;
-    /* border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
 }
 
 .columns-container {
     display: flex;
-    gap: 5px; /* Відступ між колонками */
+    gap: 5px;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center; /* Центрування колонок */
+    justify-content: space-between;
+}
+
+.info-column, .info-column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .widths-column {
-    flex: 1; /* Займає 1/4 ширини контейнера */
-    /* min-width: 0; /* Запобігає мінімальній ширині, що впливає на flex */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрує елементи по горизонталі */
-    /* text-align: center; /* Центрує текст всередині колонки */
+    align-items: center;
 }
 
 .column-group {
     display: flex;
-    flex-direction: column; /* Зробити елементи вертикально */
-    flex: 3; /* Задаємо більше простору для групи колонок */
-}
-
-.column-group .formats-header {
-    text-align: center;
-    padding: 0px 0;
-    font-weight: bold;
-    /* border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+    flex-direction: column;
+    flex: 3;
 }
 
 .columns-container > div {
-    flex: 1; /* Дозволяє колонкам займати однакову ширину */
-    min-width: 0; /* Дозволяє колонкам бути однакової ширини */
+    flex: 1;
+    min-width: 0;
 }
 
 .columns-container ul {
-    list-style: none; /* Видаляє маркери списків */
-    padding: 0; /* Видаляє внутрішні відступи списків */
-    margin: 0; /* Видаляє зовнішні відступи списків */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .columns-container ul li {
-    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
-    /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+    padding: 2px 0;
 }
 
-.formats-list, 
-.widths-list {
-    list-style: none; /* Видаляє маркери списків */
-    padding: 0; /* Видаляє внутрішні відступи списків */
-    margin: 0; /* Видаляє зовнішні відступи списків */
+.formats-list, .widths-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     text-align: center;
 }
 
-.formats-list li, .widths-list li {
-    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
-}
-
-/* Стиль для чергування кольорів у списках */
-.formats-list li:nth-child(odd),
-.widths-list li:nth-child(odd) {
-    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
-    color: #111111; /* Колір тексту */
+.formats-list li:nth-child(odd), .widths-list li:nth-child(odd) {
+    background-color: var(--accent-color);
+    color: var(--main-bg-color);
     font-weight: bolder;
 }
 
-.formats-list li:nth-child(even),
-.widths-list li:nth-child(even) {
-    background-color: #111111; /* Змінюємо фон для парних елементів */
-    color: #FFFFFF; /* Колір тексту */
-    border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
+.formats-list li:nth-child(even), .widths-list li:nth-child(even) {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border-bottom: 1px solid var(--accent-color);
 }
 
 .contacts {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Adjust as needed */
+    gap: 10px;
     padding: 10px;
     margin: 5px 0;
-    background-color: #111111;
-    color: #FFFFFF;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    overflow: hidden; /* Prevent overflow */
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .contact-columns {
     display: flex;
-    gap: 10px; /* Збільшуємо інтервал між колонками */
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 10px;
     align-items: flex-start;
     padding-left: 10px;
@@ -425,7 +385,7 @@ button:hover {
 }
 
 .contact-column-wide-gap {
-    margin-left: 10px; /* Відступ між конкретними колонками */
+    margin-left: 10px;
 }
 
 .contact-column {
@@ -448,44 +408,36 @@ button:hover {
 
 .footer {
     display: flex;
-    justify-content: center; /* Вирівнюємо вміст по центру */
-    align-items: center; /* Вирівнюємо вміст по вертикалі */
+    justify-content: center;
+    align-items: center;
     min-height: 20px;
     padding-top: 2px;
-    /* background-color: #448FD3; /* #FF6F61 Color of the Year */
 }
 
 .footer p {
-    /*font-size: 10px; */
-    vertical-align: middle; /* Вирівнюємо текст по вертикалі */
+    vertical-align: middle;
 }
 
 .footer img {
-    max-width: 40px; /* Розмір логотипу */
+    max-width: 40px;
     height: auto;
     vertical-align: middle;
 }
 
-.film-field input,
-.film-field select {
-    width: 55%; /* calc(100% - 5px); */
-    /*max-width: 250px;*/
-    height: 1.25rem; /* Set a fixed height */
-    line-height: 1.25rem; /* Match the line height to the fixed height */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    background-color: #111111; /* #FF6F61 Color of the Year */
-    border: 1px solid #FF6F61;
+.film-field input, .film-field select {
+    width: 55%;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    box-sizing: border-box;
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--accent-color);
     border-radius: 3px;
-    align-items: right;
-    /*padding: 0.1rem;*/
-    margin: 0.1rem 0;
-    color: #FFFFFF;
+    color: var(--main-text-color);
     text-align: left;
 }
 
 .film-field select {
     color: #999999;
-    /*font-size: 10px;*/
 }
 
 .form-group {
@@ -497,26 +449,20 @@ button:hover {
 .form-label {
     width: 55%;
     text-align: left;
-    text-wrap: nowrap;
     margin: 0 2px;
 }
 
 .film-field input::placeholder {
     color: #999999;
-    /*font-size: 10px;*/
 }
 
 .film-field select option[value=""] {
     color: #999999;
-    /*font-size: 10px;*/
 }
 
-.film-field input:focus, 
-.film-field select:focus,
-.film-field select option:checked {
+.film-field input:focus, .film-field select:focus, .film-field select option:checked {
     outline: none;
-    color: #FFFFFF;
-    /*font-size: 12px;*/
+    color: var(--main-text-color);
 }
 
 .result {
@@ -524,17 +470,17 @@ button:hover {
     font-weight: bold;
 }
 
-/* Стилі для модальних вікон */
 .modal {
-    display: none; /* Початково приховуємо модальне вікно */
+    display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: visible;
-    background-color: rgba(0,0,0,0.4); /* Затемнюючий фон */
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -543,66 +489,51 @@ button:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 600px;
-    border-radius: 5px;
-    position: relative;
 }
 
 .close-btn {
     color: #aaa;
     float: right;
-    /*font-size: 16px;*/
     font-weight: bold;
     cursor: pointer;
 }
 
-.close-btn:hover,
-.close-btn:focus {
+.close-btn:hover, .close-btn:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Затемнення фону при відкритті модального вікна */
 .modal.active {
     display: block;
 }
 
 .sup {
     font-size: 0.8em;
-    vertical-align: super; /* Це піднімає текст */
-    text-decoration: underline; /* Підкреслює текст */
+    vertical-align: super;
+    text-decoration: underline;
 }
 
-/* Example fix for specific elements */
+/* Fix for specific elements */
 .header, .section, .footer {
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's total width */
+    box-sizing: border-box;
 }
 
-/* Стилі для зниження z-index інших елементів при активному модальному вікні */
-body.modal-active .container,
-body.modal-active .aside,
-body.modal-active .main,
-body.modal-active .header,
-body.modal-active .footer {
-    z-index: 0; /* Зниження z-index для інших елементів */
+body.modal-active .container, body.modal-active .aside, body.modal-active .main, body.modal-active .header, body.modal-active .footer {
+    z-index: 0;
 }
 
-/* Додавання класу при відкритті модального вікна */
 body.modal-active .modal {
-    z-index: 999; /* Високий z-index для модального вікна */
+    z-index: 999;
 }
 
-
-/* Remove potential margin issues */
 .header, .section, .footer {
     margin: 0;
     padding: 0;
 }
 
 @media (max-width: 768px) {
-    
     .main {
         min-width: 100%;
         grid-template-areas:
@@ -610,14 +541,13 @@ body.modal-active .modal {
             "content";
         display: flex;
         flex-direction: column;
-        /*padding: 10px;*/
     }
 
     .container {
         flex-direction: column;
         width: 100%;
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
+        padding: 0;
+        margin: 0;
     }
 
     .aside, .contacts {
@@ -628,13 +558,12 @@ body.modal-active .modal {
     }
 
     .aside, .main {
-        /*padding: 10px;*/
         width: 100%;
-        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+        box-sizing: border-box;
     }
 
     .header {
-        order: -1; /* Move header to the top */
+        order: -1;
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -648,26 +577,21 @@ body.modal-active .modal {
     .columns, .info-columns {
         flex-direction: column;
         width: 100%;
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
-    }
-    
-    .columns-container {
-        padding: 0 5px; /* Remove padding */
-        margin: 0; /* Remove margin */
-        width: 100%;
-        /*flex-direction: column;*/
-    }
-    
-    .formats-group, .widths-column {
-        width: 100%; /* Займає всю ширину контейнера на малих екранах */
         padding: 0;
         margin: 0;
     }
 
-    /*.formats-group, .widths-column {*/
-        /*flex: 1 1 100%; /* Колонки займають всю ширину на малих екранах */
-    /*}*/
+    .columns-container {
+        padding: 0 5px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .formats-group, .widths-column {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 
     .column {
         min-width: 100%;
@@ -679,44 +603,59 @@ body.modal-active .modal {
         padding: 0 10px;
     }
 
-    .column, .info-column {
+    .column {
         min-width: 100%;
         width: 100%;
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
+        padding: 0;
+        margin: 0;
     }
-    
+
+    .info-column ul {
+        padding-left: 200px;
+    }
+
     .widths-list, .columns {
         min-width: 100%;
         margin-bottom: 5px;
     }
 
-    .formats-list li:nth-child(even),
-    .widths-list li:nth-child(even) {
-        background-color: #111111; /* Змінюємо фон для парних елементів */
-        color: #FFFFFF; /* Колір тексту */
-        border-bottom: none; /* Додає нижню межу для елементів списку */
+    .formats-list li:nth-child(even), .widths-list li:nth-child(even) {
+        background-color: var(--main-bg-color);
+        color: var(--main-text-color);
+        border-bottom: none;
     }
 
-    .formats-list li:nth-child(odd),
-    .widths-list li:nth-child(odd) {
-    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
-    color: #111111; /* Колір тексту */
-    font-weight: bolder;
-    padding: 0;
-    margin: 0;
-}
-      
+    .formats-list li:nth-child(odd), .widths-list li:nth-child(odd) {
+        background-color: var(--accent-color);
+        color: var(--main-bg-color);
+        font-weight: bolder;
+        padding: 0;
+        margin: 0;
+    }
+
     .header-text {
         order: 1;
-        /* margin-bottom: 1rem; */
     }
-    
+
     .logo {
         order: 2;
     }
 
     .header-text, .logo {
         margin: 0.5rem 0;
+    }
+
+    .contact-columns {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-column {
+        width: 100%;
+    }
+
+    .contact-column form {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
