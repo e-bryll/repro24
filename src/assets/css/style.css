@@ -20,6 +20,7 @@ body {
     min-height: 1rem;
     background: #FFFFFF;
     width: 100%;
+    margin: 0;
 }
 
 .cmyk-header {
@@ -256,7 +257,7 @@ button:hover {
 .info-column {
     flex: 1;
     min-width: 30%; /* Мінімальна ширина колонки */
-    margin: 5px;
+    padding: 0 5px;
     text-align: left;
 }
 
@@ -292,7 +293,7 @@ button:hover {
 
 .info-column ul {
     list-style: none; /* Видаляє маркери списків */
-    padding: 0; /* Видаляє внутрішні відступи списків */
+    padding: 0 5px; /* Видаляє внутрішні відступи списків */
     margin: 0; /* Видаляє зовнішні відступи списків */
     margin-bottom: 2px;
     text-align: left;
@@ -327,7 +328,7 @@ button:hover {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center; /* Центрування колонок */
-    padding: 0 10px 0 10px;
+    padding: 0;
 }
 
 .widths-column {
@@ -364,7 +365,7 @@ button:hover {
 }
 
 .columns-container ul li {
-    padding: 1px 0; /* Додає вертикальний відступ для елементів списку */
+    padding: 2px 0; /* Додає вертикальний відступ для елементів списку */
     /*border-bottom: 1px solid #FF6F61; /* Додає нижню межу для елементів списку */
 }
 
@@ -636,9 +637,9 @@ button:hover {
         flex-direction: column;
         width: 100%;
     }
-
+    
     .columns-container {
-        padding: 0; /* Remove padding */
+        padding: 0 5px; /* Remove padding */
         margin: 0; /* Remove margin */
         width: 100%;
         /*flex-direction: column;*/
@@ -648,12 +649,28 @@ button:hover {
         width: 100%; /* Займає всю ширину контейнера на малих екранах */
     }
 
+    /*.formats-group, .widths-column {*/
+        /*flex: 1 1 100%; /* Колонки займають всю ширину на малих екранах */
+    /*}*/
+
     .formats-group, .widths-column {
-        flex: 1 1 100%; /* Колонки займають всю ширину на малих екранах */
+        width: 100%;
+        padding: 0; /* Remove padding */
+    }
+
+    .column {
+        min-width: 100%;
+        padding: 0;
+    }
+
+    .info-column {
+        min-width: 100%;
+        padding: 0 5px;
     }
 
     .column, .info-column {
-        min-width: 100%;
+        width: 100%;
+        margin: 0; /* Remove margin */
     }
 
     .widths-list, .columns {
@@ -665,8 +682,17 @@ button:hover {
     .widths-list li:nth-child(even) {
         background-color: #111111; /* Змінюємо фон для парних елементів */
         color: #FFFFFF; /* Колір тексту */
-        border-bottom: 1px solid #111111; /* Додає нижню межу для елементів списку */
+        border-bottom: none; /* Додає нижню межу для елементів списку */
     }
+
+    .formats-list li:nth-child(odd),
+    .widths-list li:nth-child(odd) {
+    background-color: #FF6F61; /* Змінюємо фон для непарних елементів */
+    color: #111111; /* Колір тексту */
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+}
       
     .header-text {
         order: 1;
