@@ -71,7 +71,7 @@ body {
 /* Сайдбар */
 .aside {
     flex: 1;
-    max-width: 30%;
+    max-width: 25%;
     padding: 0.2rem;
     margin: 0 0.2rem 0 0.2rem;
     background-color: #111111;
@@ -273,16 +273,16 @@ button:hover {
     display: block;
     text-align: center;
     font-weight: bold;
-    margin: 5px 0;
-    padding: 2px;
+    margin: 0;
+    padding: 5px 0;
 }
 
 .info-column-left {
     display: block;
     text-align: left;
     font-weight: bold;
-    margin: 5px 0;
-    padding: 2px;
+    margin: 0;
+    padding: 5px 0;
     /* border-top: 2px solid #FF6F61;*/
 }
 .info-column-left p {
@@ -312,6 +312,8 @@ button:hover {
     flex-direction: column;
     align-items: center;
     flex: 1; /* Однакова ширина для всіх колонок */
+    margin: 0;
+    padding: 0;
 }
 
 .formats-header,
@@ -595,6 +597,8 @@ button:hover {
     .container {
         flex-direction: column;
         width: 100%;
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
     }
 
     .aside, .contacts {
@@ -636,6 +640,8 @@ button:hover {
     .columns, .info-columns {
         flex-direction: column;
         width: 100%;
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
     }
     
     .columns-container {
@@ -647,16 +653,13 @@ button:hover {
     
     .formats-group, .widths-column {
         width: 100%; /* Займає всю ширину контейнера на малих екранах */
+        padding: 0;
+        margin: 0;
     }
 
     /*.formats-group, .widths-column {*/
         /*flex: 1 1 100%; /* Колонки займають всю ширину на малих екранах */
     /*}*/
-
-    .formats-group, .widths-column {
-        width: 100%;
-        padding: 0; /* Remove padding */
-    }
 
     .column {
         min-width: 100%;
@@ -665,14 +668,16 @@ button:hover {
 
     .info-column {
         min-width: 100%;
-        padding: 0 5px;
+        padding: 0 10px;
     }
 
     .column, .info-column {
+        min-width: 100%;
         width: 100%;
+        padding: 0; /* Remove padding */
         margin: 0; /* Remove margin */
     }
-
+    
     .widths-list, .columns {
         min-width: 100%;
         margin-bottom: 5px;
