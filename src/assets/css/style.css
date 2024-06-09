@@ -53,11 +53,11 @@ body {
         rgba(0, 255, 255, 0.25) 12rem, rgba(0, 255, 255, 0.25) 13rem, 
         rgba(255, 0, 255, 0.25) 13rem, rgba(255, 0, 255, 0.25) 14rem, 
         rgba(255, 255, 0, 0.25) 14rem, rgba(255, 255, 0, 0.25) 15rem, 
-        rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem,
+        rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem/*,
         rgba(0, 255, 255, 0.05) 16rem, rgba(0, 255, 255, 0.05) 17rem, 
         rgba(255, 0, 255, 0.05) 17rem, rgba(255, 0, 255, 0.05) 18rem, 
         rgba(255, 255, 0, 0.05) 18rem, rgba(255, 255, 0, 0.05) 19rem, 
-        rgba(0, 0, 0, 0.05) 19rem, rgba(0, 0, 0, 0.05) 20rem);
+        rgba(0, 0, 0, 0.05) 19rem, rgba(0, 0, 0, 0.05) 20rem*/);
 }
 
 /* Контейнер */
@@ -152,10 +152,9 @@ button:hover {
 
 /* Основний хедер */
 .header {
-    grid-area: header;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: var(--header-bg-gradient);
     padding: 0;
     margin: 0;
@@ -241,17 +240,28 @@ button:hover {
     padding: 0 5px;
 }
 
+.info-columns.highlighted {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: var(--main-bg-color);
+}
+
 .info-column {
     flex: 1;
-    min-width: 30%;
-    padding: 0 5px;
-    text-align: left;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    max-width: 90%; /* Зменшення ширини стовпців */
 }
 
+
 .info-column p {
+    text-wrap: nowrap;
     margin: 0 auto;
 }
 
@@ -271,12 +281,9 @@ button:hover {
     padding: 0 10px;
 }
 
-.info-column-left {
-    display: block;
-    text-align: left;
+.info-column-header {
     font-weight: bold;
-    margin: 0;
-    padding: 5px 0;
+    margin-bottom: 5px;
 }
 
 .info-column ul {
@@ -309,18 +316,27 @@ button:hover {
     font-weight: bold;
 }
 
-.columns-container {
+/*.columns-container {
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
+}*/
+.columns-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.info-column, .info-column-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.padded-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.padded-list li {
+    padding: 5px 0;
 }
 
 .widths-column {
@@ -531,11 +547,6 @@ button:hover {
 }
 
 /* Fix for specific elements */
-.header, .section, .footer {
-    width: 100%;
-    box-sizing: border-box;
-}
-
 body.modal-active .container, body.modal-active .aside, body.modal-active .main, body.modal-active .header, body.modal-active .footer {
     z-index: 0;
 }
@@ -547,9 +558,24 @@ body.modal-active .modal {
 .header, .section, .footer {
     margin: 0;
     padding: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+
 @media (max-width: 768px) {
+    html, body, .header, .section, .footer {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header, .section, .footer {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }  
+
     .main {
         min-width: 100%;
         grid-template-areas:
@@ -590,11 +616,19 @@ body.modal-active .modal {
         margin-bottom: 0.5rem;
     }
 
-    .columns, .info-columns {
+    .info-columns {
         flex-direction: column;
         width: 100%;
         padding: 0;
         margin: 0;
+    }
+
+    .columns {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        min-width: 100%;
+        margin-bottom: 5px;
     }
 
     .info-columns {
@@ -602,6 +636,7 @@ body.modal-active .modal {
     }
 
     .columns-container {
+        flex-direction: column;
         padding: 0 5px;
         margin: 0;
         width: 100%;
@@ -618,7 +653,7 @@ body.modal-active .modal {
         width: 100%;
         padding: 0;
         margin: 0;
-    }
+    } 
 
     .info-column {
         min-width: 100%;
@@ -633,9 +668,16 @@ body.modal-active .modal {
         padding-left: 1em;
     }
 
-    .widths-list, .columns {
-        min-width: 100%;
-        margin-bottom: 5px;
+    .formats-list, .widths-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .formats-list li, .widths-list li {
+        padding: 2px 0;
+        margin: 0; /* Прибрати відступи зліва */
     }
 
     .formats-list li:nth-child(even), .widths-list li:nth-child(even) {
