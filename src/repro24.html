@@ -15,11 +15,9 @@
     <link rel="manifest" href="assets/site.webmanifest">
 </head>
 <body>
-    <!-- <div class="cmyk-header-field">
-        <div class="cmyk-header"></div>
-    </div> -->
-    <div class="container">
-        <aside class="aside">
+    
+    <div class="container"> <!-- 1 - Контейнер для усіх елементів, крім футеру -->
+        <aside class="aside"> <!-- 2 - Сайдбар - блок з полями калькулятора -->
             <header>
                 <p>Калькулятор вартості плівки</p>
             </header>
@@ -55,46 +53,45 @@
             </form>
         </aside>        
         
-        <main class="main">
-            <header class="header">
-                <div class="logo">
+        <main class="main"> <!-- 3 - Основний блок -->
+            <header class="header"> <!-- 4 - Основний хедер в блоці main -->
+                <div class="logo"> <!-- 5 - Логотип в хедері блоку main -->
                     <img src="assets/img/repro24_logo_reverse.svg" alt="logo repro24">
                 </div>
             </header>
             
             <section>
                 
-                <div class="header-text">
+                <div class="header-text"> <!-- 6 - Опис в блоці main -->
                     <p>Виводимо друкарські форми з використанням технологій CTP та CTCP різних форматів.<br>
                         Також виводимо фотоплівки, маємо рулони різної ширини.</p>
                 </div>
                 
-                <div class="columns-container">
-                    <div class="formats-group">
-                        <div class="formats-header">
+                <div class="format-container"> <!-- 7 - Контейнер для опису форм та плівок -->
+                    <div class="plate-group"> <!-- 8 - Колонки з описом форматів форм та плівок -->
+                        <div class="plate-header"> <!-- 9 - Назви колонок з описом форматів форм та плівок -->
                             <p>Популярні формати форм:</p>
                         </div>
-                        <div class="columns">
-                            <div class="column">
-                                <ul class="formats-list">
-                                    <li>490х370</li>
+                        <div class="columns"> <!-- 10 - Об'єднані 3 колонки з форматами форм -->
+                            <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
+                                <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
+                                    <li>490х370</li> <!-- 13 - елемент списку форматів форм -->
                                     <li>510х400</li>
                                     <li>521х415</li>
                                     <li>525х459</li>
-                                    <!-- <li>&nbsp;</li>  Empty list item with non-breaking space -->
                                 </ul>
                             </div>
-                            <div class="column">
-                                <ul class="formats-list">
-                                    <li>650х530</li>
+                            <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
+                                <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
+                                    <li>650х530</li> <!-- 13 - елемент списку форматів форм -->
                                     <li>650х550</li>
                                     <li>724х615</li>
                                     <li>740х575</li>
                                 </ul>
                             </div>
-                            <div class="column">
-                                <ul class="formats-list">
-                                    <li>740х605</li>
+                            <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
+                                <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
+                                    <li>740х605</li> <!-- 13 - елемент списку форматів форм -->
                                     <li>745х660</li>
                                     <li>1030х770</li>
                                     <li>1050х795</li>
@@ -102,13 +99,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="widths-column"> <!-- <div class="widths-column"> -->
-                        <div class="widths-header">
+                    <div class="film-column"> <!-- 8, 14 - Колонки з описом форматів форм та плівок -->
+                        <div class="film-header"> <!-- 9, 15 - Назви колонок з описом форматів форм та плівок -->
                             <p>Ширина стандартних плівок:</p>
                         </div>
-                        <div class="column">
-                            <ul class="widths-list">
-                                <li>457 мм</li>
+                        <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
+                            <ul class="film-list"> <!-- 12, 16 - Список форматів форм та плівок -->
+                                <li>457 мм</li> <!-- 17 - елемент списку форматів плівок -->
                                 <li>724 мм</li>
                                 <li>762 мм</li>
                                 <li>914 мм</li>
@@ -117,51 +114,49 @@
                     </div>
                 </div>                                           
 
-                <div class="info-columns highlighted">
-                    <p class="info-column-center">Графік прийому макетів</p>
-                    <div class="columns-container">
-                        <div class="info-column">
-                            <p class="info-column-header">На вивід пластин до 15 <sup class="sup">00</sup></p>
-                            <ul class="padded-list">
-                                <li>✔ макети, які потребують затвердження</li>
+                <div class="info-columns"> <!-- 18 - Інформаційний блок -->
+                    <h1>Графік прийому макетів</h1> <!-- 19 - Заголовок інформаційного блоку -->
+                    <div class="plate-info-columns"> <!-- 20 - Об'єднані колонки про вивід форм -->                        
+                        <div class="info-column"> <!-- 21 - Колонки з інформацією про вивід -->
+                            <p class="info-column-header">На вивід пластин до 15 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід-->
+                            <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
+                                <li>✔ макети, які потребують затвердження</li> <!-- 24 - Елемент списку з інформацією про вивід -->
                                 <li>✔ об'ємні роботи</li>
                                 <li>✔ роботи на відправку Новою поштою</li>
                             </ul>
                         </div>
-                        <div class="info-column">
-                            <p class="info-column-header">після 15 <sup class="sup">00</sup></p>
-                            <ul class="padded-list">
-                                <li>✔ вивід (та / або відправка) переноситься на наступний день</li>
+                        <div class="info-column"> <!-- 21 - Колонки з інформацією про вивід -->
+                            <p class="info-column-header">після 15 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід -->
+                            <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
+                                <li>✔ вивід (та / або відправка) переноситься на наступний день</li> <!-- 24 - Елемент списку з інформацією про вивід -->
                                 <li>✔ невеликі роботи за можливості будуть виведені у цей же день</li>
                                 <li>✔ об'ємні роботи можуть бути віддані частинами</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="info-column">
-                        <p class="info-column-header">На вивід плівок до 16 <sup class="sup">00</sup></p>
-                        <ul class="padded-list">
-                            <li>✔ виведення протягом години-двох після надання макетів</li>
+                    <div class="info-column"> <!--21 - Колонки з інформацією про вивід -->
+                        <p class="info-column-header">На вивід плівок до 16 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід -->
+                        <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
+                            <li>✔ виведення протягом години-двох після надання макетів</li> <!-- 24 - Елемент списку з інформацією про вивід -->
                             <li>✔ роботи на відправку Новою поштою</li>
                             <li>✔ плівки шириною більше 457 мм виводяться після 17 <sup class="sup">00</sup></li>
                         </ul>
                     </div>
-                    <div class="info-column-left">
-                        <p>СБ - робоча за наявності зміни<br>НД - вихідний</p>
-                    </div>
+                    <p>СБ - робоча за наявності зміни<br>НД - вихідний</p> <!-- 25 - Текст інформаційного блоку -->
                 </div>                
                 
-                <div class="contacts">
-                    <div class="contact-columns">
-                        <div class="contact-column">
+                <div class="contacts"> <!-- 26 - Блок з контактною інформацією -->
+                    <div class="contact-columns"> <!-- 27 - Об'єднані колонки з інформацією -->
+                        <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією -->
                             <p>Наша адреса:<br>вул. Шахтарська, 9Г<br>м. Київ, 04074</p>
                         </div>
-                        <div class="contact-column contact-column-wide-gap">
+                        <div class="contact-column"> <!-- "...-wide-gap" 29 - Окрема ширша колонка з інформацією -->
                             <p>Телефон інженерів:<br>067 401 56 87<br>
                                 Замовлення:<br>repro24@ukr.net,<br>
                                 repro24ua@gmail.com</p>
                         </div>
                         
-                        <div class="contact-column" id="contactFormContainer">
+                        <div class="contact-column" id="contactFormContainer"> <!-- 28 - Окрема колонка з інформацією -->
                             <!-- Форма зв'язку -->
                             <form action="#" method="post" aria-label="Контактна форма" id="contactForm">
                                 <!-- Модальне вікно з формою -->
@@ -197,13 +192,12 @@
             </section>
         </main>
     </div>
-    <footer class="footer">
-        <div class="cmyk-header-field">
-            <div class="cmyk-header">
+    <footer class="footer"> <!-- 30-->
+        <div class="cmyk-header-field"> <!-- 31-->
+            <div class="cmyk-header"> <!-- 32-->
                 <p> <img src="assets/img/repro24_logo_short_reverse.svg" alt="small logo repro24"> &copy; 2024</p>
             </div>
         </div>
-        <!-- <p> <img src="assets/img/repro24_logo_short.svg" alt="small logo repro24"> &copy; 2024</p> -->
     </footer>
     <script src="assets/js/script_calc.js" defer></script>
     <script src="assets/js/script_form.js" defer></script>
