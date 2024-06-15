@@ -5,68 +5,97 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetButton = document.getElementById('resetButton');
   const pricePerSquareMeter = 1500; // ціна за квадратний метр в гривнях
   const minFilmPrice = 240; // мінімальна вартість плівки в гривнях
+  let totalResult;
 
   addFilmButton.addEventListener('click', () => {
-    if (filmFieldsContainer.children.length < 4) {
-      const newFilmField = createFilmField(filmFieldsContainer.children.length + 1);
+    const currentCount = filmFieldsContainer.querySelectorAll('.film-field').length;
+    if (currentCount < 4) {
+      const newFilmField = createFilmField(currentCount + 1);
       filmFieldsContainer.appendChild(newFilmField);
+      applyDefaultStyles();
     }
   });
 
   calculateButton.addEventListener('click', () => {
     let totalCost = 0;
     let valid = true;
-    let totalResult = document.getElementById('total-result');
-    if (totalResult) {
-      totalResult.remove();
-    }
+    let fieldsFilled = 0;
+    let lastValidField = null;
 
-    document.querySelectorAll('.film-field').forEach((field, index) => {
+    document.querySelectorAll('.film-field').forEach((field) => {
       const width = field.querySelector('.film-width').value;
       const length = field.querySelector('.length').value;
       const quantity = field.querySelector('.quantity').value;
 
-      if (!width || !length || !quantity) {
-        valid = false;
-        return;
+      if (width && length && quantity) {
+        fieldsFilled++;
+        lastValidField = field;
+
+        if (length > 1100) {
+          field.querySelector('.result').textContent = 'Довжина плівки має бути до 1 100 мм';
+          field.querySelector('.result').classList.add('visible'); // Показуємо результат
+          valid = false;
+          return;
+        }
+
+        const widthInMeters = width / 1000;
+        const lengthInMeters = length / 1000;
+        const area = widthInMeters * lengthInMeters * quantity;
+        let cost = Math.ceil((area * pricePerSquareMeter) / 10) * 10;
+        cost = Math.max(cost, minFilmPrice);
+        totalCost += cost;
+        field.querySelector('.result').textContent = `Вартість: ${cost} грн.`;
+        field.querySelector('.result').classList.add('visible'); // Показуємо результат
       }
-
-      if (length > 1100) {
-        field.querySelector('.result').textContent = 'Довжина плівки має бути до 1 100 мм';
-        valid = false;
-        return;
-      }
-
-      const widthInMeters = width / 1000;
-      const lengthInMeters = length / 1000;
-      let cost = Math.ceil((widthInMeters * lengthInMeters * quantity * pricePerSquareMeter) / 10) * 10;
-      cost = Math.max(cost, minFilmPrice * quantity);
-
-      totalCost += cost;
-
-      field.querySelector('.result').textContent = `Вартість: ${cost} грн.`;
     });
 
-    if (valid && document.querySelectorAll('.film-field').length > 1) {
-      totalResult = document.createElement('div');
-      totalResult.classList.add('result');
-      totalResult.setAttribute('id', 'total-result');
-      totalResult.textContent = `Загальна вартість: ${totalCost} грн.`;
-      filmFieldsContainer.appendChild(totalResult);
+    if (fieldsFilled > 1) {
+      if (valid) {
+        if (!totalResult) {
+          totalResult = document.createElement('div');
+          totalResult.classList.add('result');
+          totalResult.setAttribute('id', 'total-result');
+        }
+        totalResult.textContent = `Загальна вартість: ${totalCost} грн.`;
+        totalResult.classList.add('visible'); // Показуємо результат
+        if (lastValidField) {
+          lastValidField.appendChild(totalResult);
+        }
+      } else {
+        if (totalResult) {
+          totalResult.textContent = '';
+          totalResult.classList.remove('visible'); // Приховуємо результат
+        }
+      }
+    } else {
+      if (totalResult) {
+        totalResult.remove();
+        totalResult = null;
+      }
     }
   });
 
   resetButton.addEventListener('click', () => {
-    // Clear all fields and add one default field
     filmFieldsContainer.innerHTML = '';
-    const newFilmField = createFilmField(1);
-    filmFieldsContainer.appendChild(newFilmField);
+    initializeFilmFields();
+    if (totalResult) {
+      totalResult.remove();
+      totalResult = null;
+    }
   });
 
-  // Ініціалізація сторінки з одним полем для плівки за замовчуванням
-  initializeFilmFields();
+  function applyDefaultStyles() {
+    document.querySelectorAll('.film-width, .length').forEach(input => {
+      input.style.color = input.value === '' ? '#999999' : '#FFFFFF';
+    });
 
-  // Функція для створення поля для плівки
+    document.querySelectorAll('.film-width, .length').forEach(input => {
+      input.addEventListener('input', () => {
+        input.style.color = input.value ? '#FFFFFF' : '#999999';
+      });
+    });
+  }
+
   function createFilmField(number) {
     const newFilmField = document.createElement('div');
     newFilmField.classList.add('film-field');
@@ -83,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     filmWidthSelect.setAttribute('id', `film-width${number}`);
     filmWidthSelect.classList.add('film-width');
     filmWidthSelect.innerHTML = `
-            <option value="">виберіть</option>
-            <option value="457">457</option>
-            <option value="724">724</option>
-            <option value="762">762</option>
-            <option value="914">914</option>
-        `;
+      <option value="">виберіть</option>
+      <option value="457">457</option>
+      <option value="724">724</option>
+      <option value="762">762</option>
+      <option value="914">914</option>
+    `;
     filmWidthGroup.appendChild(filmWidthSelect);
     newFilmField.appendChild(filmWidthGroup);
 
@@ -137,14 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return newFilmField;
   }
 
-  // Функція для ініціалізації поля для плівки
   function initializeFilmFields() {
-    while (filmFieldsContainer.children.length > 1) {
-      filmFieldsContainer.removeChild(filmFieldsContainer.lastChild);
-    }
-    if (filmFieldsContainer.children.length === 0) {
-      const newFilmField = createFilmField(1);
-      filmFieldsContainer.appendChild(newFilmField);
-    }
+    filmFieldsContainer.innerHTML = '';
+    const newFilmField = createFilmField(1);
+    filmFieldsContainer.appendChild(newFilmField);
+    applyDefaultStyles();
   }
+
+  initializeFilmFields();
 });

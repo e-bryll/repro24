@@ -18,15 +18,15 @@
     
     <div class="container"> <!-- 1 - Контейнер для усіх елементів, крім футеру -->
         <aside class="aside"> <!-- 2 - Блок з калькулятором -->
-            <header>
+            <div class="aside-header"> <!-- 2.1 - Заголовок блоку з калькулятором -->
                 <p>Калькулятор вартості плівки</p>
-            </header>
+            </div>
             <form class="calculationFields" aria-label="Калькулятор вартості плівки">
                 <div id="film-fields-container">
                     <div class="film-field">
                         <div class="form-group">
                             <label for="film-width1" class="form-label">Ширина рулону:</label>
-                            <select id="film-width1" class="film-width" aria-label="Ширина плівки">
+                            <select id="film-width1" class="film-width" aria-label="Ширина плівки" required>
                                 <option value="">виберіть</option>
                                 <option value="457">457</option>
                                 <option value="724">724</option>
@@ -53,145 +53,149 @@
             </form>
         </aside>        
         
-        <main class="main"> <!-- 3 - Основний блок -->
+        <div class="main"> <!-- 3 - Основний блок -->
             <header class="header"> <!-- 4 - Основний хедер в блоці main -->
                 <div class="logo"> <!-- 5 - Логотип в хедері блоку main -->
                     <img src="assets/img/repro24_logo_reverse.svg" alt="logo repro24">
                 </div>
             </header>
             
-            <section>
+            <div class="header-text"> <!-- 6 - Опис в блоці main -->
+                <p>Виводимо друкарські форми з використанням технологій CTP та CTCP різних форматів — від А3 до А1.<br>
+                    Також виводимо фотоплівки, маємо рулони різної ширини. Максимальна довжина 1 100 мм.</p>
+            </div>
                 
-                <div class="header-text"> <!-- 6 - Опис в блоці main -->
-                    <p>Виводимо друкарські форми з використанням технологій CTP та CTCP різних форматів.<br>
-                        Також виводимо фотоплівки, маємо рулони різної ширини.</p>
-                </div>
-                
-                <div class="format-container"> <!-- 7 - Контейнер для опису форм та плівок -->
-                    <div class="plate-group"> <!-- 8 - Колонки з описом форматів форм та плівок -->
-                        <div class="plate-header"> <!-- 9 - Назви колонок з описом форматів форм та плівок -->
-                            <p>Популярні формати форм:</p>
-                        </div>
-                        <div class="columns"> <!-- 10 - Об'єднані 3 колонки з форматами форм -->
-                            <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
-                                <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
-                                    <li>490х370</li> <!-- 13 - елемент списку форматів форм -->
-                                    <li>510х400</li>
-                                    <li>521х415</li>
-                                    <li>525х459</li>
-                                </ul>
-                            </div>
-                            <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
-                                <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
-                                    <li>650х530</li> <!-- 13 - елемент списку форматів форм -->
-                                    <li>650х550</li>
-                                    <li>724х615</li>
-                                    <li>740х575</li>
-                                </ul>
-                            </div>
-                            <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
-                                <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
-                                    <li>740х605</li> <!-- 13 - елемент списку форматів форм -->
-                                    <li>745х660</li>
-                                    <li>1030х770</li>
-                                    <li>1050х795</li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="format-container"> <!-- 7 - Контейнер для опису форм та плівок -->
+                <div class="plate-group"> <!-- 8 - Колонки з описом форматів форм та плівок -->
+                    <div class="plate-header"> <!-- 9 - Назви колонок з описом форматів форм та плівок -->
+                        <p>Популярні формати форм:</p>
                     </div>
-                    <div class="film-column"> <!-- 8, 14 - Колонки з описом форматів форм та плівок -->
-                        <div class="film-header"> <!-- 9, 15 - Назви колонок з описом форматів форм та плівок -->
-                            <p>Ширина стандартних плівок:</p>
+                    <div class="columns"> <!-- 10 - Об'єднані 3 колонки з форматами форм -->
+                        <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
+                            <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
+                                <li>490х370</li> <!-- 13 - елемент списку форматів форм -->
+                                <li>510х400</li>
+                                <li>521х415</li>
+                                <li>525х459</li>
+                            </ul>
                         </div>
                         <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
-                            <ul class="film-list"> <!-- 12, 16 - Список форматів форм та плівок -->
-                                <li>457 мм</li> <!-- 17 - елемент списку форматів плівок -->
-                                <li>724 мм</li>
-                                <li>762 мм</li>
-                                <li>914 мм</li>
+                            <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
+                                <li>650х530</li> <!-- 13 - елемент списку форматів форм -->
+                                <li>650х550</li>
+                                <li>724х615</li>
+                                <li>740х575</li>
+                            </ul>
+                        </div>
+                        <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
+                            <ul class="plate-list"> <!-- 12 - Список форматів форм та плівок -->
+                                <li>740х605</li> <!-- 13 - елемент списку форматів форм -->
+                                <li>745х660</li>
+                                <li>1030х770</li>
+                                <li>1050х795</li>
                             </ul>
                         </div>
                     </div>
-                </div>                                           
+                </div>
 
-                <div class="info-columns"> <!-- 18 - Інформаційний блок -->
-                    <h1>Графік прийому макетів</h1> <!-- 19 - Заголовок інформаційного блоку -->
-                    <div class="plate-info-columns"> <!-- 20 - Об'єднані колонки про вивід форм -->                        
-                        <div class="info-column"> <!-- 21 - Колонки з інформацією про вивід -->
-                            <p class="info-column-header">На вивід пластин до 15 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід-->
-                            <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
-                                <li>✔ макети, які потребують затвердження</li> <!-- 24 - Елемент списку з інформацією про вивід -->
-                                <li>✔ об'ємні роботи</li>
-                                <li>✔ роботи на відправку Новою поштою</li>
-                            </ul>
-                        </div>
-                        <div class="info-column"> <!-- 21 - Колонки з інформацією про вивід -->
-                            <p class="info-column-header">після 15 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід -->
-                            <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
-                                <li>✔ вивід (та / або відправка) переноситься на наступний день</li> <!-- 24 - Елемент списку з інформацією про вивід -->
-                                <li>✔ невеликі роботи за можливості будуть виведені у цей же день</li>
-                                <li>✔ об'ємні роботи можуть бути віддані частинами</li>
-                            </ul>
-                        </div>
+                <div class="film-column"> <!-- 8, 14 - Колонки з описом форматів форм та плівок -->
+                    <div class="film-header"> <!-- 9, 15 - Назви колонок з описом форматів форм та плівок -->
+                        <p>Ширина стандартних плівок:</p>
                     </div>
-                    <div class="info-column"> <!--21 - Колонки з інформацією про вивід -->
-                        <p class="info-column-header">На вивід плівок до 16 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід -->
-                        <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
-                            <li>✔ виведення протягом години-двох після надання макетів</li> <!-- 24 - Елемент списку з інформацією про вивід -->
-                            <li>✔ роботи на відправку Новою поштою</li>
-                            <li>✔ плівки шириною більше 457 мм виводяться після 17 <sup class="sup">00</sup></li>
+                    <div class="column"> <!-- 11 - Колонка з форматами форм та плівок -->
+                        <ul class="film-list"> <!-- 12, 16 - Список форматів форм та плівок -->
+                            <li>457 мм</li> <!-- 17 - елемент списку форматів плівок -->
+                            <li>724 мм</li>
+                            <li>762 мм</li>
+                            <li>914 мм</li>
                         </ul>
                     </div>
-                    <p>СБ - робоча за наявності зміни<br>НД - вихідний</p> <!-- 25 - Текст інформаційного блоку -->
-                </div>                
-                
-                <div class="contacts"> <!-- 26 - Блок з контактною інформацією -->
-                    <div class="contact-columns"> <!-- 27 - Об'єднані колонки з інформацією -->
-                        <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією -->
-                            <p>Наша адреса:<br>вул. Шахтарська, 9Г<br>м. Київ, 04074</p>
-                        </div>
-                        <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією --> <!-- "...-wide-gap" 29 - Окрема ширша колонка з інформацією -->
-                            <p>Телефон інженерів:<br>067 401 56 87<br>
-                                Замовлення:<br>repro24@ukr.net,<br>
-                                repro24ua@gmail.com</p>
-                        </div>
-                        
-                        <div class="contact-column" id="contactFormContainer"> <!-- 28 - Окрема колонка з інформацією -->
-                            <!-- Форма зв'язку -->
-                            <form action="#" method="post" aria-label="Контактна форма" id="contactForm"> <!-- 33 - Вікно форми -->
-                                <!-- Модальне вікно з формою -->
-                                <div id="form-modal" class="modal">
-                                    <div class="modal-content">
-                                        <span class="close-btn">×</span>
-                                        <!-- Ваша форма тут -->
-                                        <label for="name">Ваше ім'я:</label>
-                                        <input type="text" id="name" name="name" autocomplete="name" required>
-                                        <label for="email">Ваша пошта:</label>
-                                        <input type="email" id="email" name="email" autocomplete="email" required>
-                                        <label for="message">Повідомлення:</label>
-                                        <textarea id="message" name="message" required></textarea>
-                                        <button type="submit">Надіслати</button>
-                                    </div>
-                                </div>
-                                <!-- Модальне вікно з повідомленням про успішне надіслання форми -->
-                                <div id="success-modal" class="modal">
-                                    <div class="modal-content">
-                                        <span class="close-btn">×</span>
-                                        <h2>Дякуємо!</h2>
-                                        <p>Ваше повідомлення успішно надіслано.</p>
-                                    </div>
-                                </div>
-                            </form>
+                </div>
+            </div>                                           
 
-                        </div>
-                        <div class="center-content">
-                            <button id="toggleFormButton" aria-label="Написати нам">Написати нам</button>
-                        </div>                        
+            <div class="info-columns"> <!-- 18 - Інформаційний блок -->
+                <h1>Графік прийому макетів</h1> <!-- 19 - Заголовок інформаційного блоку -->
+                <div class="plate-info-columns"> <!-- 20 - Об'єднані колонки про вивід форм -->                        
+                    <div class="info-column"> <!-- 21 - Колонки з інформацією про вивід -->
+                        <p class="info-column-header">На вивід пластин до 15 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід-->
+                        <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
+                            <li>✔ макети, які потребують затвердження</li> <!-- 24 - Елемент списку з інформацією про вивід -->
+                            <li>✔ об'ємні роботи</li>
+                            <li>✔ роботи на відправку Новою поштою</li>
+                        </ul>
+                    </div>
+                    <div class="info-column"> <!-- 21 - Колонки з інформацією про вивід -->
+                        <p class="info-column-header">після 15 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід -->
+                        <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
+                            <li>✔ вивід (та / або відправка) переноситься на наступний день</li> <!-- 24 - Елемент списку з інформацією про вивід -->
+                            <li>✔ невеликі роботи за можливості будуть виведені у цей же день</li>
+                            <li>✔ об'ємні роботи можуть бути віддані частинами</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-column"> <!--21 - Колонки з інформацією про вивід -->
+                    <p class="info-column-header">На вивід плівок до 16 <sup class="sup">00</sup></p> <!-- 22 - Заголовок колонки з інформацією про вивід -->
+                    <ul class="padded-list"> <!-- 23 - Список з інформацією про вивід -->
+                        <li>✔ виведення протягом години-двох після надання макетів</li> <!-- 24 - Елемент списку з інформацією про вивід -->
+                        <li>✔ роботи на відправку Новою поштою</li>
+                        <li>✔ плівки шириною більше 457 мм виводяться після 17 <sup class="sup">00</sup></li>
+                    </ul>
+                </div>
+                <div class="info-columns-text"> <!-- 25 - Інформаційний блок -->
+                    <h2></h2> <!-- 25.1 - Заголовок інформаційного блоку /* Змінити при додаванні інформації */ -->
+                    <p></p> <!-- 25.2 - Текст інформаційного блоку /* Змінити при додаванні інформації */ -->
+                </div>
+            </div>                
+                
+            <div class="contacts"> <!-- 26 - Блок з контактною інформацією -->
+                <div class="contact-columns"> <!-- 27 - Об'єднані колонки з інформацією -->
+                    <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією -->
+                        <p>Графік роботи:<br>ПН - ПТ<br>СБ - робоча за наявності зміни<br>НД - вихідний</p>
+                    </div>
+                    <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією -->
+                        <p>Наша адреса:<br>вул. Шахтарська, 9Г<br>м. Київ, 04074</p>
+                    </div>
+                    <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією -->
+                        <p>Телефон інженерів:<br>067 401 56 87<br>
+                            Замовлення:<br>repro24@ukr.net<br>
+                            repro24ua@gmail.com</p>
+                    </div>                                          
                 </div>                
-            
-            </section>
-        </main>
+            </div>
+
+            <div class="connection"> <!-- 29 - Форма зворотнього зв'язку -->
+                <div class="center-content">
+                    <button id="toggleFormButton" aria-label="Написати нам">Написати нам</button>
+                </div>
+                <form action="#" method="post" aria-label="Контактна форма" id="contactForm"> <!-- 33 - Вікно форми -->
+                    <!-- Модальне вікно з формою -->
+                    <div id="form-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn">×</span>
+                            <!-- Ваша форма тут -->
+                            <label for="name">Ваше ім'я:</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                            <label for="email">Ваша пошта:</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                            <label for="message">Повідомлення:</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <button type="submit">Надіслати</button>
+                        </div>
+                    </div>
+                    <!-- Модальне вікно з повідомленням про успішне надіслання форми -->
+                    <div id="success-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn">×</span>
+                            <h2>Дякуємо!</h2>
+                            <p>Ваше повідомлення успішно надіслано.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
+        
     <footer class="footer"> <!-- 30 - Блок футера -->
         <div class="cmyk-footer-field"> <!-- 31 - Колір блоку футера -->
             <div class="cmyk-footer"> <!-- 32 - заливка футера -->
@@ -199,9 +203,11 @@
             </div>
         </div>
     </footer>
+    
     <script src="assets/js/script_calc.js" defer></script>
     <script src="assets/js/script_form.js" defer></script>
     <script type="application/ld+json">
+
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",

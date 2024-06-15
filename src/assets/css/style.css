@@ -8,38 +8,38 @@
     --header-bg-gradient: linear-gradient(to top right, var(--highlight-color), #3871c1);
     --font-size-small: 12px;
 }
-
+    
 html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-
+    
 body {
     font-family: var(--font-family);
     line-height: 1.4;
     font-size: var(--font-size-small);
     color: var(--main-text-color);
     background-color: var(--main-bg-color);
-    overflow-x: visible;
+    overflow-x: hidden;
 }
-
+    
 /* 1 - Контейнер для усіх елементів, крім футеру */
-.container { 
+.container {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--main-bg-color);
     width: 100%;
     overflow: hidden;
-    padding: 0;
-    margin: 0;
 }
-
+    
 /* 2 - Блок з калькулятором */
 .aside {
     flex: 1;
     max-width: 25%;
+    padding: 0;
+    margin: 0 0.2rem 0 0.2rem;
     background-color: var(--main-bg-color);
     display: block;
     border: 1px solid var(--accent-color);
@@ -47,103 +47,123 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
-
-.aside header { 
+    
+.aside-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--accent-color);
     border-radius: var(--border-radius);
+    margin: 5px;
 }
-
-.aside p {
+    
+.aside-header p {
     text-align: center;
     color: var(--main-bg-color);
     font-weight: bold;
 }
-
+    
 .calculationFields {
+    padding: 0 5px;
     display: flex;
     flex-direction: column;
 }
-
+    
 .film-field {
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color);
-    border-bottom: 0.5px solid var(--accent-color);
+    padding: 5px 0;
 }
 
-.film-field input, .film-field select {
+/* Поля введення та вибору */
+.film-field input,
+.film-field select {
     width: 55%;
     height: 1.25rem;
     line-height: 1.25rem;
     box-sizing: border-box;
     background-color: var(--main-bg-color);
     border: 1px solid var(--accent-color);
-    border-radius: var(--border-radius);
-    color: var(--main-text-color);
+    border-radius: 3px;
     text-align: left;
+    color: #999999; /* Сірий текст за замовчуванням */
 }
 
-.film-field select {
-    color: #999999;
+.film-field .length::placeholder {
+    color: #999999; /* Сірий текст для placeholder */
+}
+
+.film-field select:not(:invalid) {
+    color: #FFFFFF; /* Білий текст після вибору значення */
+}
+
+.film-field input:not([value=""]) {
+    color: #FFFFFF;
+}
+.film-field .length:not(:placeholder-shown) {
+    color: #FFFFFF;
+}
+
+.film-field .length:not([value=""]) {
+    color: #FFFFFF;
 }
 
 .form-group {
     display: flex;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
-
+    
 .form-label {
     width: 55%;
     text-align: left;
+    margin: 0 2px;
 }
-
-.film-field input::placeholder {
-    color: #999999;
-}
-
-.film-field select option[value=""] {
-    color: #999999;
-}
-
-.film-field input:focus, .film-field select:focus, .film-field select option:checked {
-    outline: none;
-    color: var(--main-text-color);
-}
-
+        
 .result {
     font-weight: bold;
+    text-align: left;
+    padding: 2px 0;
+    margin: 0;
+    border-top: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    display: none; /* Приховуємо результат за замовчуванням */
 }
 
+.result.visible {
+    display: block; /* Відображаємо результат, коли він обчислений */
+}
+    
 /* Стилі для всіх кнопок */
 #buttons-container {
     display: flex;
-    gap: 5px;
+    gap: 10%;
+    margin-top: 5px;
     justify-content: center;
     align-items: center;
 }
-
+    
 /* Центрування кнопок */
 .center-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
 }
-
+    
 button {
+    padding: 2px;
     background-color: var(--accent-color);
     cursor: pointer;
     text-wrap: nowrap;
-    border-radius: var(--border-radius);
+    border-radius: 4px;
+    font-weight: bold;
 }
 
 button:hover {
     background-color: var(--highlight-color);
 }
-
+    
 /* 3 - Основний блок */
 .main {
     flex: 2;
@@ -154,17 +174,14 @@ button:hover {
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    display: grid;
-    grid-template-areas:
-        "header"
-        "content";
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
 }
-
+    
 /* 4 - Хедер в блоці main */
 .header {
-    grid-area: header;
-    position: relative;
+    order: 1; /* Завжди на першому місці */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,72 +192,80 @@ button:hover {
     box-sizing: border-box;
     max-height: 60px;
 }
-
+    
 /* 5 - Логотип в хедері блоку main */
 .header .logo {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    height: 100%; /* Займає всю висоту хедера */
-    padding: 1rem 0;
-    margin: 0;
 }
-
+       
 /* 5.3 - Зображення в логотипі в хедері блоку main */
 .header .logo img {
+    max-width: 100px;
     height: auto;
     min-height: 50px;
 }
-
+    
 /* 6 - Опис в блоці main */
 .header-text {
-    grid-area: content;
+    order: 2; /* Після header */
     text-align: left;
     color: var(--main-text-color);
-    padding: 10px 0 10px 10px;
-    margin: 0;
-    font-weight: bold;
+    margin: 10px 0;
+    border-bottom: 2px solid var(--accent-color);
 }
-
+    
+/* 6.1 - текст в блоці main */
+.header-text p {
+    color: var(--main-text-color);
+    display: flex;
+    font-weight: bold;
+    padding: 20px;
+}
+    
 /* 7 - Контейнер для опису форм та плівок */
 .format-container {
+    order: 3; /* Після header-text */
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-
-/* 8, 14 - Колонки з описом форматів форм та плівок */ 
+    
+/* 8, 14 - Колонки з описом форматів форм та плівок */
 .plate-group, .film-column {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
-    margin: 0;
+    margin: 5px 0;
     padding: 0;
 }
-
+    
 /* 9, 15 - Назви колонок з описом форматів форм та плівок */
 .plate-header, .film-header {
     text-align: center;
+    padding: 2px 0;
     font-weight: bold;
 }
-
+    
 /* 10 - Об'єднані 3 колонки з форматами форм */
 .columns {
     display: flex;
     gap: 0px;
     width: 100%;
 }
-
+    
 /* 11 - Колонка з форматами форм та плівок */
 .column {
     flex: 1;
     width: 30%;
     padding: 0;
-    margin: 0;
-}
-
+    margin-bottom: 10px;
+ }
+    
 /* 12, 16 - Список форматів форм та плівок */
 .plate-list, .film-list {
     list-style: none;
@@ -248,26 +273,28 @@ button:hover {
     margin: 0;
     text-align: center;
 }
-
+    
 /* 13, 17 - елемент списку форматів форм та плівок */
 .plate-list li, .film-list li {
-    /*padding: 2px 0;*/
+    padding: 2px 0;
 }
 
 /* 13.1, 17.1 - непарний елемент списку форматів форм та плівок */
-.plate-list li:nth-child(odd), .film-list li:nth-child(odd) {
+.plate-list li:nth-child(odd),
+.film-list li:nth-child(odd) {
     background-color: var(--accent-color);
     color: var(--main-bg-color);
     font-weight: bolder;
 }
 
 /* 13.2, 17.2 - парний елемент списку форматів форм та плівок */
-.plate-list li:nth-child(even), .film-list li:nth-child(even) {
+.plate-list li:nth-child(even),
+.film-list li:nth-child(even) {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
     border-bottom: 1px solid var(--accent-color);
 }
-
+    
 /* 14 - Колонка з описом форматів плівок */
 .film-column {
     flex: 1;
@@ -275,46 +302,55 @@ button:hover {
     flex-direction: column;
     align-items: center;
 }
-
+    
 /* 18 - Інформаційний блок */
 .info-columns {
+    order: 4; /* Після format-container */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 0;
+    margin: 10px 0;
     background-color: var(--accent-color);
     color: var(--main-bg-color);
+    flex-grow: 1;
+    gap: 10px;
 }
-
+    
 /* 19 - Заголовок інформаційного блоку */
 .info-columns h1 {
     display: block;
     text-align: center;
     font-weight: bold;
-    margin: 0;
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 14px;
 }
-
+    
 /* 20 - Об'єднані колонки про вивід форм */
 .plate-info-columns {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
 }
-
+    
 /* 21 - Колонки з інформацією про вивід */
 .info-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    max-width: 100%; /* Зменшення ширини стовпців */
+    max-width: 90%; /* Зменшення ширини стовпців */
 }
 
 /* 22 - Заголовок колонки з інформацією про вивід */
 .info-column-header {
     font-weight: bold;
+    margin-bottom: 5px;
     text-align: center;
     text-wrap: nowrap;
 }
@@ -330,27 +366,46 @@ button:hover {
 .padded-list {
     list-style: none;
     text-align: center;
+    padding: 2px 0;
 }
 
 /* 24 - Елемент списку з інформацією про вивід */
 .padded-list li {
+    padding: 0 5px;
     text-align: left;
     font-weight: bolder;
 }
 
-/* 25 - Текст інформаційного блоку */
-.info-columns p {
+/* 25 - Інформаційний блок */
+.info-columns-text {
+    display: block;
+    /*padding: 20px 20px;*/ /* Змінити при додаванні інформації */
+    margin: 0;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* 25.1 - Заголовок інформаційного блоку */
+.info-columns-text h2 {
     display: block;
     text-align: left;
     font-weight: bold;
-    margin: 0;
+    /*margin: 10px 0;*/ /* Змінити при додаванні інформації */
+}
+
+/* 25.2 - Текст інформаційного блоку */
+.info-columns-text p {
+    display: block;
+    text-align: left;
+    font-weight: bold;
 }
 
 /* 26 - Блок з контактною інформацією */
 .contacts {
+    order: 5; /* Після info-columns */
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
     padding: 0;
     margin: 0;
     background-color: var(--main-bg-color);
@@ -363,19 +418,35 @@ button:hover {
 .contact-columns {
     display: flex;
     flex-wrap: nowrap;
-    gap: 10px;
     align-items: flex-start;
-    text-wrap: nowrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+    width: 90%;
+    padding: 0;
+    margin: 0 5%;
+    gap: 10%;
 }
 
 /* 28 - Окрема колонка з інформацією */
 .contact-column {
+    padding: 0;
+    text-align: left;
+    text-wrap: nowrap;
     flex: 1;
+    margin: 5px 0;
 }
 
-/* 29 - Окрема ширша колонка з інформацією */
-.contact-column-wide-gap {
-    /*margin-left: 10px;*/
+/* 29 - Форма зворотнього зв'язку */
+.connection {
+    order: 10;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0.5rem;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 3px;
 }
 
 /* 30 - Блок футера */
@@ -384,6 +455,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     min-height: 20px;
+    padding-top: 2px;
 }
 
 /* 31 - Колір блоку футера */
@@ -417,16 +489,13 @@ button:hover {
         rgba(0, 255, 255, 0.25) 12rem, rgba(0, 255, 255, 0.25) 13rem, 
         rgba(255, 0, 255, 0.25) 13rem, rgba(255, 0, 255, 0.25) 14rem, 
         rgba(255, 255, 0, 0.25) 14rem, rgba(255, 255, 0, 0.25) 15rem, 
-        rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem/*,
-        rgba(0, 255, 255, 0.05) 16rem, rgba(0, 255, 255, 0.05) 17rem, 
-        rgba(255, 0, 255, 0.05) 17rem, rgba(255, 0, 255, 0.05) 18rem, 
-        rgba(255, 255, 0, 0.05) 18rem, rgba(255, 255, 0, 0.05) 19rem, 
-        rgba(0, 0, 0, 0.05) 19rem, rgba(0, 0, 0, 0.05) 20rem*/);
+        rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem);
 }
 
 /* 32.1 - текст у блоці футера */
 .footer p {
     vertical-align: middle;
+    font-weight: bold;
 }
 
 /* 32.2 - логотип у блоці футера */
@@ -437,15 +506,8 @@ button:hover {
 }
 
 /* 33 - Вікно форми */
-.contact-column form {
-    display: flex;
-    gap: 5px;
-    align-items: flex-end;
-}
-
-/* Модальне вікно */
 #contactFormContainer {
-    display: none;
+    display: flex; /* none*/
 }
 
 #contactFormContainer.active {
@@ -453,211 +515,68 @@ button:hover {
 }
 
 .modal {
-    display: none;
+    display: none; /* Приховати модальне вікно за замовчуванням */
     position: fixed;
-    top: 0;
+    z-index: 1000;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Додано для забезпечення правильного відображення */
-    /*overflow: auto;*/
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон */
 }
 
 .modal-content {
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-bg-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--accent-color);
     width: 80%;
-    max-width: 500px;
-    position: relative;
-    z-index: 10000; /* Додано для забезпечення правильного відображення */
-}
-
-.close-btn {
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.close-btn:hover, .close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal.active {
-    display: flex;
-    /*display: block;*/
-}
-
-/* Fix for specific elements */
-body.modal-active .container, body.modal-active .aside, body.modal-active .main, body.modal-active .header, body.modal-active .footer {
-    z-index: 0;
-}
-
-body.modal-active .modal {
-    z-index: 999;
-}
-
-.header, .section, .footer {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    border-radius: var(--border-radius);
     box-sizing: border-box;
 }
 
+.close-btn {
+    color: var(--main-text-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--highlight-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+
+
+
+
+
+
 @media (max-width: 768px) {
-    html, body, .header, .section, .footer {
-        margin: 0;
-        padding: 0;
-    }
-
-    .header, .section, .footer {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        box-sizing: border-box;
-    }  
-
-    .main {
-        min-width: 100%;
-        grid-template-areas:
-            "header"
-            "content";
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
-    }
-
     .container {
         flex-direction: column;
-        width: 100%;
-        padding: 0;
-        margin: 0;
     }
-
-    .aside, .contacts {
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-        border: none;
-    }
-
-    .aside, .main {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .header {
-        order: -1;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .header-text, .logo {
-        /*margin-bottom: 0.5rem;*/
-    }
-
-    .header-text {
-        order: 1;
-    }
-
-    .logo {
+    
+    .aside {
         order: 2;
+        max-width: 100%;
     }
 
-    .info-columns {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        align-items: flex-start;
-    }
-
-    .columns {
-        display: flex;
-        gap: 5px;
-        width: 100%;
-        min-width: 100%;
+    .main {
+        order: 1; /* header і header-text будуть зверху на малих екранах */
     }
 
     .format-container {
         flex-direction: column;
-        margin: 0;
-        width: 100%;
-    }
-
-    .plate-group, .film-column {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .column {
-        flex: 1;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .info-column {
-        min-width: 100%;
-        padding: 0 10px;
-    }
-
-    .info-column p {
-        margin: 0;
+        align-items: center;
     }
     
-    .plate-list, .film-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-
-    .plate-list li, .film-list li {
-        margin: 0; /* Прибрати відступи зліва */
-    }
-
-    .plate-list li:nth-child(even), .film-list li:nth-child(even) {
-        background-color: var(--main-bg-color);
-        color: var(--main-text-color);
-        border-bottom: none;
-    }
-
-    .plate-list li:nth-child(odd), .film-list li:nth-child(odd) {
-        background-color: var(--accent-color);
-        color: var(--main-bg-color);
-        font-weight: bolder;
-        padding: 0;
-        margin: 0;
-    }
-
-    .padded-list {
-        /*padding-left: 1em;*/
-    }
-
-    .contact-columns {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .contact-column {
-        width: 100%;
-    }
-
-    .contact-column form {
-        flex-direction: column;
-        align-items: flex-start;
+    .info-columns, .contacts {
+        align-items: stretch;
     }
 }
