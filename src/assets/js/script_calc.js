@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lengthInput.setAttribute('id', `length${number}`);
     lengthInput.classList.add('length');
     lengthInput.setAttribute('placeholder', 'довжина в мм');
-    lengthInput.setAttribute('min', '50');
+    lengthInput.setAttribute('min', '100');
     lengthInput.setAttribute('max', '1100');
     lengthInput.required = true;
     lengthGroup.appendChild(lengthInput);
