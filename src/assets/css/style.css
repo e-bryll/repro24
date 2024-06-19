@@ -4,22 +4,24 @@
     --add-text-color: #000000;
     --accent-color: #FF6F61;
     --highlight-color: #50ade5;
+    --darker-color: #3871c1;
     --border-radius: 5px;
     --font-family: 'Montserrat';
-    --header-bg-gradient: linear-gradient(to top right, var(--highlight-color), #3871c1);
+    --header-bg-gradient: linear-gradient(to top right, var(--highlight-color), var(--darker-color));
     --font-size-small: 10px;
+    --font-size-medium: 12px;
     --font-size-large: 14px;
 }
     
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
     
 body {
     font-family: var(--font-family);
-    line-height: 1.4;
+    line-height: 1.5;
     font-size: var(--font-size-large);
     color: var(--main-text-color);
     background-color: var(--main-bg-color);
@@ -38,10 +40,12 @@ body {
     
 /* 2 - Блок з калькулятором */
 .aside {
-    /*flex: 1;*/
+    flex: 1;
+    flex-grow: 2;
+    line-height: 1.2;
     max-width: 25%;
     padding: 0;
-    margin: 0 5px;
+    margin: 5px;
     background-color: var(--main-bg-color);
     display: block;
     border: 1px solid var(--accent-color);
@@ -63,6 +67,7 @@ body {
     text-align: center;
     color: var(--add-text-color);
     font-weight: bold;
+    font-size: var(--font-size-large);
 }
     
 .calculationFields {
@@ -92,13 +97,13 @@ body {
     border: 1px solid var(--accent-color);
     border-radius: 3px;
     text-align: left;
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-medium);
     color: #999999; /* Сірий текст за замовчуванням */
 }
 
 .film-field .length::placeholder {
     color: #999999; /* Сірий текст для placeholder */
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-medium);
 }
 
 .film-field select:not(:invalid) {
@@ -123,10 +128,10 @@ body {
 }
     
 .form-label {
-    width: 100%;
+    width: 120%;
     text-align: left;
-    text-wrap: nowrap;
-    font-size: var(--font-size-small);
+    text-wrap: wrap;
+    font-size: var(--font-size-medium);
     margin: 0 2px;
 }
         
@@ -148,7 +153,7 @@ body {
 #buttons-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
     margin: 5px 0;
     justify-content: center;
     align-items: center;
@@ -175,7 +180,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--highlight-color);
+    /*background-color: var(--highlight-color);*/
     color: var(--main-text-color);
 }
     
@@ -226,11 +231,11 @@ button:hover {
     
 /* 6 - Опис в блоці main */
 .header-text {
-    order: 2; /* Після header */
+    order: 2;
     text-align: left;
     color: var(--main-text-color);
     margin: 10px 0;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--highlight-color);
     justify-content: center;
 }
     
@@ -238,19 +243,20 @@ button:hover {
 .header-text p {
     color: var(--main-text-color);
     display: flex;
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding: 10px;
     justify-content: center;
 }
     
 /* 7 - Контейнер для опису форм та плівок */
 .format-container {
-    order: 3; /* Після header-text */
+    order: 3;
     display: flex;
     width: 100%;
     column-gap: 0;
     padding: 0;
     margin: 0;
+    font-size: var(--font-size-medium);
 }
     
 /* 8, 14 - Колонки з описом форматів форм та плівок */
@@ -302,7 +308,7 @@ button:hover {
 /* 13.1, 17.1 - непарний елемент списку форматів форм та плівок */
 .plate-list li:nth-child(odd),
 .film-list li:nth-child(odd) {
-    background-color: var(--accent-color);
+    background-color: var(--highlight-color);
     color: var(--add-text-color);
     font-weight: bolder;
 }
@@ -312,7 +318,7 @@ button:hover {
 .film-list li:nth-child(even) {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--highlight-color);
 }
     
 /* 14 - Колонка з описом форматів плівок */
@@ -331,8 +337,6 @@ button:hover {
     flex-wrap: nowrap;
     padding: 0;
     margin: 0 0 20px 0;
-    /*background-color: var(--accent-color);
-    color: var(--add-text-color);*/
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
     flex-grow: 0.5;
@@ -343,10 +347,10 @@ button:hover {
 .info-columns h1 {
     display: block;
     text-align: center;
+    color: var(--highlight-color);
     font-weight: bold;
     margin: 5px 0;
     padding: 0 10px;
-    font-size: var(--font-size-large);
 }
     
 /* 20 - Об'єднані колонки про вивід форм */
@@ -369,6 +373,8 @@ button:hover {
     margin-bottom: 20px;
     box-sizing: border-box;
     max-width: 90%;
+    font-size: var(--font-size-medium);
+    /*font-weight: bold;*/
 }
 
 /* 22 - Заголовок колонки з інформацією про вивід */
@@ -398,7 +404,7 @@ button:hover {
 /* 24 - Елемент списку з інформацією про вивід */
 .padded-list li {
     position: relative;
-    padding-left: 25px;
+    padding-left: 1rem;
     text-align: left;
     /*font-weight: bolder;*/
 }
@@ -406,8 +412,9 @@ button:hover {
 .padded-list li::before {
     content: '✔';
     position: absolute;
-    left: 10px;
+    left: 0;
     color: var(--highlight-color); /* Колір галочки */
+    font-weight: bold;
 }
 
 /* 25 - Інформаційний блок */
@@ -417,7 +424,7 @@ button:hover {
     margin: 0;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--highlight-color);
 }
 
 /* 25.1 - Заголовок інформаційного блоку */
@@ -487,12 +494,12 @@ button:hover {
     right: 4rem;
     padding: 2px;
     background-color: var(--highlight-color);
-    color: var(--main-text-color);
+    color: var(--add-text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     white-space: nowrap;
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-medium);
     z-index: 1000;
     display: none; /* Приховати кнопку за замовчуванням */
 }
@@ -502,8 +509,8 @@ button:hover {
 }
 
 .floating-button:hover {
-    background-color: var(--accent-color);
-    color: var(--add-text-color);
+    /*background-color: var(--highlight-color);*/
+    color: var(--main-text-color);
 }
 
 /* 30 - Блок футера */
@@ -529,22 +536,22 @@ button:hover {
     text-align: center;
     color: var(--main-text-color);
     background: repeating-linear-gradient(to right,
-        rgba(0, 255, 255, 1) 0rem, rgba(0, 255, 255, 1) 1rem, 
-        rgba(255, 0, 255, 1) 1rem, rgba(255, 0, 255, 1) 2rem, 
-        rgba(255, 255, 0, 1) 2rem, rgba(255, 255, 0, 1) 3rem, 
-        rgba(0, 0, 0, 1) 3rem, rgba(0, 0, 0, 1) 4rem,
-        rgba(0, 255, 255, 0.75) 4rem, rgba(0, 255, 255, 0.75) 5rem, 
-        rgba(255, 0, 255, 0.75) 5rem, rgba(255, 0, 255, 0.75) 6rem, 
-        rgba(255, 255, 0, 0.75) 6rem, rgba(255, 255, 0, 0.75) 7rem, 
-        rgba(0, 0, 0, 0.75) 7rem, rgba(0, 0, 0, 0.75) 8rem,
-        rgba(0, 255, 255, 0.5) 8rem, rgba(0, 255, 255, 0.5) 9rem, 
-        rgba(255, 0, 255, 0.5) 9rem, rgba(255, 0, 255, 0.5) 10rem, 
-        rgba(255, 255, 0, 0.5) 10rem, rgba(255, 255, 0, 0.5) 11rem, 
-        rgba(0, 0, 0, 0.5) 11rem, rgba(0, 0, 0, 0.5) 12rem,
-        rgba(0, 255, 255, 0.25) 12rem, rgba(0, 255, 255, 0.25) 13rem, 
-        rgba(255, 0, 255, 0.25) 13rem, rgba(255, 0, 255, 0.25) 14rem, 
-        rgba(255, 255, 0, 0.25) 14rem, rgba(255, 255, 0, 0.25) 15rem, 
-        rgba(0, 0, 0, 0.25) 15rem, rgba(0, 0, 0, 0.25) 16rem);
+        rgba(0, 255, 255, 1) 0rem, rgba(0, 255, 255, 1) 1.5rem, 
+        rgba(255, 0, 255, 1) 1.5rem, rgba(255, 0, 255, 1) 3rem, 
+        rgba(255, 255, 0, 1) 3rem, rgba(255, 255, 0, 1) 4.5rem, 
+        rgba(0, 0, 0, 1) 4.5rem, rgba(0, 0, 0, 1) 6rem,
+        rgba(0, 255, 255, 0.75) 6rem, rgba(0, 255, 255, 0.75) 7.5rem, 
+        rgba(255, 0, 255, 0.75) 7.5rem, rgba(255, 0, 255, 0.75) 9rem, 
+        rgba(255, 255, 0, 0.75) 9rem, rgba(255, 255, 0, 0.75) 10.5rem,
+        rgba(0, 0, 0, 0.75) 10.5rem, rgba(0, 0, 0, 0.75) 12rem,
+        rgba(0, 255, 255, 0.5) 12rem, rgba(0, 255, 255, 0.5) 13.5rem, 
+        rgba(255, 0, 255, 0.5) 13.5rem, rgba(255, 0, 255, 0.5) 15rem,
+        rgba(255, 255, 0, 0.5) 15rem, rgba(255, 255, 0, 0.5) 16.5rem, 
+        rgba(0, 0, 0, 0.5) 16.5rem, rgba(0, 0, 0, 0.5) 18rem,
+        rgba(0, 255, 255, 0.25) 18rem, rgba(0, 255, 255, 0.25) 19.5rem, 
+        rgba(255, 0, 255, 0.25) 19.5rem, rgba(255, 0, 255, 0.25) 21rem,
+        rgba(255, 255, 0, 0.25) 21rem, rgba(255, 255, 0, 0.25) 22.5rem, 
+        rgba(0, 0, 0, 0.25) 22.5rem, rgba(0, 0, 0, 0.25) 24rem);
 }
 
 /* 32.1 - текст у блоці футера */
@@ -558,6 +565,50 @@ button:hover {
     max-width: 40px;
     height: auto;
     vertical-align: middle;
+}
+
+/* 34 - Додатковий блок з інформацією */
+.table-block {
+    order: 7;
+    flex: 1;
+    flex-grow: 1;
+    line-height: 1;
+    width: 100%;
+    padding: 0;
+    margin: 1rem 5px;
+    background-color: var(--main-bg-color);
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.table-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+    
+.table-header p {
+    text-align: center;
+    color: var(--highlight-color);
+    font-weight: bold;
+    font-size: var(--font-size-small);
+}
+
+table {
+    width: auto; /* Змінено з 100% на auto */
+    max-width: 80%; /* Додано max-width для обмеження ширини таблиці */
+    margin: 0 0; /* Додано для центрування таблиці */
+    border-collapse: collapse;
+    color: var(--highlight-color);
+    font-size: var(--font-size-small);
+}
+
+th, td {
+    border: none;
+    padding: 2px;
+    text-align: center;
 }
 
 /* 33 - Вікно форми */
@@ -583,7 +634,7 @@ button:hover {
     padding: 0.5rem 1rem;
     width: 80%;
     max-width: 400px;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--highlight-color);
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
@@ -593,19 +644,23 @@ button:hover {
 }
 
 .modal-content label {
-    font-weight: bold;
+    color: var(--highlight-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size-large);
 }
 
 .modal-content input,
 .modal-content textarea {
-    line-height: 2rem;
+    line-height: 1.5rem;
     width: 100%;
     padding: 0;
     margin: 0;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--highlight-color);
     border-radius: var(--border-radius);
     background-color: var(--main-bg-color);
     color: #FFFFFF;
+    font-family: var(--font-family);
+    font-size: var(--font-size-large);
 }
 
 .modal-content textarea {
@@ -615,19 +670,18 @@ button:hover {
 .modal-content button {
     padding: 2px;
     align-self: center;
-    background-color: var(--accent-color);
-    color: var(--add-text-color);
     text-wrap: nowrap;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: var(--font-size-small);
+    background-color: var(--highlight-color);
+    color: var(--add-text-color);
+    font-size: var(--font-size-medium);
     max-width: 100%;
 }
 
 .modal-content button:hover {
-    background-color: var(--highlight-color);
+    /*background-color: var(--highlight-color);*/
     color: var(--main-text-color);
 }
 
@@ -784,7 +838,7 @@ button:hover {
     }
 
     .cmyk-footer {
-        text-align: left;
+        /*text-align: left;*/
         padding-left: 10px;
     }
 
