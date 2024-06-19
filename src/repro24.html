@@ -21,7 +21,7 @@
             <div class="aside-header"> <!-- 2.1 - Заголовок блоку з калькулятором -->
                 <p>Калькулятор вартості плівки</p>
             </div>
-            <form class="calculationFields" aria-label="Калькулятор вартості плівки">
+            <form class="calculationFields" aria-label="Калькулятор вартості плівки" novalidate>
                 <div id="film-fields-container">
                     <div class="film-field">
                         <div class="form-group">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label for="length1" class="form-label">Довжина плівки 1:</label>
-                            <input type="number" id="length1" class="length" placeholder="довжина в мм" min="50" max="1100" required>
+                            <input type="number" id="length1" class="length" placeholder="довжина в мм" min="100" max="1100" aria-label="Довжина плівки 1" required>
                         </div>
                         <div class="form-group">
                             <label for="quantity1" class="form-label">Кількість:</label>
@@ -150,7 +150,7 @@
             <div class="contacts"> <!-- 26 - Блок з контактною інформацією -->
                 <div class="contact-columns"> <!-- 27 - Об'єднані колонки з інформацією -->
                     <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією -->
-                        <p>Графік роботи:<br>ПН - ПТ: 09<sup class="sup">00</sup> — 18<sup class="sup">00</sup><br>СБ, НД — вихідний</p>
+                        <p>Графік роботи:<br>ПН - ПТ: 09<sup class="sup">00</sup> - 18<sup class="sup">00</sup><br>СБ, НД: вихідний</p>
                     </div>
                     <div class="contact-column"> <!-- 28 - Окрема колонка з інформацією -->
                         <p>Наша адреса:<br>вул. Шахтарська, 9Г<br>м. Київ, 04074</p>
@@ -163,10 +163,10 @@
                 </div>                
             </div>
 
+            <!-- Плаваюча кнопка зворотнього зв'язку -->
+            <button id="toggleFormButton" class="floating-button" aria-label="Написати нам">Написати нам</button>
+
             <div class="connection"> <!-- 29 - Форма зворотнього зв'язку -->
-                <div class="center-content">
-                    <button id="toggleFormButton" aria-label="Написати нам">Написати нам</button>
-                </div>
                 <form action="#" method="post" aria-label="Контактна форма" id="contactForm">
                     <div id="form-modal" class="modal">
                         <div class="modal-content">
@@ -189,6 +189,7 @@
                     </div>
                 </form>
             </div>
+
 
         </div>
     </div>

@@ -6,6 +6,23 @@ const form = document.querySelector('#contactForm');
 
 const openFormModalBtn = document.querySelector('#toggleFormButton');
 const closeBtns = document.querySelectorAll('.close-btn');
+const connectionDiv = document.querySelector('.connection');
+
+// Показати кнопку зворотнього зв'язку при наведенні миші на нижню частину екрану
+document.addEventListener('mousemove', (event) => {
+    const windowHeight = window.innerHeight;
+    const mouseY = event.clientY;
+
+    if (mouseY > windowHeight - 100) {
+        if (openFormModalBtn) {
+            openFormModalBtn.classList.add('visible');
+        }
+    } else {
+        if (openFormModalBtn) {
+            openFormModalBtn.classList.remove('visible');
+        }
+    }
+});
 
 // Open form modal
 if (openFormModalBtn) {
@@ -13,6 +30,9 @@ if (openFormModalBtn) {
         console.log('Open Form Modal Button Clicked');
         formModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
         console.log('Form Modal State:', formModal.classList);
+        if (connectionDiv) {
+            connectionDiv.style.display = 'block'; // Show connection form container
+        }
     });
 }
 
@@ -24,6 +44,9 @@ closeBtns.forEach((btn) => {
         successModal.classList.remove(MODAL_ACTIVE_CLASS_NAME);
         console.log('Form Modal State:', formModal.classList);
         console.log('Success Modal State:', successModal.classList);
+        if (connectionDiv) {
+            connectionDiv.style.display = 'none'; // Hide connection form container
+        }
     });
 });
 

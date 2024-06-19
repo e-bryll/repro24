@@ -1,13 +1,14 @@
 :root {
     --main-bg-color: #111111;
     --main-text-color: #FFFFFF;
+    --add-text-color: #000000;
     --accent-color: #FF6F61;
     --highlight-color: #50ade5;
     --border-radius: 5px;
     --font-family: 'Montserrat';
     --header-bg-gradient: linear-gradient(to top right, var(--highlight-color), #3871c1);
-    --font-size-small: 12px;
-    --font-size-large: 16px;
+    --font-size-small: 10px;
+    --font-size-large: 14px;
 }
     
 html, body {
@@ -37,7 +38,7 @@ body {
     
 /* 2 - Блок з калькулятором */
 .aside {
-    flex: 1;
+    /*flex: 1;*/
     max-width: 25%;
     padding: 0;
     margin: 0 5px;
@@ -60,7 +61,7 @@ body {
     
 .aside-header p {
     text-align: center;
-    color: var(--main-bg-color);
+    color: var(--add-text-color);
     font-weight: bold;
 }
     
@@ -83,7 +84,7 @@ body {
 /* Поля введення та вибору */
 .film-field input,
 .film-field select {
-    width: 110%;
+    width: 100%;
     height: 1.25rem;
     line-height: 1.25rem;
     box-sizing: border-box;
@@ -122,8 +123,10 @@ body {
 }
     
 .form-label {
-    width: 90%;
+    width: 100%;
     text-align: left;
+    text-wrap: nowrap;
+    font-size: var(--font-size-small);
     margin: 0 2px;
 }
         
@@ -173,6 +176,7 @@ button {
 
 button:hover {
     background-color: var(--highlight-color);
+    color: var(--main-text-color);
 }
     
 /* 3 - Основний блок */
@@ -299,7 +303,7 @@ button:hover {
 .plate-list li:nth-child(odd),
 .film-list li:nth-child(odd) {
     background-color: var(--accent-color);
-    color: var(--main-bg-color);
+    color: var(--add-text-color);
     font-weight: bolder;
 }
 
@@ -327,8 +331,10 @@ button:hover {
     flex-wrap: nowrap;
     padding: 0;
     margin: 0 0 20px 0;
-    background-color: var(--accent-color);
-    color: var(--main-bg-color);
+    /*background-color: var(--accent-color);
+    color: var(--add-text-color);*/
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
     flex-grow: 0.5;
     row-gap: 5px;
 }
@@ -470,44 +476,34 @@ button:hover {
 }
 
 /* 29 - Форма зворотнього зв'язку */
-/*.connection {
-    order: 10;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 50px;
-    margin-top: -50px;
-    width: 100%;
-    box-sizing: border-box;
-    max-height: 20px;
-    z-index: 100;
-}*/
 .connection {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+    display: none;
 }
 
-#toggleFormButton {
+/* Плаваюча кнопка зворотнього зв'язку */
+.floating-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 4rem;
     padding: 2px;
-    background-color: var(--accent-color);
+    background-color: var(--highlight-color);
     color: var(--main-text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     white-space: nowrap;
-    font-weight: bold;
     font-size: var(--font-size-small);
-    max-width: 100%;
-    box-sizing: border-box;
+    z-index: 1000;
+    display: none; /* Приховати кнопку за замовчуванням */
 }
 
-#toggleFormButton:hover {
-    background-color: var(--highlight-color);
+.floating-button.visible {
+    display: block; /* Показати кнопку, коли додано клас visible */
+}
+
+.floating-button:hover {
+    background-color: var(--accent-color);
+    color: var(--add-text-color);
 }
 
 /* 30 - Блок футера */
@@ -516,7 +512,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     min-height: 20px;
-    padding-top: 2px;
+    padding: 0;
 }
 
 /* 31 - Колір блоку футера */
@@ -530,8 +526,6 @@ button:hover {
 /* 32 - заливка футера */
 .cmyk-footer {
     min-height: 1rem;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     color: var(--main-text-color);
     background: repeating-linear-gradient(to right,
@@ -622,7 +616,7 @@ button:hover {
     padding: 2px;
     align-self: center;
     background-color: var(--accent-color);
-    color: var(--main-bg-color);
+    color: var(--add-text-color);
     text-wrap: nowrap;
     border: none;
     border-radius: 4px;
@@ -634,6 +628,7 @@ button:hover {
 
 .modal-content button:hover {
     background-color: var(--highlight-color);
+    color: var(--main-text-color);
 }
 
 .close-btn {
@@ -674,8 +669,13 @@ button:hover {
         order: 2;
         max-width: 100%;
         overflow-x: hidden;
+        margin-bottom: 2rem;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0; /* Встановлюємо верхню позицію для липкого елементу */
+        z-index: 1;
     }
-    
+
     .main {
         order: 1;
         min-width: 100%;
@@ -745,14 +745,15 @@ button:hover {
     }
     
     .contacts {
-        flex-direction: column;
-        width: 100%;
+        width: 90%;
         padding: 0;
         margin: 0;
     }
 
     .contact-columns {
         flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
     }
 
     .connection {
@@ -780,6 +781,11 @@ button:hover {
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
+
+    .cmyk-footer {
+        text-align: left;
+        padding-left: 10px;
     }
 
 }
