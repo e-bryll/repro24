@@ -570,16 +570,19 @@ button:hover {
 /* 34 - Додатковий блок з інформацією */
 .table-block {
     order: 7;
+    justify-content: left;
+    align-items: left;
     flex: 1;
     flex-grow: 1;
-    line-height: 1;
+    line-height: 1.25;
     width: 100%;
     padding: 0;
     margin: 1rem 5px;
     background-color: var(--main-bg-color);
-    display: block;
+    display: flexbox;
     box-sizing: border-box;
-    overflow: hidden;
+    /*overflow-x: auto; /* Змінено overflow: hidden на overflow-x: auto */
+    max-height: 80vh;
 }
 
 .table-header {
@@ -599,16 +602,20 @@ button:hover {
 table {
     width: auto; /* Змінено з 100% на auto */
     max-width: 80%; /* Додано max-width для обмеження ширини таблиці */
-    margin: 0 0; /* Додано для центрування таблиці */
+    margin: 0 auto; /* Додано для центрування таблиці */
     border-collapse: collapse;
     color: var(--highlight-color);
     font-size: var(--font-size-small);
+    overflow-x: auto;
 }
 
 th, td {
     border: none;
-    padding: 2px;
+    /*border: 0.5px solid var(--highlight-color);*/
+    padding: 3px 5px 0 5px;
     text-align: center;
+    align-items: center;
+    justify-items: center;
 }
 
 /* 33 - Вікно форми */
@@ -726,7 +733,8 @@ th, td {
         margin-bottom: 2rem;
         position: -webkit-sticky; /* Safari */
         position: sticky;
-        top: 0; /* Встановлюємо верхню позицію для липкого елементу */
+        /*top: 0; /* Встановлюємо верхню позицію для липкого елементу */
+        bottom: 0;
         z-index: 1;
     }
 
@@ -743,7 +751,7 @@ th, td {
     }
 
     .header-text {
-        border-bottom: 1px solid var(--accent-color);
+        border-bottom: 1px solid var(--highlight-color);
     }
 
     .format-container {
@@ -751,7 +759,7 @@ th, td {
         padding: 0;
         margin-bottom: 10px;
         width: 100%;
-        border-bottom: 1px solid var(--accent-color);
+        border-bottom: 1px solid var(--highlight-color);
     }
 
     .plate-group, .film-column {
@@ -835,6 +843,17 @@ th, td {
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
+
+    .floating-button {
+        /*position: relative;*/
+        order: 100;
+        bottom: 1.5rem;
+        right: 0.25rem;
+        padding: 2px;
+        white-space: nowrap;
+        z-index: 1000;
+        display: block;
     }
 
     .cmyk-footer {
