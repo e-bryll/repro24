@@ -262,7 +262,8 @@
             <!-- </div> -->
 
             <div class="connection"> <!-- 29 - Форма зворотнього зв'язку -->
-                <form action="#" method="post" aria-label="Контактна форма" id="contactForm" netlify>
+                <form action="#" name="contact" method="POST" aria-label="Контактна форма" id="contactForm" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
                     <div id="form-modal" class="modal">
                         <div class="modal-content">
                             <span class="close-btn">×</span>
