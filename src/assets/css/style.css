@@ -41,14 +41,14 @@ body {
 /* 1.2 - Бічна секція */
 .aside {
     display: flex;
-    flex: 1;
-    flex-grow: 1;
+    /*flex: 1;
+    flex-grow: 1;*/
     flex-direction: column;
     justify-content: space-between; /* Розподіл елементів по вертикалі */
     height: 100%; /*100vh; /* Займає всю висоту екрану */
     max-width: 25%;
     padding: 0;
-    margin: 0 5px;
+    margin-right: 5px;
     background-color: var(--main-bg-color);
     box-sizing: border-box;
     overflow: hidden;
@@ -56,18 +56,19 @@ body {
 
 /* 34 - Таблиця з інформацією */
 .table-block {
-    order: 7;
     width: 100%;
     padding: 0;
+    display: flex;
+    flex: 1;
     justify-content: center;
     /*margin: 1rem 5px 0 5px;*/
     /*background-color: var(--main-bg-color);*/
     display: block;
     box-sizing: border-box;
-    max-height: 80vh;
+    /*max-height: 80vh;*/
     position: sticky;
-    bottom: 0; /* Прикріплює таблицю до нижньої частини */
-    margin-top: auto; /* Відсуває таблицю вниз */
+    margin: auto 0 0 0;
+    bottom: 0;
 }
 
 .table-header p {
@@ -81,8 +82,9 @@ body {
 
 table {
     width: auto;
-    max-width: 100%;
+    min-width: 90%;
     margin: 0;
+    justify-content: center;
     border-collapse: collapse;
     color: var(--highlight-color);
     font-size: var(--font-size-medium);
@@ -97,12 +99,12 @@ th, td {
 
 /* 2 - Блок з калькулятором */
 .calc {
-    flex: 1;
+    flex: 2;
     flex-grow: 1;
     line-height: 1.25;
     width: 100%;
     height: 100%;
-    padding: 0;
+    padding: 2px;
     margin: 0;
     background-color: var(--main-bg-color);
     display: block;
@@ -195,7 +197,7 @@ th, td {
 .form-label {
     width: 100%;
     text-align: left;
-    text-wrap: nowrap;
+    text-wrap: wrap;
     font-size: var(--font-size-medium);
     margin: 0 2px;
 }
@@ -220,9 +222,9 @@ th, td {
 #buttons-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    /*gap: 10px;*/
     margin: 5px 0;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
@@ -787,17 +789,23 @@ button:hover {
     }
     
     .calc {
-        /*order: 1;*/
+        order: 70;
         max-width: 100%;
         overflow-x: hidden;
         min-height: 100vh;
         margin-bottom: 1rem;
         position: -webkit-sticky; /* Safari */
         position: sticky;
-        top: 0; /* Встановлюємо верхню позицію для липкого елементу */
+        margin-top: auto;
         bottom: 0;
-        /*z-index: 1;*/
     }
+
+    table{
+        order: 7;
+        min-height: 100vh;
+        min-width: 100%;
+    }
+
 
     .main {
         order: 1;
@@ -895,16 +903,6 @@ button:hover {
         font-size: 0.9rem; /* Зменшений розмір шрифту для малих екранів */
         padding: 8px; /* Зменшені внутрішні відступи */
     }
-
-    #buttons-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin: 5px 0;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
     
     .floating-button {
         position: fixed; /*absolute; /* Закріплення кнопки в межах контейнера */
@@ -921,7 +919,7 @@ button:hover {
     }
 
     .table-header p,
-    table,
+    /*table,*/
     .table-block {
         text-align: center;
         margin: 0 auto;
