@@ -41,11 +41,11 @@ body {
 /* 1.2 - Бічна секція */
 .aside {
     display: flex;
-    /*flex: 1;
-    flex-grow: 2;*/
+    flex: 1;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: space-between; /* Розподіл елементів по вертикалі */
-    height: 100vh; /* Займає всю висоту екрану */
+    height: 100%; /*100vh; /* Займає всю висоту екрану */
     max-width: 25%;
     padding: 0;
     margin: 0 5px;
@@ -59,7 +59,8 @@ body {
     order: 7;
     width: 100%;
     padding: 0;
-    margin: 1rem 5px 0 5px;
+    justify-content: center;
+    /*margin: 1rem 5px 0 5px;*/
     /*background-color: var(--main-bg-color);*/
     display: block;
     box-sizing: border-box;
@@ -97,8 +98,8 @@ th, td {
 /* 2 - Блок з калькулятором */
 .calc {
     flex: 1;
-    /*flex-grow: 1;*/
-    line-height: 1;
+    flex-grow: 1;
+    line-height: 1.25;
     width: 100%;
     height: 100%;
     padding: 0;
@@ -132,6 +133,7 @@ th, td {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: #FF6F61;
 }
     
 .film-field {
@@ -146,7 +148,7 @@ th, td {
 /* Поля введення та вибору */
 .film-field input,
 .film-field select {
-    width: 100%;
+    width: 120%;
     height: 1.25rem;
     line-height: 1.25rem;
     box-sizing: border-box;
@@ -156,26 +158,32 @@ th, td {
     text-align: left;
     font-size: var(--font-size-medium);
     color: #999999; /* Сірий текст за замовчуванням */
+    padding-left: 2px;
 }
 
 .film-field .length::placeholder {
     color: #999999; /* Сірий текст для placeholder */
     font-size: var(--font-size-medium);
+    padding-left: 2px;
 }
 
 .film-field select:not(:invalid) {
     color: #FFFFFF; /* Білий текст після вибору значення */
+    padding-left: 2px;
 }
 
 .film-field input:not([value=""]) {
     color: #FFFFFF;
+    padding-left: 2px;
 }
 .film-field .length:not(:placeholder-shown) {
     color: #FFFFFF;
+    padding-left: 2px;
 }
 
 .film-field .length:not([value=""]) {
     color: #FFFFFF;
+    padding-left: 2px;
 }
 
 .form-group {
@@ -185,9 +193,9 @@ th, td {
 }
     
 .form-label {
-    width: 120%;
+    width: 100%;
     text-align: left;
-    text-wrap: wrap;
+    text-wrap: nowrap;
     font-size: var(--font-size-medium);
     margin: 0 2px;
 }
@@ -200,6 +208,7 @@ th, td {
     margin: 2px 0;
     border-top: 1px solid var(--accent-color);
     border-bottom: 1px solid var(--accent-color);
+    color: var(--main-text-color);
     display: none; /* Приховуємо результат за замовчуванням */
 }
 
@@ -324,7 +333,7 @@ button:hover {
     justify-content: flex-end;
     align-items: center;
     flex: 4;
-    margin-bottom: 5px;
+    /*margin-bottom: 50px;*/
     padding: 0;
 }
     
@@ -394,8 +403,9 @@ button:hover {
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 20px 0;
     background-color: var(--main-bg-color);
+    /*border-top: 2px solid var(--highlight-color);*/
     color: var(--main-text-color);
     flex-grow: 0.5;
     row-gap: 5px;
@@ -482,8 +492,8 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 10px;
-    margin-bottom: 20px;
+    padding: 20px 10px 0 10px;
+    margin: 0;
     box-sizing: border-box;
     max-width: 100%;
     font-size: var(--font-size-medium);
@@ -499,7 +509,7 @@ button:hover {
     text-align: left;
     font-weight: bold;
     font-size: var(--font-size-large);
-    /*margin: 10px 0;*/
+    margin: 5px 0;
 }
 
 /* 25.2 - Текст інформаційного блоку */
@@ -674,7 +684,7 @@ button:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .modal-content {
@@ -695,13 +705,13 @@ button:hover {
 .modal-content label {
     color: var(--highlight-color);
     font-family: var(--font-family);
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-medium);
 }
 
 .modal-content input,
 .modal-content textarea {
     line-height: 1.5rem;
-    width: 100%;
+    min-width: 90%;
     padding: 0;
     margin: 0;
     border: 1px solid var(--highlight-color);
@@ -772,7 +782,7 @@ button:hover {
         order: 2;
         max-width: 100%;
         overflow-x: hidden;
-        margin-bottom: 0;
+        margin: 0 0 5px 0;
         /*z-index: 1;*/
     }
     
@@ -781,7 +791,7 @@ button:hover {
         max-width: 100%;
         overflow-x: hidden;
         min-height: 100vh;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         position: -webkit-sticky; /* Safari */
         position: sticky;
         top: 0; /* Встановлюємо верхню позицію для липкого елементу */
@@ -898,7 +908,7 @@ button:hover {
     
     .floating-button {
         position: fixed; /*absolute; /* Закріплення кнопки в межах контейнера */
-        bottom: 1.5rem;
+        bottom: 0.1rem;
         right: 0.25rem;
         padding: 2px;
         white-space: nowrap;
@@ -906,12 +916,13 @@ button:hover {
     }
 
     .cmyk-footer {
-        /*text-align: left;*/
+        text-align: left;
         padding-left: 10px;
     }
 
     .table-header p,
-    table {
+    table,
+    .table-block {
         text-align: center;
         margin: 0 auto;
         font-size: var(--font-size-small);

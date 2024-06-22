@@ -8,7 +8,7 @@ const openFormModalBtn = document.querySelector('#toggleFormButton');
 const closeBtns = document.querySelectorAll('.close-btn');
 const connectionDiv = document.querySelector('.connection');
 
-// Показати кнопку зворотнього зв'язку при наведенні миші на нижню частину екрану
+// Show feedback button when mouse is at the bottom of the screen
 document.addEventListener('mousemove', (event) => {
     const windowHeight = window.innerHeight;
     const mouseY = event.clientY;
@@ -27,11 +27,9 @@ document.addEventListener('mousemove', (event) => {
 // Open form modal
 if (openFormModalBtn) {
     openFormModalBtn.addEventListener('click', () => {
-        console.log('Open Form Modal Button Clicked');
         formModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
-        console.log('Form Modal State:', formModal.classList);
         if (connectionDiv) {
-            connectionDiv.style.display = 'block'; // Show connection form container
+            connectionDiv.style.display = 'block';
         }
     });
 }
@@ -39,14 +37,12 @@ if (openFormModalBtn) {
 // Close modals
 closeBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-        console.log('Close Button Clicked');
         formModal.classList.remove(MODAL_ACTIVE_CLASS_NAME);
         successModal.classList.remove(MODAL_ACTIVE_CLASS_NAME);
-        console.log('Form Modal State:', formModal.classList);
-        console.log('Success Modal State:', successModal.classList);
         if (connectionDiv) {
-            connectionDiv.style.display = 'none'; // Hide connection form container
+            connectionDiv.style.display = 'none';
         }
+        clearFormFields(); // Clear form fields when the modal is closed
     });
 });
 
@@ -54,7 +50,6 @@ closeBtns.forEach((btn) => {
 if (form) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log('Form Submitted');
         const formData = new FormData(form);
 
         fetch('/', {
@@ -63,13 +58,12 @@ if (form) {
             body: new URLSearchParams(formData).toString(),
         })
         .then(() => {
-            console.log('Form Submission Successful');
             formModal.classList.remove(MODAL_ACTIVE_CLASS_NAME);
             successModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
             setTimeout(() => {
                 successModal.classList.remove(MODAL_ACTIVE_CLASS_NAME);
             }, 2000);
-            clearFormFields();
+            clearFormFields(); // Clear form fields after successful submission
         })
         .catch((error) => console.log('Sending form failed', error));
     });
