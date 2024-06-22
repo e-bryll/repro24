@@ -17,41 +17,119 @@
 <body>
     
     <div class="container"> <!-- 1 - Контейнер для усіх елементів, крім футеру -->
-        <aside class="aside"> <!-- 2 - Блок з калькулятором -->
-            <div class="aside-header"> <!-- 2.1 - Заголовок блоку з калькулятором -->
-                <p>Калькулятор вартості плівки</p>
-            </div>
-            <form class="calculationFields" aria-label="Калькулятор вартості плівки" novalidate>
-                <div id="film-fields-container">
-                    <div class="film-field">
-                        <div class="form-group">
-                            <label for="film-width1" class="form-label">Ширина рулону:</label>
-                            <select id="film-width1" class="film-width" aria-label="Ширина плівки" required>
-                                <option value="">виберіть</option>
-                                <option value="457">457</option>
-                                <option value="724">724</option>
-                                <option value="762">762</option>
-                                <option value="914">914</option>
-                            </select>
+        
+        <aside class="aside"> <!-- 1.2 - Бічна секція -->
+            <div class="calc"> <!-- 2 - Блок з калькулятором -->
+                <div class="calc-header"> <!-- 2.1 - Заголовок блоку з калькулятором -->
+                    <p>Калькулятор вартості плівки</p>
+                </div>
+                <form class="calculationFields" aria-label="Калькулятор вартості плівки" novalidate>
+                    <div id="film-fields-container">
+                        <div class="film-field">
+                            <div class="form-group">
+                                <label for="film-width1" class="form-label">Ширина рулону:</label>
+                                <select id="film-width1" class="film-width" aria-label="Ширина плівки" required>
+                                    <option value="">виберіть</option>
+                                    <option value="457">457</option>
+                                    <option value="724">724</option>
+                                    <option value="762">762</option>
+                                    <option value="914">914</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="length1" class="form-label">Довжина плівки 1:</label>
+                                <input type="number" id="length1" class="length" placeholder="довжина в мм" min="100" max="1100" aria-label="Довжина плівки 1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity1" class="form-label">Кількість:</label>
+                                <input type="number" id="quantity1" class="quantity" value="1" min="1" required>
+                            </div>
+                            <div class="result" id="result1"></div>
                         </div>
-                        <div class="form-group">
-                            <label for="length1" class="form-label">Довжина плівки 1:</label>
-                            <input type="number" id="length1" class="length" placeholder="довжина в мм" min="100" max="1100" aria-label="Довжина плівки 1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity1" class="form-label">Кількість:</label>
-                            <input type="number" id="quantity1" class="quantity" value="1" min="1" required>
-                        </div>
-                        <div class="result" id="result1"></div>
                     </div>
+                    <div id="buttons-container" class="center-content">
+                        <button type="button" id="addFilm" aria-label="Додати плівку">Додати плівку</button>
+                        <button type="button" id="calculate" aria-label="Розрахувати">Розрахувати</button>
+                        <button type="button" id="resetButton" aria-label="Скинути">Скинути</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="table-block"> <!-- 34 - Таблиця з інформацією -->
+                <div class="table-header">
+                    <p>Години роботи відповідно до графіка відключень:</p>
                 </div>
-                <div id="buttons-container" class="center-content">
-                    <button type="button" id="addFilm" aria-label="Додати плівку">Додати плівку</button>
-                    <button type="button" id="calculate" aria-label="Розрахувати">Розрахувати</button>
-                    <button type="button" id="resetButton" aria-label="Скинути">Скинути</button>
-                </div>
-            </form>
-        </aside>        
+                <table>
+                    <tbody>
+                        <tr>
+                                <td>пн</td>
+                                <td></td>
+                                <td>10<sup class="sup">00</sup></td>
+                                <td>11<sup class="sup">00</sup></td>
+                                <td>12<sup class="sup">00</sup></td>
+                                <td>13<sup class="sup">00</sup></td>
+                                <td>14<sup class="sup">00</sup></td>
+                                <td>15<sup class="sup">00</sup></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>вт</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>12<sup class="sup">00</sup></td>
+                                <td>13<sup class="sup">00</sup></td>
+                                <td>14<sup class="sup">00</sup></td>
+                                <td>15<sup class="sup">00</sup></td>
+                                <td>16<sup class="sup">00</sup></td>
+                                <td>17<sup class="sup">00</sup></td>
+                                <td>18<sup class="sup">00</sup></td>
+                        </tr>
+                        <tr>
+                                <td>ср</td>
+                                <td>9<sup class="sup">00</sup></td>
+                                <td>10<sup class="sup">00</sup></td>
+                                <td>11<sup class="sup">00</sup></td>
+                                <td>12<sup class="sup">00</sup></td>
+                                <td></td>
+                                <td></td>
+                                <td>15<sup class="sup">00</sup></td>
+                                <td>16<sup class="sup">00</sup></td>
+                                <td>17<sup class="sup">00</sup></td>
+                                <td>18<sup class="sup">00</sup></td>
+                        </tr>
+                        <tr>
+                                <td>чт</td>
+                                <td></td>
+                                <td>10<sup class="sup">00</sup></td>
+                                <td>11<sup class="sup">00</sup></td>
+                                <td>12<sup class="sup">00</sup></td>
+                                <td>13<sup class="sup">00</sup></td>
+                                <td>14<sup class="sup">00</sup></td>
+                                <td>15<sup class="sup">00</sup></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>пт</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>12<sup class="sup">00</sup></td>
+                                <td>13<sup class="sup">00</sup></td>
+                                <td>14<sup class="sup">00</sup></td>
+                                <td>15<sup class="sup">00</sup></td>
+                                <td>16<sup class="sup">00</sup></td>
+                                <td>17<sup class="sup">00</sup></td>
+                                <td>18<sup class="sup">00</sup></td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+        </aside>
         
         <div class="main"> <!-- 3 - Основний блок -->
             <header class="header"> <!-- 4 - Основний хедер в блоці main -->
@@ -142,8 +220,23 @@
                     </ul>
                 </div>
                 <div class="info-columns-text"> <!-- 25 - Інформаційний блок -->
-                    <h2></h2> <!-- 25.1 - Заголовок інформаційного блоку /* Змінити при додаванні інформації */ -->
-                    <p></p> <!-- 25.2 - Текст інформаційного блоку /* Змінити при додаванні інформації */ -->
+                    <h1>Вимоги до макетів:</h1> <!-- 25.1 - Заголовок інформаційного блоку -->
+                    <ul class="padded-list"> <!-- 25.2 - Текст інформаційного блоку -->
+                        <li>розмір документу має дорівнювати формату готової продукції, для файлів у форматі pdf цей розмір може бути більшим на величину вильотів (мінімум 2 мм)</li>
+                        <li>важливі елементи верстки (текст, графічні елементи) мають відступати від лінії різу не менш, ніж на 4 мм</li>
+                        <li>масштаб макету має бути 1:1</li>
+                        <li>мінімальна товщина ліній у макеті:
+                            <ul class="sub-ul">
+                                <li class="sub-ul li">0,2 pt - 100%, без растру,</li>
+                                <li>0,5 pt - растрові лінії</li>
+                            </ul>
+                        </li>
+                        <li>всі кольори елементів мають мати тип process</li>
+                        <li>роздільна здатність імпортованих зображень 300 dpi</li>
+                        <li>насичений чорний колір повинен мати такі значення тріади:<br>С=40%, М=40%, Y=40%, К=100%</li>
+                        <li>сумарна кількість тріадних фарб не повинна перевищувати 300% в одному елементі</li>
+                        <li>якщо в макеті передбачені технічні елементи (висічка, тиснення, перфорація та ін.), вони мають бути позначені окремим кольором spotcolor з використанням опції overprint</li>
+                    </ul>
                 </div>
             </div>                
                 
@@ -164,7 +257,9 @@
             </div>
 
             <!-- Плаваюча кнопка зворотнього зв'язку -->
-            <button id="toggleFormButton" class="floating-button" aria-label="Написати нам">Написати нам</button>
+            <!-- <div class="floating-container"> -->
+                <button id="toggleFormButton" class="floating-button" aria-label="Написати нам">Написати нам</button>
+            <!-- </div> -->
 
             <div class="connection"> <!-- 29 - Форма зворотнього зв'язку -->
                 <form action="#" method="post" aria-label="Контактна форма" id="contactForm">
@@ -190,14 +285,13 @@
                 </form>
             </div>
 
-            <div class="table-block"> <!-- 34 - Додатковий блок з інформацією -->
+            <!-- <div class="table-block">  34 - Таблиця з інформацією 
                 <div class="table-header">
-                    <p>Орієнтовні години роботи відповідно до графіка відключень:</p>
+                    <p>Години роботи відповідно до графіка відключень:</p>
                 </div>
-                <div>
-                    <table>
-                        <tbody>
-                            <tr>
+                <table>
+                    <tbody>
+                        <tr>
                                 <td>пн</td>
                                 <td></td>
                                 <td>10<sup class="sup">00</sup></td>
@@ -209,8 +303,8 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>
-                            <tr>
+                        </tr>
+                        <tr>
                                 <td>вт</td>
                                 <td></td>
                                 <td></td>
@@ -222,8 +316,8 @@
                                 <td>16<sup class="sup">00</sup></td>
                                 <td>17<sup class="sup">00</sup></td>
                                 <td>18<sup class="sup">00</sup></td>
-                            </tr>
-                            <tr>
+                        </tr>
+                        <tr>
                                 <td>ср</td>
                                 <td>9<sup class="sup">00</sup></td>
                                 <td>10<sup class="sup">00</sup></td>
@@ -235,8 +329,8 @@
                                 <td>16<sup class="sup">00</sup></td>
                                 <td>17<sup class="sup">00</sup></td>
                                 <td>18<sup class="sup">00</sup></td>
-                            </tr>
-                            <tr>
+                        </tr>
+                        <tr>
                                 <td>чт</td>
                                 <td></td>
                                 <td>10<sup class="sup">00</sup></td>
@@ -248,8 +342,8 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>
-                            <tr>
+                        </tr>
+                        <tr>
                                 <td>пт</td>
                                 <td></td>
                                 <td></td>
@@ -261,11 +355,10 @@
                                 <td>16<sup class="sup">00</sup></td>
                                 <td>17<sup class="sup">00</sup></td>
                                 <td>18<sup class="sup">00</sup></td>
-                            </tr>
-                        </tbody>
-                    </table> 
-                </div>  
-        </div>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div> --> 
 
         </div>
 
