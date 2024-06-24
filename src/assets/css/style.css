@@ -58,7 +58,7 @@ body {
 /* 34 - Таблиця з інформацією */
 .table-block {
     width: 100%;
-    padding: 0;
+    padding-top: 10px;
     /*position: absolute;*/
     bottom: 0;
     left: 0;
@@ -564,7 +564,7 @@ button:hover {
     padding: 0;
     margin: 0;
     background-color: var(--main-bg-color);
-    border-top: 1px solid var(--highlight-color);
+    border-top: 10px solid var(--highlight-color);
     color: var(--main-text-color);
     box-sizing: border-box;
     overflow-x: hidden;
@@ -579,7 +579,7 @@ button:hover {
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0;
     margin: 0;
 }
 
@@ -588,9 +588,10 @@ button:hover {
     padding: 0;
     text-align: left;
     text-wrap: nowrap;
-    flex: 1;
-    margin: 5px 0;
-    min-width: 200px;
+    flex: 5;
+    padding: 0 10px;
+    margin: 0;
+    width: 100%;
 }
 
 /* 29 - Форма зворотнього зв'язку */
@@ -884,7 +885,7 @@ button:hover {
     }
     
     .contacts {
-        width: 90%;
+        width: 100%;
         padding: 0;
         margin: 0;
     }
@@ -893,6 +894,10 @@ button:hover {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 10px;
+    }
+
+    .contact-column {
+        padding: 10px 0;
     }
 
     .connection {
