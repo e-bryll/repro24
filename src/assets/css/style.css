@@ -475,6 +475,7 @@ button:hover {
     text-align: center;
     padding: 0;
     margin: 0;
+    font-size: var(--font-size-medium);
 }
 
 /* 24 - Елемент списку з інформацією про вивід */
@@ -563,6 +564,7 @@ button:hover {
     padding: 0;
     margin: 0;
     background-color: var(--main-bg-color);
+    border-top: 1px solid var(--highlight-color);
     color: var(--main-text-color);
     box-sizing: border-box;
     overflow-x: hidden;
@@ -577,9 +579,8 @@ button:hover {
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
-    padding: 0;
-    margin: 0 10px;
-    gap: 10px;
+    padding: 10px;
+    margin: 0;
 }
 
 /* 28 - Окрема колонка з інформацією */
@@ -933,10 +934,10 @@ button:hover {
         /*font-size: var(--font-size-small);*/
     }
 
-    .info-columns,
+    /*.info-columns,
     .info-columns-text {
         border-top: 1px solid var(--highlight-color);
         border-bottom: 1px solid var(--highlight-color);
-    }
+    }*/
 
 }
