@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const filmFieldsContainer = document.getElementById('film-fields-container');
   const addFilmButton = document.getElementById('addFilm');
   const resetButton = document.getElementById('resetButton');
-  const pricePerSquareMeter = 1500; // ціна за квадратний метр в гривнях
-  const minFilmPrice = 240; // мінімальна вартість плівки в гривнях
+  const pricePerSquareMeter = 1543; // ціна за квадратний метр в гривнях
+  const minFilmPrice = 250; // мінімальна вартість плівки в гривнях
   let totalResult;
 
   addFilmButton.addEventListener('click', () => {

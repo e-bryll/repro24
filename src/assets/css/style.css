@@ -41,15 +41,14 @@ body {
 /* 1.2 - Бічна секція */
 .aside {
     display: flex;
-    flex: 1;
-    /*flex-grow: 1;*/
+    /*flex: 1;*/
     flex-direction: column;
     justify-content: space-between;
-    height: 200vh; /* Займає всю висоту екрану */
-    /*max-width: 25%;*/
+    height: 100%;
+    min-height: 200vh;
     padding: 0;
     margin: 0;
-    background-color: var(--highlight-color); /* var(--accent-color); */
+    /*background-color: var(--highlight-color);*/
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
@@ -57,13 +56,14 @@ body {
 
 /* 34 - Таблиця з інформацією */
 .table-block {
+    /*flex-grow: 1;*/
     width: 100%;
+    height: 100%;
     padding-top: 10px;
-    /*position: absolute;*/
-    bottom: 0;
-    left: 0;
-    right: 0;
     margin-bottom: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--highlight-color);
 }
 
 .table-header p {
@@ -78,7 +78,7 @@ body {
 table {
     width: 100%;
     max-width: 100%;
-    padding: 0 2px;
+    padding: 0 5px;
     margin: 0;
     justify-content: center;
     align-items: center;
@@ -98,12 +98,12 @@ th, td {
 
 /* 2 - Блок з калькулятором */
 .calc {
-    flex: 1;
-    flex-grow: 1;
+    /*flex: 2;*/
+    /*flex-grow: 5;*/
     line-height: 1.25;
     width: 100%;
     height: 100%;
-    padding: 2px;
+    padding: 5px;
     margin: 0;
     background-color: var(--main-bg-color);
     display: block;
@@ -415,7 +415,7 @@ button:hover {
     /*border-bottom: 1px solid var(--highlight-color);*/
     color: var(--main-text-color);
     flex-grow: 0.5;
-    row-gap: 5px;
+    /*row-gap: 5px;*/
 }
     
 /* 19 - Заголовок інформаційного блоку */
@@ -554,20 +554,34 @@ button:hover {
 
 /* 26 - Блок з контактною інформацією */
 .contacts {
+    width: 100%;
     order: 5;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
-    flex-grow: 1;
-    align-items: flex-start;
+    flex-grow: 0.5;
+    align-items: center;
     justify-content: center; 
-    padding: 5px 10%;
-    margin: 0;
+    /*text-align: center;*/
+    padding: 0; /* padding: 5px 10%;*/
+    margin: 20px 0; /* margin: 0; */
     background-color: var(--main-bg-color);
-    border-top: 10px solid var(--highlight-color);
     color: var(--main-text-color);
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     overflow-x: hidden;
+}
+
+/* 26.1 - Заголовок блоку з контактною інформацією */
+.contact h1 {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    /*text-align: center;*/
+    background-color: var(--highlight-color);
+    color: var(--add-text-color);
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 0 10px;
 }
 
 /* 27 - Об'єднані колонки з інформацією */ 
@@ -795,6 +809,7 @@ button:hover {
         padding: 0;
         margin: 0;
         /*z-index: 1;*/
+        border-radius: var(--border-radius);
     }
     
     .calc {
